@@ -3,7 +3,8 @@ node_js:
   - "9"
 cache:
   directories:
-    - node_modules
+  - ~/.npm
+  - node_modules
 notification:
   email:
     recipients:
@@ -12,21 +13,14 @@ notification:
     on_failure: always
 git:
   depth: 3
-
-before_script:
-  - "npm install -g gatsby-cli"
-  - "npm install"
-script:
-  - npm build
-
 deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
-  local-dir: public
+  local_dir: public
   keep-history: true
   target-branch: master
   on:
     branch: develop
-
-
+script:
+  - "npm build"
