@@ -14,10 +14,10 @@ git:
   depth: 3
 
 before_script:
-  - "npm i -g gatsby"
-  - "npm i"
+  - "npm install -g gatsby-cli"
+  - "npm install"
 script:
-  - gatsby build
+  - npm build
 
 deploy:
   provider: pages
