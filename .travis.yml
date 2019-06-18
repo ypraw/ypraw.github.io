@@ -22,4 +22,4 @@ deploy:
   on:
     branch: develop
 script:
-  - "yarn build"
+  - "npm build"
