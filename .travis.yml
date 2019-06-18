@@ -22,8 +22,8 @@ deploy:
   on:
     branch: develop
 before_script:
-  - "npm i -g gatsby"
-  - "npm i"
+  - "npm install -g gatsby-cli"
+  - "npm install"
 script:
   - "npm build"
 after_success:
