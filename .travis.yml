@@ -1,9 +1,9 @@
 language: node_js
 node_js:
-  - "stable"
+  - "9"
 cache:
   directories:
-  - node_modules
+  - ~/.npm
 notification:
   email:
     recipients:
@@ -21,10 +21,5 @@ deploy:
   target-branch: master
   on:
     branch: develop
-before_script:
-  - "npm install -g gatsby-cli"
-  - "npm install"
 script:
-  - "npm build"
-after_success:
-  - "npm run deploy"
+  - "yarn build"
