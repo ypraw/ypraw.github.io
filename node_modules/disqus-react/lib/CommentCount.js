@@ -1,0 +1,93 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.CommentCount = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _utils = require('./utils');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var queueResetCount = (0, _utils.debounce)(function () {
+    if (window.DISQUSWIDGETS) window.DISQUSWIDGETS.getCount({ reset: true });
+}, 300, false); // eslint-disable-line no-magic-numbers
+
+var CommentCount = exports.CommentCount = function (_React$Component) {
+    _inherits(CommentCount, _React$Component);
+
+    function CommentCount() {
+        _classCallCheck(this, CommentCount);
+
+        return _possibleConstructorReturn(this, (CommentCount.__proto__ || Object.getPrototypeOf(CommentCount)).apply(this, arguments));
+    }
+
+    _createClass(CommentCount, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.loadInstance();
+        }
+    }, {
+        key: 'shouldComponentUpdate',
+        value: function shouldComponentUpdate(nextProps) {
+            if (this.props.shortname !== nextProps.shortname) return true;
+
+            var nextConfig = nextProps.config;
+            var config = this.props.config;
+            if (nextConfig.url === config.url || nextConfig.identifier === config.identifier) return false;
+            return true;
+        }
+    }, {
+        key: 'componentWillUpdate',
+        value: function componentWillUpdate(nextProps) {
+            if (this.props.shortname !== nextProps.shortname) this.cleanInstance();
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate() {
+            this.loadInstance();
+        }
+    }, {
+        key: 'loadInstance',
+        value: function loadInstance() {
+            var doc = window.document;
+            if (doc.getElementById('dsq-count-scr')) queueResetCount();else (0, _utils.insertScript)('https://' + this.props.shortname + '.disqus.com/count.js', 'dsq-count-scr', doc.body);
+        }
+    }, {
+        key: 'cleanInstance',
+        value: function cleanInstance() {
+            var body = window.document.body;
+            (0, _utils.removeScript)('dsq-count-scr', body);
+
+            // count.js only reassigns this window object if it's undefined.
+            window.DISQUSWIDGETS = undefined;
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'span',
+                {
+                    className: 'disqus-comment-count',
+                    'data-disqus-identifier': this.props.config.identifier,
+                    'data-disqus-url': this.props.config.url
+                },
+                this.props.children
+            );
+        }
+    }]);
+
+    return CommentCount;
+}(_react2.default.Component);
