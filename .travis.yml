@@ -22,6 +22,8 @@ deploy:
   target-branch: master
   on:
     branch: develop
-script:
+before_script:
   - "rm -rf public/"
+  
+script:
   - "npm build"
