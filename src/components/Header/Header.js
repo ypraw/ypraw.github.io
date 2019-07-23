@@ -39,7 +39,9 @@ class Header extends React.Component {
           <Link to="/" className="logoType">
             <div className="logo">
               <img
-                src={config.gravatarImgMd5 == "" ? avatar : config.gravatarImgMd5}
+                src={
+                  config.gravatarImgMd5 == "" ? avatar : config.gravatarImgMd5
+                }
                 alt={config.siteTitle}
               />
             </div>
@@ -143,7 +145,9 @@ class Header extends React.Component {
             left: 0;
             right: 0;
             height: 1px;
-            top: ${path === "/" ? theme.header.height.homepage : theme.header.height.default};
+            top: ${path === "/"
+              ? theme.header.height.homepage
+              : theme.header.height.default};
           }
 
           @from-width tablet {
@@ -187,7 +191,8 @@ class Header extends React.Component {
               &.fixed {
                 height: ${theme.header.height.fixed};
                 background-color: ${theme.color.neutral.white};
-                box-shadow: 0 0 10px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.14),
+                  0 4px 8px rgba(0, 0, 0, 0.28);
                 left: 0;
                 padding: 0 ${theme.space.m};
                 position: fixed;

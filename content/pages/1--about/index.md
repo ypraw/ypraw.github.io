@@ -7,9 +7,6 @@ title: About Me
 
 My name is Yunindyo Prabowo and this is my cv :
 
-## Personal Information
-  > Born in Jakarta 15th June 1995
-
 ## Education
   > * Senior High School : SMAN 101 Jakarta 2010-2013
   > * College : Universitas Dian Nuswantoro Semarang [now]

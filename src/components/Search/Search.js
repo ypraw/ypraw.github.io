@@ -1,6 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { InstantSearch, SearchBox, Hits, Stats, Pagination } from "react-instantsearch/dom";
+import {
+  InstantSearch,
+  SearchBox,
+  Hits,
+  Stats,
+  Pagination
+} from "react-instantsearch/dom";
 
 import Hit from "./Hit";
 

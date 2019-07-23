@@ -1,15 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-require("core-js/fn/array/from");
-
-// import { FaHome } from "react-icons/fa/";
-// import { FaSearch } from "react-icons/fa/";
-// import { FaEnvelope } from "react-icons/fa/";
-// import { FaTag } from "react-icons/fa/";
-
 import Item from "./Item";
 import Expand from "./Expand";
-
+require("core-js/fn/array/from");
 class Menu extends React.Component {
   constructor(props) {
     super(props);
@@ -74,10 +67,12 @@ class Menu extends React.Component {
   };
 
   hideOverflowedMenuItems = () => {
-    const PADDING_AND_SPACE_FOR_MORELINK = this.props.screenWidth >= 1024 ? 60 : 0;
+    const PADDING_AND_SPACE_FOR_MORELINK =
+      this.props.screenWidth >= 1024 ? 60 : 0;
 
     const itemsContainer = this.itemList.current;
-    const maxWidth = itemsContainer.offsetWidth - PADDING_AND_SPACE_FOR_MORELINK;
+    const maxWidth =
+      itemsContainer.offsetWidth - PADDING_AND_SPACE_FOR_MORELINK;
 
     this.setState({ hiddenItems: [] }); // clears previous state
 
@@ -86,10 +81,14 @@ class Menu extends React.Component {
         item.classList.add("item");
         item.classList.remove("hideItem");
 
-        const currentCumulativeWidth = result.cumulativeWidth + item.offsetWidth;
+        const currentCumulativeWidth =
+          result.cumulativeWidth + item.offsetWidth;
         result.cumulativeWidth = currentCumulativeWidth;
 
-        if (!item.classList.contains("more") && currentCumulativeWidth > maxWidth) {
+        if (
+          !item.classList.contains("more") &&
+          currentCumulativeWidth > maxWidth
+        ) {
           const link = item.querySelector("a");
 
           item.classList.add("hideItem");
@@ -154,7 +153,9 @@ class Menu extends React.Component {
               <Item item={item} key={item.label} theme={theme} />
             ))}
           </ul>
-          {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} />}
+          {this.state.hiddenItems.length > 0 && (
+            <Expand onClick={this.toggleMenu} theme={theme} />
+          )}
           {open && screenWidth >= 1024 && (
             <ul className="hiddenItemList">
               {this.state.hiddenItems.map(item => (

@@ -258,7 +258,71 @@ SPACESHIP_EXIT_CODE_COLOR="red"
 ##################
 ```
 
-langkah terakhir ketikan perintah berikut pada terminal anda,
+kemudiian kita membuat file `.aliases` untuk memudahkan kita dalam membuat alias terhadap perintah-perintah terminal tertentu. Dalam konteks ini saya membuat file tersebut dan menyimpannya pada directory `~/` atau directory `/home/username` berikut perintah-perintah alias yang saya buat,
+
+```bash
+mkcd(){
+  mkdir -p "$1"
+  cd "$1"
+}
+
+# call from your terminal 
+# weather yourcity intervalDay
+# weather Jakarta 0 > for current info
+# weather Jakarta 1 > for 1 day
+# etc
+weather(){
+curl wttr.in/$1\?$2
+}
+
+downloadVideo(){
+youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 "$1"
+}
+
+#alias lc='colorls -r --sf'
+
+alias downloadmp3='youtube-dl -x --audio-format mp3'
+
+alias checkmem="sudo ps_mem -S | lolcat"
+# please check my custom config for neofetch
+# and make sure if the path is right XD
+# if you store the config on ~/config.conf
+# change the this path XD
+alias neo='neofetch --config ~/Programming/linux/configDotfiles/neofetch/config.conf --ascii ~/Programming/linux/configDotfiles/neofetch/ypSig'
+
+alias sysfo='neofetch - --config ~/Programming/linux/configDotfiles/neofetch/config.conf  --ascii ~/Programming/linux/configDotfiles/neofetch/arch'
+
+# alias for php server and lamp
+alias php-server-start="sudo systemctl start httpd mysqld && sudo systemctl status httpd mysqld |  grep -i --max-count=4 'httpd.service - Apache Web Server\|active:\|mariadb.service - MariaDB' "
+
+alias php-server-stop="sudo systemctl stop httpd mysqld && sudo systemctl status httpd mysqld |  grep -i --max-count=4 'httpd.service - Apache Web Server\|active:\|mariadb.service - MariaDB' "
+
+alias php-server-status="sudo systemctl status httpd mysqld |  grep -i --max-count=4 'httpd.service - Apache Web Server\|active:\|mariadb.service - MariaDB' "
+
+alias php-server-restart="sudo systemctl restart httpd mysqld && sudo systemctl status httpd mysqld |  grep -i --max-count=4 'httpd.service - Apache Web Server\|active:\|mariadb.service - MariaDB' "
+
+#alias weather-check="curl wttr.in/Semarang\?0"
+
+# ls info
+alias lx="exa -l -h"
+
+#update grub 
+alias up-grub="sudo mkinitcpio -P linux && sudo grub-mkconfig -o /boot/grub/grub.cfg"       
+
+
+# cat alias
+alias prin="bat "
+
+#alias editor kate
+alias sukate="SUDO_EDITOR=kate sudoedit "
+
+alias powerpc="sudo cpupower frequency-set -g performance"
+alias lowpc="sudo cpupower frequency-set -g powersave"
+alias updatePkg="sudo pacman -Syyu"
+alias updateAur="trizen -Syyu"
+```
+
+dan sebagai penutup kita, langkah terakhir ketikan perintah berikut pada terminal anda,
 
 ```bash
 source ~/.zshrc

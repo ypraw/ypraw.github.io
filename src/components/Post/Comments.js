@@ -51,7 +51,10 @@ const Comments = props => {
   return (
     <React.Fragment>
       <div id="post-comments" className="comments">
-        <DiscussionEmbed shortname={config.disqusShortname} config={disqusConfig} />
+        <DiscussionEmbed
+          shortname={config.disqusShortname}
+          config={disqusConfig}
+        />
       </div>
       <style jsx>{`
         .comments {

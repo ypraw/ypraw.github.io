@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ypraw Blog]]></title><description><![CDATA[ypraw code snippets and chit-chat about programming, technology, operating system or sometimes about my feel XD]]></description><link>https://ypraw.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 18 Jun 2019 10:08:26 GMT</lastBuildDate><item><title><![CDATA[Mengenal Linux Desktop Art]]></title><description><![CDATA[Hai jumpa lagi pada artikel yang bertemakan Linux, pada kesempatan kali ini, saya akan menuliskan beberapa tips untuk memulai kustomisasi…]]></description><link>https://ypraw.github.io/mengenal-linux-desktop-art/</link><guid isPermaLink="false">https://ypraw.github.io/mengenal-linux-desktop-art/</guid><content:encoded>&lt;p&gt;Hai jumpa lagi pada artikel yang bertemakan &lt;a href=&quot;/category/linux&quot;&gt;Linux&lt;/a&gt;, pada kesempatan kali ini, saya akan menuliskan beberapa tips untuk memulai kustomisasi desktop linux. Sebelumnya kita telah mempelajari bagaimana cara mempercantik terminal linux menggunakan zsh dengan bantuan plugin zplug, untuk yang belum membaca artikel tersebut, dapat dibaca pada tautan &lt;a href=&quot;/kustomisasi-terminal-linux&quot;&gt;berikut&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Ypraw Blog]]></title><description><![CDATA[ypraw code snippets and chit-chat about programming, technology, operating system or sometimes about my feel XD]]></description><link>https://ypraw.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 23 Jul 2019 05:33:48 GMT</lastBuildDate><item><title><![CDATA[Mengenal Linux Desktop Art]]></title><description><![CDATA[Hai jumpa lagi pada artikel yang bertemakan Linux, pada kesempatan kali ini, saya akan menuliskan beberapa tips untuk memulai kustomisasi…]]></description><link>https://ypraw.github.io/mengenal-linux-desktop-art/</link><guid isPermaLink="false">https://ypraw.github.io/mengenal-linux-desktop-art/</guid><content:encoded>&lt;p&gt;Hai jumpa lagi pada artikel yang bertemakan &lt;a href=&quot;/category/linux&quot;&gt;Linux&lt;/a&gt;, pada kesempatan kali ini, saya akan menuliskan beberapa tips untuk memulai kustomisasi desktop linux. Sebelumnya kita telah mempelajari bagaimana cara mempercantik terminal linux menggunakan zsh dengan bantuan plugin zplug, untuk yang belum membaca artikel tersebut, dapat dibaca pada tautan &lt;a href=&quot;/kustomisasi-terminal-linux&quot;&gt;berikut&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Pada artikel ini, saya akan menjelaskan trik-trik dasar mengenai ricing. Sebelum itu kita bahas dulu apa itu ricing.&lt;/p&gt;
 &lt;h2&gt;Apa itu Ricing?&lt;/h2&gt;
 &lt;p&gt;Ada beberapa pendapat mengenai awal mula kata ricing, yang paling terkenal adalah bermula dari kata &lt;em&gt;&lt;strong&gt;Race Inspired Cosmetic Enhancement&lt;/strong&gt;&lt;/em&gt;, lomba mempercantik mobil dengan menambahkan banyak aksesoris tanpa peduli dengan mesin yang pada akhirnya tidak akan membuat perbedaan berarti kecuali hanya dari tampilan.
@@ -335,7 +335,67 @@ SPACESHIP_EXIT_CODE_COLOR&lt;span class=&quot;token operator&quot;&gt;=&lt;/span
 &lt;span class=&quot;token comment&quot;&gt;##################&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;#end theme config#&lt;/span&gt;
 &lt;span class=&quot;token comment&quot;&gt;##################&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;langkah terakhir ketikan perintah berikut pada terminal anda,&lt;/p&gt;
+&lt;p&gt;kemudiian kita membuat file &lt;code class=&quot;language-text&quot;&gt;.aliases&lt;/code&gt; untuk memudahkan kita dalam membuat alias terhadap perintah-perintah terminal tertentu. Dalam konteks ini saya membuat file tersebut dan menyimpannya pada directory &lt;code class=&quot;language-text&quot;&gt;~/&lt;/code&gt; atau directory &lt;code class=&quot;language-text&quot;&gt;/home/username&lt;/code&gt; berikut perintah-perintah alias yang saya buat,&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;mkcd&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;mkdir&lt;/span&gt; -p &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# call from your terminal &lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# weather yourcity intervalDay&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# weather Jakarta 0 &gt; for current info&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# weather Jakarta 1 &gt; for 1 day&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# etc&lt;/span&gt;
+weather&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; wttr.in/&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;\?&lt;span class=&quot;token variable&quot;&gt;$2&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+downloadVideo&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+youtube-dl -f &lt;span class=&quot;token string&quot;&gt;&apos;bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio&apos;&lt;/span&gt; --merge-output-format mp4 &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;$1&lt;/span&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;#alias lc=&apos;colorls -r --sf&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;alias&lt;/span&gt; downloadmp3&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;youtube-dl -x --audio-format mp3&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;alias&lt;/span&gt; checkmem&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;sudo ps_mem -S | lolcat&quot;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# please check my custom config for neofetch&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# and make sure if the path is right XD&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# if you store the config on ~/config.conf&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;# change the this path XD&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;alias&lt;/span&gt; neo&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;neofetch --config ~/Programming/linux/configDotfiles/neofetch/config.conf --ascii ~/Programming/linux/configDotfiles/neofetch/ypSig&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;alias&lt;/span&gt; sysfo&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;neofetch - --config ~/Programming/linux/configDotfiles/neofetch/config.conf  --ascii ~/Programming/linux/configDotfiles/neofetch/arch&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# alias for php server and lamp&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;alias&lt;/span&gt; php-server-start&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;sudo systemctl start httpd mysqld &amp;amp;&amp;amp; sudo systemctl status httpd mysqld |  grep -i --max-count=4 &apos;httpd.service - Apache Web Server\|active:\|mariadb.service - MariaDB&apos; &quot;&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;alias&lt;/span&gt; php-server-stop&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;sudo systemctl stop httpd mysqld &amp;amp;&amp;amp; sudo systemctl status httpd mysqld |  grep -i --max-count=4 &apos;httpd.service - Apache Web Server\|active:\|mariadb.service - MariaDB&apos; &quot;&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;alias&lt;/span&gt; php-server-status&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;sudo systemctl status httpd mysqld |  grep -i --max-count=4 &apos;httpd.service - Apache Web Server\|active:\|mariadb.service - MariaDB&apos; &quot;&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;alias&lt;/span&gt; php-server-restart&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;sudo systemctl restart httpd mysqld &amp;amp;&amp;amp; sudo systemctl status httpd mysqld |  grep -i --max-count=4 &apos;httpd.service - Apache Web Server\|active:\|mariadb.service - MariaDB&apos; &quot;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;#alias weather-check=&quot;curl wttr.in/Semarang\?0&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# ls info&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;alias&lt;/span&gt; lx&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;exa -l -h&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;#update grub &lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;alias&lt;/span&gt; up-grub&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;sudo mkinitcpio -P linux &amp;amp;&amp;amp; sudo grub-mkconfig -o /boot/grub/grub.cfg&quot;&lt;/span&gt;       
+
+
+&lt;span class=&quot;token comment&quot;&gt;# cat alias&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;alias&lt;/span&gt; prin&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;bat &quot;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;#alias editor kate&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;alias&lt;/span&gt; sukate&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;SUDO_EDITOR=kate sudoedit &quot;&lt;/span&gt;
+
+&lt;span class=&quot;token function&quot;&gt;alias&lt;/span&gt; powerpc&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;sudo cpupower frequency-set -g performance&quot;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;alias&lt;/span&gt; lowpc&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;sudo cpupower frequency-set -g powersave&quot;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;alias&lt;/span&gt; updatePkg&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;sudo pacman -Syyu&quot;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;alias&lt;/span&gt; updateAur&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;trizen -Syyu&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;dan sebagai penutup kita, langkah terakhir ketikan perintah berikut pada terminal anda,&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;source&lt;/span&gt; ~/.zshrc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Tunggu hingga proses instalasi selesai XD.&lt;/p&gt;
 &lt;p&gt;Untuk dokumentasi lebih lanjut pada zplug anda dapat membacanya pada tautan berikut &lt;a href=&quot;https://github.com/zplug/zplug&quot;&gt;ini&lt;/a&gt;.
@@ -1688,7 +1748,7 @@ see you pada tutorial selanjutnyaaaaaaa&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;img src=&quot;https://github.com/addy-dclxvi.png&quot; height=&quot;100&quot; width=&quot;100&quot; style=&quot;border-radius:50%;margin-left:auto;margin-right:auto;&quot;&gt; &lt;a href=&quot;https://addy-dclxvi.github.io&quot;&gt;addy&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[About Me]]></title><description><![CDATA[My name is Yunindyo Prabowo and this is my cv :Personal InformationBorn in Jakarta 15th June 1995EducationSenior High School : SMAN 10…]]></description><link>https://ypraw.github.io/about/</link><guid isPermaLink="false">https://ypraw.github.io/about/</guid><content:encoded>
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[About Me]]></title><description><![CDATA[My name is Yunindyo Prabowo and this is my cv :EducationSenior High School : SMAN 101 Jakarta 2010-2013College : Universitas Dian Nuswantoro…]]></description><link>https://ypraw.github.io/about/</link><guid isPermaLink="false">https://ypraw.github.io/about/</guid><content:encoded>
   &lt;a class=&quot;gatsby-resp-image-link&quot; href=&quot;/static/492ed88ed27cba96afe4309daf844026/e2288/photo_2019-04-11_00-21-32.jpg&quot; style=&quot;display: block&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;
   
   &lt;span class=&quot;gatsby-resp-image-wrapper&quot; style=&quot;position: relative; display: block;  max-width: 640px; margin-left: auto; margin-right: auto;&quot;&gt;
@@ -1702,10 +1762,6 @@ see you pada tutorial selanjutnyaaaaaaa&lt;/p&gt;
   &lt;/a&gt;
     
 &lt;p&gt;My name is Yunindyo Prabowo and this is my cv :&lt;/p&gt;
-&lt;h2&gt;Personal Information&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Born in Jakarta 15th June 1995&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;h2&gt;Education&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;

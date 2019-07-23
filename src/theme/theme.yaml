@@ -43,7 +43,7 @@ color:
     gray:
       a: &color-gray-1 '#fafaf9'
       b: &color-gray-2 '#f3f2f2'
-      c: &color-gray-3 '#ecebea'
+      c: &color-gray-3 '#f5f5f5'
       d: '#dddbda'
       e: '#c9c7c5'
       f: '#b0adab'
@@ -54,7 +54,7 @@ color:
       k: '#2b2826'
     black: '#333333'
   brand:
-    primary: &color-brand-primary '#4db6ac'
+    primary: &color-brand-primary '#ff0f7b'
     primaryActive: '#4db6ac'
     light: '#4db6ac'
     lightActive: '#4db6ac'

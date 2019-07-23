@@ -7,12 +7,12 @@ import { graphql, StaticQuery } from "gatsby";
 import { getScreenWidth, timeoutThrottlerHandler } from "../utils/helpers";
 import Footer from "../components/Footer/";
 import Header from "../components/Header";
+import themeObjectFromYaml from "../theme/theme.yaml";
 
 export const ThemeContext = React.createContext(null);
 export const ScreenWidthContext = React.createContext(0);
 export const FontLoadedContext = React.createContext(false);
 
-import themeObjectFromYaml from "../theme/theme.yaml";
 
 class Layout extends React.Component {
   constructor() {
@@ -44,7 +44,12 @@ class Layout extends React.Component {
   }
 
   resizeThrottler = () => {
-    return timeoutThrottlerHandler(this.timeouts, "resize", 100, this.resizeHandler);
+    return timeoutThrottlerHandler(
+      this.timeouts,
+      "resize",
+      100,
+      this.resizeHandler
+    );
   };
 
   resizeHandler = () => {
@@ -142,8 +147,8 @@ class Layout extends React.Component {
                       }
                       body {
                         font-family: ${this.state.font400loaded
-                          ? "'Open Sans', sans-serif;"
-                          : "Arial, sans-serif;"};
+                        ? "'Open Sans', sans-serif;"
+                        : "Arial, sans-serif;"};
                       }
                       h1,
                       h2,
