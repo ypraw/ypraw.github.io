@@ -23,4 +23,5 @@ deploy:
   on:
     branch: develop
 script:
+  - "rm -rf public/"
   - "npm build"
