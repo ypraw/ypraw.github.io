@@ -55,11 +55,11 @@ color:
     black: '#333333'
   brand:
     primary: &color-brand-primary '#ff0f7b'
-    primaryActive: '#4db6ac'
-    light: '#4db6ac'
-    lightActive: '#4db6ac'
-    dark: '#4db6ac'
-    darkActive: '#4db6ac'
+    primaryActive: '#ff0f7b'
+    light: '#ff0f7b'
+    lightActive: '#ff0f7b'
+    dark: '#ff0f7b'
+    darkActive: '#ff0f7b'
   special:
     attention: &color-special-attention orange
 # FONT
