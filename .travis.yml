@@ -22,12 +22,9 @@ deploy:
   target-branch: master
   on:
     branch: develop
-<<<<<<< HEAD
 before_script:
   - "rm -rf public/"
   - "npm install"
-=======
->>>>>>> 3f6cc5880ad0b349dc224d6a0fe6e8d22a25a867
   
 script:
-  - "rm -rf * && npm build"
+  - "npm build"
