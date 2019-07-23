@@ -24,6 +24,7 @@ deploy:
     branch: develop
 before_script:
   - "rm -rf public/"
+  - "npm install"
   
 script:
   - "npm build"
