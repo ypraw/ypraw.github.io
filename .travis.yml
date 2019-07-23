@@ -21,8 +21,6 @@ deploy:
   keep-history: true
   target-branch: master
   on:
-    branch: develop
-before_install:
-  - "rm -rf public/"  
+    branch: develop  
 script:
   - "npm build"
