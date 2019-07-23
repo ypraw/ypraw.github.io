@@ -21,7 +21,7 @@ module.exports = {
   manifestShortName: "yprawblog", // max 12 characters
   manifestStartUrl: "/index.html",
   manifestBackgroundColor: "#333333",
-  manifestThemeColor: "#009688",
+  manifestThemeColor: "#ff0f7b",
   manifestDisplay: "standalone",
 
   // gravatar
