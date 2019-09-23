@@ -11,7 +11,7 @@ class IndexPage extends React.Component {
   scrollToContent = e => {
     this.separator.current.scrollIntoView({
       block: "start",
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
@@ -26,9 +26,9 @@ class IndexPage extends React.Component {
       data: {
         posts: { edges: posts = [] },
         site: {
-          siteMetadata: { facebook }
-        }
-      }
+          siteMetadata: { facebook },
+        },
+      },
     } = this.props;
     return (
       <React.Fragment>
@@ -41,7 +41,7 @@ class IndexPage extends React.Component {
           style={{
             maxWidth: "700px",
             margin: "0 auto 20px auto",
-            textAlign: "center"
+            textAlign: "center",
           }}
         >
           {!isFirst && (
@@ -66,14 +66,14 @@ class IndexPage extends React.Component {
             marginLeft: "auto",
             marginRight: "auto",
             paddingBottom: "1%",
-            listStyle: "none"
+            listStyle: "none",
           }}
         >
           {Array.from({ length: numPages }, (_, i) => (
             <li
               key={`pagination-number${i + 1}`}
               style={{
-                margin: 0
+                margin: 0,
               }}
             >
               <Link
@@ -83,7 +83,7 @@ class IndexPage extends React.Component {
                   borderRadius: "5px",
                   textDecoration: "none",
                   color: i + 1 === currentPage ? "#ffffff" : "",
-                  background: i + 1 === currentPage ? "#009688" : ""
+                  background: i + 1 === currentPage ? "#ff0f7b" : "",
                 }}
               >
                 {i + 1}
@@ -105,7 +105,7 @@ class IndexPage extends React.Component {
 
 IndexPage.PropTypes = {
   data: PropTypes.object.isRequired,
-  pageContext: PropTypes.object.isRequired
+  pageContext: PropTypes.object.isRequired,
 };
 export default IndexPage;
 
