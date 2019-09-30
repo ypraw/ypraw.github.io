@@ -4,7 +4,7 @@ category: linux
 author: Yunindyo Prabowo
 ---
 
-Halo guys XD, setelah membahas bagaimana trik untuk *Berhemat Battery* pada Tutorial [Linux First Install](/Linux-First-Install), dalam kesempatan kali ini saya akan membahas mengenai langkah-langkah untuk mempercantik terminal Linux.
+Halo guys XD, setelah membahas bagaimana trik untuk _Berhemat Battery_ pada Tutorial [Linux First Install](/Linux-First-Install), dalam kesempatan kali ini saya akan membahas mengenai langkah-langkah untuk mempercantik terminal Linux.
 
 Didalam dunia unix-like, baik linux, macOs, ataupun os lain seperti bsd dan turunannya, sangat dikenal sekali fungsionalitas dari terminalnya atau _command line_. Selain flexibillitasnya, terminal atau command line juga sangat ampuh dalam memecahkan beberapa masalah seperti tidak bisanya login menggunakan gui, atau bahkan instalasi os seperti arch linux yang menggunakan terminal. Nah tentu karena seringnya beraktivitas menggunakan terminal, terkadang kita merasa bosan dengan tampilan yang itu-itu saja. Nah dalam kesempatan kali ini, saya akan menuliskan beberapa langkah untuk mengkustomisasi terminal.
 
@@ -13,6 +13,7 @@ Pada umumnya, terminal di linux berbasiskan [bash](https://www.gnu.org/software/
 # Langkah-langkah
 
 ## Install zsh
+
 Sebelum memulai tentu kita harus menginstall zsh dan menjadikannya default shell kita. Bagi pengguna arch linux maupun manjaro seperti saya, zsh sudah terinstall secara default, atau anda dapat mengecek apakah zsh sudah terinstall atau belum dengan memanggil zsh pada terminal.
 
 ```bash
@@ -34,6 +35,7 @@ sudo pacman -S zsh
 ```
 
 ### fedora
+
 ```bash
 sudo dnf install zsh
 ```
@@ -50,16 +52,15 @@ kemudia logout dari sesi anda saat ini atau anda dapat juga merestart sistem ope
 echo $SHELL
 ```
 
-hasil yang diharapkan adalah ```/usr/bin/zsh``` saat perintah tersebut dieksekusi.
+hasil yang diharapkan adalah `/usr/bin/zsh` saat perintah tersebut dieksekusi.
 
-Jika langkah-langkah diatas telah berhasil di lakukan maka selanjutnya adalah menyalin semua perintah yang ada pada file ```.zshrc``` saya (dalam hal ini saya lampirkan dibawah) kedalam file ```.zshrc``` anda yang berada pada lokasi ```$HOME``` anda.
+Jika langkah-langkah diatas telah berhasil di lakukan maka selanjutnya adalah menyalin semua perintah yang ada pada file `.zshrc` saya (dalam hal ini saya lampirkan dibawah) kedalam file `.zshrc` anda yang berada pada lokasi `$HOME` anda.
 
+# Cara cepat (zplug sebagai solusi pada file `.zshrc`)
 
-# Cara cepat (zplug sebagai solusi pada file ```.zshrc```)
+Banyak tutorial yang bertebaran di google menyarankan setelah mengganti bash dengan zsh, langkah selanjutnya yaitu menginstall [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) untuk menerapkan tema dan lain sebagainya. Akan tetapi, saya menemukan cara yang lebih mudah bahkan lebih simpel, yaitu menggunakan [zplug](https://github.com/zplug/zplug). Hanya menuliskan beberapa script pada file .zshrc maka otomatis zplug akan menginstall semua dependecy dan paket-paket yang telah di definisikan.
 
-Banyak tutorial yang bertebaran di google menyarankan setelah mengganti bash dengan zsh, langkah selanjutnya yaitu menginstall [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) untuk menerapkan tema dan lain sebagainya. Akan tetapi, saya menemukan cara yang lebih mudah bahkan lebih simpel, yaitu menggunakan [zplug](https://github.com/zplug/zplug). Hanya menuliskan beberapa script pada file .zshrc maka otomatis zplug akan menginstall semua dependecy dan paket-paket yang telah di definisikan. 
-
-Sebelum mengikuti script dibawah ini, pastikan bahwa anda telah menginstall [powerline fonts](https://github.com/powerline/fonts) atau [nerd fonts](https://github.com/ryanoasis/nerd-fonts). Disini saya menggunakan Fantasque nerd font sebagai font pada terminal saya.
+Sebelum mengikuti script dibawah ini, pastikan bahwa anda telah menginstall [powerline fonts](https://github.com/powerline/fonts) atau [nerd fonts](https://github.com/ryanoasis/nerd-fonts). Disini saya menggunakan Fantasque nerd font sebagai font pada terminal saya. Untuk mempermudah anda, anda dapat mendownloadnya dari repository saya [disini](https://github.com/ypraw/configDotfiles/tree/master/fonts)
 
 Sebagai contoh, berikut ini merupakan tampilan terminal saya,
 
@@ -102,7 +103,7 @@ if ! zplug check; then
         echo; zplug install
     fi
 fi
-zplug load 
+zplug load
 
 # returning command and folder completion when line is empty
 # like a bash, but better
@@ -266,7 +267,7 @@ mkcd(){
   cd "$1"
 }
 
-# call from your terminal 
+# call from your terminal
 # weather yourcity intervalDay
 # weather Jakarta 0 > for current info
 # weather Jakarta 1 > for 1 day
@@ -306,8 +307,8 @@ alias php-server-restart="sudo systemctl restart httpd mysqld && sudo systemctl 
 # ls info
 alias lx="exa -l -h"
 
-#update grub 
-alias up-grub="sudo mkinitcpio -P linux && sudo grub-mkconfig -o /boot/grub/grub.cfg"       
+#update grub
+alias up-grub="sudo mkinitcpio -P linux && sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 
 # cat alias
@@ -327,10 +328,10 @@ dan sebagai penutup kita, langkah terakhir ketikan perintah berikut pada termina
 ```bash
 source ~/.zshrc
 ```
- 
+
 Tunggu hingga proses instalasi selesai XD.
 
-Untuk dokumentasi lebih lanjut pada zplug anda dapat membacanya pada tautan berikut [ini](https://github.com/zplug/zplug). 
+Untuk dokumentasi lebih lanjut pada zplug anda dapat membacanya pada tautan berikut [ini](https://github.com/zplug/zplug).
 Dan untuk bagian tema, dikarenakan saya menggunakan tema [spaceship-prompt](https://github.com/denysdovhan/spaceship-prompt) anda dapat membacanya dari official github resminya. Untuk kustomisasi tema lain anda dapat menggunakan tema-tema yang tersedia seperti [powerlevel9k](https://github.com/bhilburn/powerlevel9k) dan sebagainya.
 
 untuk selebihnya anda dapat mengeksplorasi konfig-konfig lain yang sekiranya memudahkan anda dalam menggunakan terminal ataupun membuat terminal anda nampak ciamik. Untuk pertanyaan, anda bisa menanyakan pada kolom komentar dibawah, terima kasih dan sampai jumpa pada artikel selanjutnya.
