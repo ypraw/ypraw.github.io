@@ -1,9 +1,8 @@
 language: node_js
 node_js:
-  - "9"
+  - "stable"
 cache:
   directories:
-    - ~/.npm
     - node_modules
 notification:
   email:
@@ -19,9 +18,9 @@ deploy:
   github-token: $GITHUB_TOKEN
   local_dir: public
   keep-history: true
-  target-branch: master
+  # target-branch: master
   on:
-    branch: develop
-edge: true
+    branch: master
+# edge: true
 script:
   - "npm build"
