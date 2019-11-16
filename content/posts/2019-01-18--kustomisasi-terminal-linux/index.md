@@ -46,7 +46,7 @@ setelah menginstallnya, langkah selanjutnya yaitu membuat zsh menjadi default sh
 chsh -s $(which zsh)
 ```
 
-kemudia logout dari sesi anda saat ini atau anda dapat juga merestart sistem operasi anda. Pastikan juga bahwa langkah ini berjalan dengan benar, setelah anda me-logout atau mereboot sistem operasi anda, ketikkan perintah berikut ini untuk memastikan bahwa langkah yang anda lakukan sudah sesuai.
+kemudian logout dari sesi anda saat ini atau anda dapat juga merestart sistem operasi anda. Pastikan juga bahwa langkah ini berjalan dengan benar, setelah anda me-logout atau mereboot sistem operasi anda, ketikkan perintah berikut ini untuk memastikan bahwa langkah yang anda lakukan sudah sesuai.
 
 ```bash
 echo $SHELL
@@ -58,9 +58,9 @@ Jika langkah-langkah diatas telah berhasil di lakukan maka selanjutnya adalah me
 
 # Cara cepat (zplug sebagai solusi pada file `.zshrc`)
 
-Banyak tutorial yang bertebaran di google menyarankan setelah mengganti bash dengan zsh, langkah selanjutnya yaitu menginstall [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) untuk menerapkan tema dan lain sebagainya. Akan tetapi, saya menemukan cara yang lebih mudah bahkan lebih simpel, yaitu menggunakan [zplug](https://github.com/zplug/zplug). Hanya menuliskan beberapa script pada file .zshrc maka otomatis zplug akan menginstall semua dependecy dan paket-paket yang telah di definisikan.
+Banyak tutorial yang bertebaran di google menyarankan setelah mengganti bash dengan zsh, langkah selanjutnya yaitu menginstall [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) untuk menerapkan tema dan lain sebagainya. Akan tetapi, saya menemukan cara yang lebih mudah bahkan lebih simpel, yaitu menggunakan [zplug](https://github.com/zplug/zplug). Hanya menuliskan beberapa script pada file .zshrc maka otomatis zplug akan menginstall semua dependecy dan paket-paket yang telah di definisikan. Sebelum menyalin config yang saya gunakan, pastikan bahwa anda telah menginstall git.
 
-Sebelum mengikuti script dibawah ini, pastikan bahwa anda telah menginstall [powerline fonts](https://github.com/powerline/fonts) atau [nerd fonts](https://github.com/ryanoasis/nerd-fonts). Disini saya menggunakan Fantasque nerd font sebagai font pada terminal saya. Untuk mempermudah anda, anda dapat mendownloadnya dari repository saya [disini](https://github.com/ypraw/configDotfiles/tree/master/fonts)
+Sebelum mengikuti script dibawah ini, pastikan juga bahwa anda telah menginstall [powerline fonts](https://github.com/powerline/fonts) atau [nerd fonts](https://github.com/ryanoasis/nerd-fonts). Disini saya menggunakan Fantasque nerd font sebagai font pada terminal saya. Untuk mempermudah anda, anda dapat mendownloadnya dari repository saya [disini](https://github.com/ypraw/configDotfiles/tree/master/fonts)
 
 Sebagai contoh, berikut ini merupakan tampilan terminal saya,
 
@@ -78,7 +78,7 @@ source $ZPLUG_HOME/init.zsh
 # do self-manage
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
-# auto-close quotes and brackets like a pro
+# auto-close quotes and brackets
 zplug 'hlissner/zsh-autopair', defer:2, as:plugin
 zplug "lib/history",      from:oh-my-zsh
 zplug "lib/key-bindings", from:oh-my-zsh
@@ -86,7 +86,7 @@ zplug "lib/termsupport", from:oh-my-zsh
 zplug "lib/completion", from:oh-my-zsh
 zplug "lib/theme-and-appearance", from:oh-my-zsh
 
-# another eyecandy
+
 zplug 'zdharma/fast-syntax-highlighting', defer:2, hook-load:'FAST_HIGHLIGHT=()', as:plugin
 
 zplug "zsh-users/zsh-autosuggestions", defer:2, as:plugin
@@ -259,7 +259,7 @@ SPACESHIP_EXIT_CODE_COLOR="red"
 ##################
 ```
 
-kemudiian kita membuat file `.aliases` untuk memudahkan kita dalam membuat alias terhadap perintah-perintah terminal tertentu. Dalam konteks ini saya membuat file tersebut dan menyimpannya pada directory `~/` atau directory `/home/username` berikut perintah-perintah alias yang saya buat,
+kemudian kita membuat file `.aliases` untuk memudahkan kita dalam membuat alias terhadap perintah-perintah terminal tertentu. Dalam konteks ini saya membuat file tersebut dan menyimpannya pada directory `~/` atau directory `/home/username` berikut perintah-perintah alias yang saya buat,
 
 ```bash
 mkcd(){
