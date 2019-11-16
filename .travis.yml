@@ -3,8 +3,8 @@ node_js:
   - "9"
 cache:
   directories:
-  - ~/.npm
-  - node_modules
+    - ~/.npm
+    - node_modules
 notification:
   email:
     recipients:
@@ -21,6 +21,7 @@ deploy:
   keep-history: true
   target-branch: master
   on:
-    branch: develop  
+    branch: develop
+edge: true
 script:
   - "npm build"
