@@ -1,14 +1,12 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @flow strict
- */
+// @flow strict
 
 import find from '../polyfills/find';
+
 import { Kind } from '../language/kinds';
+import { type ASTNode, type FieldNode } from '../language/ast';
+
+import { type GraphQLSchema } from '../type/schema';
+import { type GraphQLDirective } from '../type/directives';
 import {
   type GraphQLType,
   type GraphQLInputType,
@@ -29,14 +27,12 @@ import {
   getNullableType,
   getNamedType,
 } from '../type/definition';
-import { type GraphQLDirective } from '../type/directives';
 import {
   SchemaMetaFieldDef,
   TypeMetaFieldDef,
   TypeNameMetaFieldDef,
 } from '../type/introspection';
-import { type GraphQLSchema } from '../type/schema';
-import { type ASTNode, type FieldNode } from '../language/ast';
+
 import { typeFromAST } from './typeFromAST';
 
 /**
@@ -49,7 +45,7 @@ export class TypeInfo {
   _typeStack: Array<?GraphQLOutputType>;
   _parentTypeStack: Array<?GraphQLCompositeType>;
   _inputTypeStack: Array<?GraphQLInputType>;
-  _fieldDefStack: Array<?GraphQLField<*, *>>;
+  _fieldDefStack: Array<?GraphQLField<mixed, mixed>>;
   _defaultValueStack: Array<?mixed>;
   _directive: ?GraphQLDirective;
   _argument: ?GraphQLArgument;
@@ -113,7 +109,7 @@ export class TypeInfo {
     }
   }
 
-  getFieldDef(): ?GraphQLField<*, *> {
+  getFieldDef(): ?GraphQLField<mixed, mixed> {
     if (this._fieldDefStack.length > 0) {
       return this._fieldDefStack[this._fieldDefStack.length - 1];
     }
@@ -300,7 +296,7 @@ function getFieldDef(
   schema: GraphQLSchema,
   parentType: GraphQLType,
   fieldNode: FieldNode,
-): ?GraphQLField<*, *> {
+): ?GraphQLField<mixed, mixed> {
   const name = fieldNode.name.value;
   if (
     name === SchemaMetaFieldDef.name &&

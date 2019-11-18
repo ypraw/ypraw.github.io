@@ -1,23 +1,21 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @flow strict
- */
+// @flow strict
 
 import objectValues from '../polyfills/objectValues';
+
 import inspect from '../jsutils/inspect';
-import invariant from '../jsutils/invariant';
+import devAssert from '../jsutils/devAssert';
 import keyValMap from '../jsutils/keyValMap';
-import { valueFromAST } from './valueFromAST';
+import isObjectLike from '../jsutils/isObjectLike';
+
 import { parseValue } from '../language/parser';
+
+import { GraphQLDirective } from '../type/directives';
+import { specifiedScalarTypes } from '../type/scalars';
+import { introspectionTypes, TypeKind } from '../type/introspection';
 import {
   type GraphQLSchemaValidationOptions,
   GraphQLSchema,
 } from '../type/schema';
-
 import {
   type GraphQLType,
   type GraphQLInputType,
@@ -38,12 +36,7 @@ import {
   assertInterfaceType,
 } from '../type/definition';
 
-import { GraphQLDirective } from '../type/directives';
-
-import { introspectionTypes, TypeKind } from '../type/introspection';
-
-import { specifiedScalarTypes } from '../type/scalars';
-
+import { valueFromAST } from './valueFromAST';
 import {
   type IntrospectionQuery,
   type IntrospectionType,
@@ -79,6 +72,12 @@ export function buildClientSchema(
   introspection: IntrospectionQuery,
   options?: Options,
 ): GraphQLSchema {
+  devAssert(
+    isObjectLike(introspection) && isObjectLike(introspection.__schema),
+    'Invalid or incomplete introspection result. Ensure that you are passing "data" property of introspection response and no "errors" was returned alongside: ' +
+      inspect(introspection),
+  );
+
   // Get the schema from the introspection result.
   const schemaIntrospection = introspection.__schema;
 
@@ -153,9 +152,7 @@ export function buildClientSchema(
     const type = typeMap[typeName];
     if (!type) {
       throw new Error(
-        `Invalid or incomplete schema, unknown type: ${typeName}. Ensure ` +
-          'that a full introspection query is used in order to build a ' +
-          'client schema.',
+        `Invalid or incomplete schema, unknown type: ${typeName}. Ensure that a full introspection query is used in order to build a client schema.`,
       );
     }
 
@@ -164,26 +161,28 @@ export function buildClientSchema(
 
   function getInputType(typeRef: IntrospectionInputTypeRef): GraphQLInputType {
     const type = getType(typeRef);
-    invariant(
-      isInputType(type),
+    if (isInputType(type)) {
+      return type;
+    }
+    throw new Error(
       'Introspection must provide input type for arguments, but received: ' +
         inspect(type) +
         '.',
     );
-    return type;
   }
 
   function getOutputType(
     typeRef: IntrospectionOutputTypeRef,
   ): GraphQLOutputType {
     const type = getType(typeRef);
-    invariant(
-      isOutputType(type),
+    if (isOutputType(type)) {
+      return type;
+    }
+    throw new Error(
       'Introspection must provide output type for fields, but received: ' +
         inspect(type) +
         '.',
     );
-    return type;
   }
 
   function getObjectType(
@@ -220,8 +219,7 @@ export function buildClientSchema(
       }
     }
     throw new Error(
-      'Invalid or incomplete introspection result. Ensure that a full ' +
-        'introspection query is used in order to build a client schema:' +
+      'Invalid or incomplete introspection result. Ensure that a full introspection query is used in order to build a client schema:' +
         inspect(type),
     );
   }
@@ -232,7 +230,6 @@ export function buildClientSchema(
     return new GraphQLScalarType({
       name: scalarIntrospection.name,
       description: scalarIntrospection.description,
-      serialize: value => value,
     });
   }
 

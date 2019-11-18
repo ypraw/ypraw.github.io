@@ -1,17 +1,12 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @flow strict
- */
+// @flow strict
 
 import invariant from '../jsutils/invariant';
 import isPromise from '../jsutils/isPromise';
-import { type GraphQLSchema } from '../type/schema';
-import { execute } from '../execution/execute';
+
 import { parse } from '../language/parser';
+import { execute } from '../execution/execute';
+import { type GraphQLSchema } from '../type/schema';
+
 import {
   type IntrospectionQuery,
   type IntrospectionOptions,

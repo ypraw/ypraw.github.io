@@ -15,5 +15,5 @@ export interface StatisticProps extends FormatConfig {
     prefix?: React.ReactNode;
     suffix?: React.ReactNode;
 }
-declare const WrapperStatistic: React.FunctionComponent<StatisticProps> & StatisticComponent;
+declare const WrapperStatistic: React.SFC<StatisticProps> & StatisticComponent;
 export default WrapperStatistic;

@@ -61,6 +61,7 @@ React.render(<Upload />, container);
 |supportServerRender | boolean | false| whether to support server render |
 |onReady | function | | only call when supportServerRender is true, upload is rendered completely |
 |action| string &#124; function(file): string &#124; Promise&lt;string&gt; | | form action url |
+|method | string | post | request method |
 |directory| boolean | false | support upload whole directory |
 |data| object/function(file) | | other data object to post or a function which returns a data object |
 |headers| object | {} | http headers to post, available in modern browsers |
@@ -74,6 +75,7 @@ React.render(<Upload />, container);
 |customRequest | function | null | provide an override for the default xhr behavior for additional customization|
 |withCredentials | boolean | false | ajax upload with cookie send |
 |openFileDialogOnClick | boolean | true | useful for drag only upload as it does not trigger on enter key or click event |
+|transformFile | function(file): Promise&lt;blob&gt; |  | transform file before request |
 
 #### onError arguments
 

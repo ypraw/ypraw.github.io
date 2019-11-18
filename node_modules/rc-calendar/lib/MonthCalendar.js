@@ -30,6 +30,8 @@ var _KeyCode = require('rc-util/lib/KeyCode');
 
 var _KeyCode2 = _interopRequireDefault(_KeyCode);
 
+var _reactLifecyclesCompat = require('react-lifecycles-compat');
+
 var _CalendarHeader = require('./calendar/CalendarHeader');
 
 var _CalendarHeader2 = _interopRequireDefault(_CalendarHeader);
@@ -159,7 +161,6 @@ var MonthCalendar = function (_React$Component) {
 
 MonthCalendar.propTypes = (0, _extends3['default'])({}, _CalendarMixin.calendarMixinPropTypes, _CommonMixin.propType, {
   monthCellRender: _propTypes2['default'].func,
-  dateCellRender: _propTypes2['default'].func,
   value: _propTypes2['default'].object,
   defaultValue: _propTypes2['default'].object,
   selectedValue: _propTypes2['default'].object,
@@ -167,5 +168,5 @@ MonthCalendar.propTypes = (0, _extends3['default'])({}, _CalendarMixin.calendarM
   disabledDate: _propTypes2['default'].func
 });
 MonthCalendar.defaultProps = (0, _extends3['default'])({}, _CommonMixin.defaultProp, _CalendarMixin.calendarMixinDefaultProps);
-exports['default'] = (0, _CalendarMixin.calendarMixinWrapper)((0, _CommonMixin.commonMixinWrapper)(MonthCalendar));
+exports['default'] = (0, _reactLifecyclesCompat.polyfill)((0, _CalendarMixin.calendarMixinWrapper)((0, _CommonMixin.commonMixinWrapper)(MonthCalendar)));
 module.exports = exports['default'];

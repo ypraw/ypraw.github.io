@@ -4,7 +4,6 @@ import { RadioGroupProps, RadioGroupState, RadioChangeEvent, RadioGroupButtonSty
 import { ConfigConsumerProps } from '../config-provider';
 declare class RadioGroup extends React.Component<RadioGroupProps, RadioGroupState> {
     static defaultProps: {
-        disabled: boolean;
         buttonStyle: RadioGroupButtonStyle;
     };
     static childContextTypes: {

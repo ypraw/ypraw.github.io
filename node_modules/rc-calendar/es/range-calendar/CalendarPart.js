@@ -39,6 +39,7 @@ var CalendarPart = function (_React$Component) {
         enablePrev = props.enablePrev,
         enableNext = props.enableNext,
         clearIcon = props.clearIcon,
+        showClear = props.showClear,
         inputMode = props.inputMode;
 
     var shouldShowTimePicker = showTimePicker && timePicker;
@@ -70,7 +71,7 @@ var CalendarPart = function (_React$Component) {
       placeholder: placeholder,
       disabledTime: disabledTime,
       value: value,
-      showClear: false,
+      showClear: showClear || false,
       selectedValue: selectedValue[index],
       onChange: onInputChange,
       onSelect: onInputSelect,
@@ -144,6 +145,7 @@ CalendarPart.propTypes = {
   enableNext: PropTypes.any,
   enablePrev: PropTypes.any,
   clearIcon: PropTypes.node,
+  dateRender: PropTypes.func,
   inputMode: PropTypes.string
 };
 export default CalendarPart;

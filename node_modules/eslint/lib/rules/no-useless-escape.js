@@ -5,7 +5,7 @@
 
 "use strict";
 
-const astUtils = require("../util/ast-utils");
+const astUtils = require("./utils/ast-utils");
 
 //------------------------------------------------------------------------------
 // Rule Definition
@@ -102,9 +102,14 @@ module.exports = {
          * @returns {void}
          */
         function report(node, startOffset, character) {
+            const start = sourceCode.getLocFromIndex(sourceCode.getIndexFromLoc(node.loc.start) + startOffset);
+
             context.report({
                 node,
-                loc: sourceCode.getLocFromIndex(sourceCode.getIndexFromLoc(node.loc.start) + startOffset),
+                loc: {
+                    start,
+                    end: { line: start.line, column: start.column + 1 }
+                },
                 message: "Unnecessary escape character: \\{{character}}.",
                 data: { character }
             });
@@ -112,10 +117,9 @@ module.exports = {
 
         /**
          * Checks if the escape character in given string slice is unnecessary.
-         *
          * @private
-         * @param {ASTNode} node - node to validate.
-         * @param {string} match - string slice to validate.
+         * @param {ASTNode} node node to validate.
+         * @param {string} match string slice to validate.
          * @returns {void}
          */
         function validateString(node, match) {
@@ -151,8 +155,7 @@ module.exports = {
 
         /**
          * Checks if a node has an escape.
-         *
-         * @param {ASTNode} node - node to check.
+         * @param {ASTNode} node node to check.
          * @returns {void}
          */
         function check(node) {

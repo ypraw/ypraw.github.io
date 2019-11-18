@@ -1,4 +1,4 @@
-/*! algoliasearch 3.32.0 | © 2014, 2015 Algolia SAS | github.com/algolia/algoliasearch-client-js */
+/*! algoliasearch 3.35.1 | © 2014, 2015 Algolia SAS | github.com/algolia/algoliasearch-client-js */
 (function(f){var g;if(typeof window!=='undefined'){g=window}else if(typeof self!=='undefined'){g=self}g.ALGOLIA_MIGRATION_LAYER=f()})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 
 module.exports = function load (src, opts, cb) {
@@ -3054,6 +3054,27 @@ AlgoliaSearch.prototype.deleteApiKey = function(key, callback) {
   });
 };
 
+/**
+ * Restore a deleted API key
+ *
+ * @param {String} key - The key to restore
+ * @param {Function} callback - The result callback called with two arguments
+ *   error: null or Error('message')
+ *   content: the server answer with the restored API key
+ * @return {Promise|undefined} Returns a promise if no callback given
+ * @example
+ * client.restoreApiKey('APIKEY')
+ * @see {@link https://www.algolia.com/doc/rest-api/search/#restore-api-key|Algolia REST API Documentation}
+ */
+AlgoliaSearch.prototype.restoreApiKey = function(key, callback) {
+  return this._jsonRequest({
+    method: 'POST',
+    url: '/1/keys/' + key + '/restore',
+    hostType: 'write',
+    callback: callback
+  });
+};
+
 /*
  @deprecated see client.addApiKey
  */
@@ -3258,7 +3279,7 @@ AlgoliaSearch.prototype.sendQueriesBatch = deprecate(function sendQueriesBatchDe
 }, deprecatedMessage('client.sendQueriesBatch()', 'client.search()'));
 
 /**
- * Perform write operations accross multiple indexes.
+ * Perform write operations across multiple indexes.
  *
  * To reduce the amount of time spent on network round trips,
  * you can create, update, or delete several objects in one call,
@@ -3331,6 +3352,31 @@ AlgoliaSearch.prototype.assignUserID = function(data, callback) {
     headers: {
       'x-algolia-user-id': data.userID
     }
+  });
+};
+
+/**
+ * Assign a array of userIDs to a cluster.
+ *
+ * @param {Array} data.userIDs The array of userIDs to assign to a new cluster
+ * @param {string} data.cluster The cluster to assign the user to
+ * @return {Promise|undefined} Returns a promise if no callback given
+ * @example
+ * client.assignUserIDs({ cluster: 'c1-test', userIDs: ['some-user-1', 'some-user-2'] });
+ */
+AlgoliaSearch.prototype.assignUserIDs = function(data, callback) {
+  if (!data.userIDs || !data.cluster) {
+    throw new errors.AlgoliaSearchError('You have to provide both an array of userIDs and cluster', data);
+  }
+  return this._jsonRequest({
+    method: 'POST',
+    url: '/1/clusters/mapping/batch',
+    hostType: 'write',
+    body: {
+      cluster: data.cluster,
+      users: data.userIDs
+    },
+    callback: callback
   });
 };
 
@@ -3508,7 +3554,7 @@ AlgoliaSearch.prototype.getPersonalizationStrategy = function(callback) {
   return this._jsonRequest({
     method: 'GET',
     url: '/1/recommendation/personalization/strategy',
-    hostType: 'write',
+    hostType: 'read',
     callback: callback
   });
 };
@@ -3520,6 +3566,7 @@ AlgoliaSearch.prototype.disableRateLimitForward = notImplemented;
 AlgoliaSearch.prototype.useSecuredAPIKey = notImplemented;
 AlgoliaSearch.prototype.disableSecuredAPIKey = notImplemented;
 AlgoliaSearch.prototype.generateSecuredApiKey = notImplemented;
+AlgoliaSearch.prototype.getSecuredApiKeyRemainingValidity = notImplemented;
 
 function notImplemented() {
   var message = 'Not implemented in this environment.\n' +
@@ -3703,8 +3750,10 @@ AlgoliaSearchCore.prototype.unsetExtraHeader = function(name) {
 * @param algoliaAgent the agent to add
 */
 AlgoliaSearchCore.prototype.addAlgoliaAgent = function(algoliaAgent) {
-  if (this._ua.indexOf(';' + algoliaAgent) === -1) {
-    this._ua += ';' + algoliaAgent;
+  var algoliaAgentWithDelimiter = '; ' + algoliaAgent;
+
+  if (this._ua.indexOf(algoliaAgentWithDelimiter) === -1) {
+    this._ua += algoliaAgentWithDelimiter;
   }
 };
 
@@ -3961,7 +4010,7 @@ AlgoliaSearchCore.prototype._jsonRequest = function(initialOpts) {
         return client._promise.reject(err);
       }
 
-      // When a timeout occured, retry by raising timeout
+      // When a timeout occurred, retry by raising timeout
       if (err instanceof errors.RequestTimeout) {
         return retryRequestWithHigherTimeout();
       }
@@ -4100,7 +4149,7 @@ AlgoliaSearchCore.prototype._computeRequestHeaders = function(options) {
   var forEach = require(5);
 
   var ua = options.additionalUA ?
-    this._ua + ';' + options.additionalUA :
+    this._ua + '; ' + options.additionalUA :
     this._ua;
 
   var requestHeaders = {
@@ -5094,7 +5143,7 @@ Index.prototype.waitTask = function(taskID, callback) {
 *
 * @param callback (optional) the result callback called with two arguments
 *  error: null or Error('message')
-*  content: the settings object or the error message if a failure occured
+*  content: the settings object or the error message if a failure occurred
 */
 Index.prototype.clearIndex = function(callback) {
   var indexObj = this;
@@ -5402,10 +5451,95 @@ Index.prototype.batchRules = function(rules, opts, callback) {
   });
 };
 
+Index.prototype.exists = function(callback) {
+  var result = this.getSettings().then(function() {
+    return true;
+  }).catch(function(err) {
+    if (err instanceof errors.AlgoliaSearchError && err.statusCode === 404) {
+      return false;
+    }
+
+    throw err;
+  });
+
+  if (typeof callback !== 'function') {
+    return result;
+  }
+
+  result.then(function(res) {
+    callback(null, res);
+  }).catch(function(err) {
+    callback(err);
+  });
+};
+
+Index.prototype.findObject = function(findCallback, requestOptions, callback) {
+  requestOptions = requestOptions === undefined ? {} : requestOptions;
+  var paginate = requestOptions.paginate !== undefined ? requestOptions.paginate : true;
+  var query = requestOptions.query !== undefined ? requestOptions.query : '';
+
+  var that = this;
+  var page = 0;
+
+  var paginateLoop = function() {
+    requestOptions.page = page;
+
+    return that.search(query, requestOptions).then(function(result) {
+      var hits = result.hits;
+
+      for (var position = 0; position < hits.length; position++) {
+        var hit = hits[position];
+        if (findCallback(hit)) {
+          return {
+            object: hit,
+            position: position,
+            page: page
+          };
+        }
+      }
+
+      page += 1;
+
+      // paginate if option was set and has next page
+      if (!paginate || page >= result.nbPages) {
+        throw new errors.ObjectNotFound('Object not found');
+      }
+
+      return paginateLoop();
+    });
+  };
+
+  var promise = paginateLoop(page);
+
+  if (callback === undefined) {
+    return promise;
+  }
+
+  promise
+    .then(function(res) {
+      callback(null, res);
+    })
+    .catch(function(err) {
+      callback(err);
+    });
+};
+
+Index.prototype.getObjectPosition = function(result, objectID) {
+  var hits = result.hits;
+
+  for (var position = 0; position < hits.length; position++) {
+    if (hits[position].objectID === objectID) {
+      return position;
+    }
+  }
+
+  return -1;
+};
+
 /*
 * Set settings for this index
 *
-* @param settigns the settings object that can contains :
+* @param settings the settings object that can contains :
 * - minWordSizefor1Typo: (integer) the minimum number of characters to accept one typo (default = 3).
 * - minWordSizefor2Typos: (integer) the minimum number of characters to accept two typos (default = 7).
 * - hitsPerPage: (integer) the number of hits per page (default = 10).
@@ -5471,7 +5605,7 @@ Index.prototype.batchRules = function(rules, opts, callback) {
 * be considered as optional when found in the query.
 * @param callback (optional) the result callback called with two arguments
 *  error: null or Error('message')
-*  content: the server answer or the error message if a failure occured
+*  content: the server answer or the error message if a failure occurred
 */
 Index.prototype.setSettings = function(settings, opts, callback) {
   if (arguments.length === 1 || typeof opts === 'function') {
@@ -6101,7 +6235,7 @@ IndexCore.prototype._search = function(params, url, callback, additionalUA) {
 * @param attrs (optional) if set, contains the array of attribute names to retrieve
 * @param callback (optional) the result callback called with two arguments
 *  error: null or Error('message')
-*  content: the object to retrieve or the error message if a failure occured
+*  content: the object to retrieve or the error message if a failure occurred
 */
 IndexCore.prototype.getObject = function(objectID, attrs, callback) {
   var indexObj = this;
@@ -6187,7 +6321,7 @@ IndexCore.prototype.typeAheadValueOption = null;
 var AlgoliaSearch = require(16);
 var createAlgoliasearch = require(22);
 
-module.exports = createAlgoliasearch(AlgoliaSearch);
+module.exports = createAlgoliasearch(AlgoliaSearch, 'Browser');
 
 },{"16":16,"22":22}],22:[function(require,module,exports){
 (function (process){
@@ -6222,7 +6356,10 @@ module.exports = function createAlgoliasearch(AlgoliaSearch, uaSuffix) {
   }
 
   algoliasearch.version = require(37);
-  algoliasearch.ua = 'Algolia for vanilla JavaScript ' + uaSuffix + algoliasearch.version;
+
+  algoliasearch.ua =
+    'Algolia for JavaScript (' + algoliasearch.version + '); ' + uaSuffix;
+
   algoliasearch.initPlaces = places(algoliasearch);
 
   // we expose into window no matter how we are used, this will allow
@@ -6818,7 +6955,7 @@ module.exports = {
   ),
   RequestTimeout: createCustomError(
     'RequestTimeout',
-    'Request timedout before getting a response'
+    'Request timed out before getting a response'
   ),
   Network: createCustomError(
     'Network',
@@ -6828,9 +6965,17 @@ module.exports = {
     'JSONPScriptFail',
     '<script> was loaded but did not call our provided callback'
   ),
+  ValidUntilNotFound: createCustomError(
+    'ValidUntilNotFound',
+    'The SecuredAPIKey does not have a validUntil parameter.'
+  ),
   JSONPScriptError: createCustomError(
     'JSONPScriptError',
     '<script> unable to load due to an `error` event on it'
+  ),
+  ObjectNotFound: createCustomError(
+    'ObjectNotFound',
+    'Object not found'
   ),
   Unknown: createCustomError(
     'Unknown',
@@ -7039,7 +7184,7 @@ function cleanup() {
 },{"1":1}],37:[function(require,module,exports){
 'use strict';
 
-module.exports = '3.32.0';
+module.exports = '3.35.1';
 
 },{}]},{},[21])(21)
 });

@@ -30,5 +30,5 @@ export interface BlockProps extends TypographyProps {
 interface InternalBlockProps extends BlockProps {
     component: string;
 }
-declare const _default: React.FunctionComponent<InternalBlockProps>;
+declare const _default: React.SFC<InternalBlockProps>;
 export default _default;

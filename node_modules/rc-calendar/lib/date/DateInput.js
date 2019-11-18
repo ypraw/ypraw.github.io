@@ -228,8 +228,8 @@ var _initialiseProps = function _initialiseProps() {
     });
   };
 
-  this.onKeyDown = function (_ref) {
-    var keyCode = _ref.keyCode;
+  this.onKeyDown = function (event) {
+    var keyCode = event.keyCode;
     var _props2 = _this2.props,
         onSelect = _props2.onSelect,
         value = _props2.value,
@@ -240,6 +240,7 @@ var _initialiseProps = function _initialiseProps() {
       if (validateDate) {
         onSelect(value.clone());
       }
+      event.preventDefault();
     }
   };
 

@@ -7,7 +7,10 @@ export interface PlacementsConfig {
     horizontalArrowShift?: number;
     verticalArrowShift?: number;
     arrowPointAtCenter?: boolean;
-    autoAdjustOverflow?: any;
+    autoAdjustOverflow?: boolean | AdjustOverflow;
 }
-export declare function getOverflowOptions(autoAdjustOverflow: any): any;
+export declare function getOverflowOptions(autoAdjustOverflow: boolean | AdjustOverflow): {
+    adjustX: number;
+    adjustY: number;
+};
 export default function getPlacements(config?: PlacementsConfig): any;

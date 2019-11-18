@@ -1,16 +1,11 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @flow strict
- */
+// @flow strict
 
 import inspect from '../jsutils/inspect';
+import invariant from '../jsutils/invariant';
 import keyValMap from '../jsutils/keyValMap';
 import isInvalid from '../jsutils/isInvalid';
 import { type ObjMap } from '../jsutils/ObjMap';
+
 import { Kind } from '../language/kinds';
 import { type ValueNode } from '../language/ast';
 
@@ -62,6 +57,5 @@ export function valueFromASTUntyped(
   }
 
   // Not reachable. All possible value nodes have been considered.
-  /* istanbul ignore next */
-  throw new Error(`Unexpected value node: "${inspect((valueNode: empty))}".`);
+  invariant(false, 'Unexpected value node: ' + inspect((valueNode: empty)));
 }

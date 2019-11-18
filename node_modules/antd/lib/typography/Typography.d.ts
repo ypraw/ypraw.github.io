@@ -7,9 +7,5 @@ export interface TypographyProps {
     children?: React.ReactNode;
     ['aria-label']?: string;
 }
-interface InternalTypographyProps extends TypographyProps {
-    component?: string;
-    setContentRef?: (node: HTMLElement) => void;
-}
-declare const Typography: React.SFC<InternalTypographyProps>;
-export default Typography;
+declare const ExportTypography: React.FC<TypographyProps>;
+export default ExportTypography;
