@@ -22,7 +22,7 @@ var _syncRequires = _interopRequireDefault(require("./sync-requires"));
 
 var _matchPaths = _interopRequireDefault(require("./match-paths.json"));
 
-var _jsxFileName = "/Users/kastens/Sites/gatsby/packages/gatsby/cache-dir/app.js";
+// Generated during bootstrap
 window.___emitter = _emitter.default;
 const loader = new _devLoader.default(_syncRequires.default, _matchPaths.default);
 (0, _loader.setLoader)(loader);
@@ -61,13 +61,7 @@ window.___loader = _loader.publicLoader; // Let the site/plugins run code very e
 
     let Root = preferDefault(require(`./root`));
     (0, _domready.default)(() => {
-      renderer(_react.default.createElement(Root, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 67
-        },
-        __self: void 0
-      }), rootElement, () => {
+      renderer(_react.default.createElement(Root, null), rootElement, () => {
         (0, _apiRunnerBrowser.apiRunner)(`onInitialClientRender`);
       });
     });

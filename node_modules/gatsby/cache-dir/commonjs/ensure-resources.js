@@ -19,8 +19,7 @@ class EnsureResources extends _react.default.Component {
       pageResources
     } = props;
     this.state = {
-      location: { ...location
-      },
+      location: Object.assign({}, location),
       pageResources: pageResources || _loader.default.loadPageSync(location.pathname)
     };
   }
@@ -33,14 +32,12 @@ class EnsureResources extends _react.default.Component {
 
       return {
         pageResources,
-        location: { ...location
-        }
+        location: Object.assign({}, location)
       };
     }
 
     return {
-      location: { ...location
-      }
+      location: Object.assign({}, location)
     };
   }
 
@@ -48,8 +45,7 @@ class EnsureResources extends _react.default.Component {
     _loader.default.loadPage(rawPath).then(pageResources => {
       if (pageResources && pageResources.status !== `error`) {
         this.setState({
-          location: { ...window.location
-          },
+          location: Object.assign({}, window.location),
           pageResources
         });
       } else {

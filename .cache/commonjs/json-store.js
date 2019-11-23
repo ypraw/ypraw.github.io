@@ -19,8 +19,6 @@ var _gatsby = require("gatsby");
 
 var _socketIo = require("./socketIo");
 
-var _jsxFileName = "/Users/kastens/Sites/gatsby/packages/gatsby/cache-dir/json-store.js";
-
 if (process.env.NODE_ENV === `production`) {
   throw new Error(`It appears like Gatsby is misconfigured. JSONStore is Gatsby internal ` + `development-only component and should never be used in production.\n\n` + `Unless your site has a complex or custom webpack/Gatsby ` + `configuration this is likely a bug in Gatsby. ` + `Please report this at https://github.com/gatsbyjs/gatsby/issues ` + `with steps to reproduce this error.`);
 }
@@ -81,29 +79,12 @@ class JSONStore extends _react.default.Component {
     const data = this.state.pageQueryData[getPathFromProps(this.props)]; // eslint-disable-next-line
 
     if (!data) {
-      return _react.default.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 88
-        },
-        __self: this
-      });
+      return _react.default.createElement("div", null);
     }
 
     return _react.default.createElement(_gatsby.StaticQueryContext.Provider, {
-      value: this.state.staticQueryData,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 92
-      },
-      __self: this
-    }, _react.default.createElement(_pageRenderer.default, (0, _extends2.default)({}, this.props, data, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 93
-      },
-      __self: this
-    })));
+      value: this.state.staticQueryData
+    }, _react.default.createElement(_pageRenderer.default, (0, _extends2.default)({}, this.props, data)));
   }
 
 }

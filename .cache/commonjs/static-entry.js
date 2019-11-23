@@ -7,8 +7,6 @@ exports.default = exports.sanitizeComponents = void 0;
 
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 
-var _jsxFileName = "/Users/kastens/Sites/gatsby/packages/gatsby/cache-dir/static-entry.js";
-
 const React = require(`react`);
 
 const fs = require(`fs`);
@@ -134,12 +132,7 @@ var _default = (pagePath, callback) => {
   let headComponents = [React.createElement("meta", {
     name: "generator",
     content: `Gatsby ${gatsbyVersion}`,
-    key: `generator-${gatsbyVersion}`,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 109
-    },
-    __self: void 0
+    key: `generator-${gatsbyVersion}`
   })];
   let htmlAttributes = {};
   let bodyAttributes = {};
@@ -202,11 +195,10 @@ var _default = (pagePath, callback) => {
 
   class RouteHandler extends React.Component {
     render() {
-      const props = { ...this.props,
-        ...pageData.result,
+      const props = Object.assign({}, this.props, {}, pageData.result, {
         // pathContext was deprecated in v2. Renamed to pageContext
         pathContext: pageData.result ? pageData.result.pageContext : undefined
-      };
+      });
       const pageElement = createElement(syncRequires.components[componentChunkName], props);
       const wrappedPage = apiRunner(`wrapPageElement`, {
         element: pageElement,
@@ -327,12 +319,7 @@ var _default = (pagePath, callback) => {
       as: "script",
       rel: script.rel,
       key: script.name,
-      href: `${__PATH_PREFIX__}/${script.name}`,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 316
-      },
-      __self: void 0
+      href: `${__PATH_PREFIX__}/${script.name}`
     }));
   });
 
@@ -342,12 +329,7 @@ var _default = (pagePath, callback) => {
       rel: "preload",
       key: pageDataUrl,
       href: pageDataUrl,
-      crossOrigin: "anonymous",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 327
-      },
-      __self: void 0
+      crossOrigin: "anonymous"
     }));
   }
 
@@ -359,24 +341,14 @@ var _default = (pagePath, callback) => {
         as: "style",
         rel: style.rel,
         key: style.name,
-        href: `${__PATH_PREFIX__}/${style.name}`,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 346
-        },
-        __self: void 0
+        href: `${__PATH_PREFIX__}/${style.name}`
       }));
     } else {
       headComponents.unshift(React.createElement("style", {
         "data-href": `${__PATH_PREFIX__}/${style.name}`,
         dangerouslySetInnerHTML: {
           __html: fs.readFileSync(join(process.cwd(), `public`, style.name), `utf-8`)
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 355
-        },
-        __self: void 0
+        }
       }));
     }
   }); // Add page metadata for the current page
@@ -387,12 +359,7 @@ var _default = (pagePath, callback) => {
     id: `gatsby-script-loader`,
     dangerouslySetInnerHTML: {
       __html: windowPageData
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 372
-    },
-    __self: void 0
+    }
   })); // Add chunk mapping metadata
 
   const scriptChunkMapping = `/*<![CDATA[*/window.___chunkMapping=${JSON.stringify(chunkMapping)};/*]]>*/`;
@@ -401,12 +368,7 @@ var _default = (pagePath, callback) => {
     id: `gatsby-chunk-mapping`,
     dangerouslySetInnerHTML: {
       __html: scriptChunkMapping
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 387
-    },
-    __self: void 0
+    }
   })); // Filter out prefetched bundles as adding them as a script tag
   // would force high priority fetching.
 
@@ -415,12 +377,7 @@ var _default = (pagePath, callback) => {
     return React.createElement("script", {
       key: scriptPath,
       src: scriptPath,
-      async: true,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 405
-      },
-      __self: void 0
+      async: true
     });
   });
   postBodyComponents.push(...bodyScripts);
@@ -441,12 +398,7 @@ var _default = (pagePath, callback) => {
     preBodyComponents: preBodyComponents,
     postBodyComponents: postBodyComponents,
     body: bodyHtml,
-    path: pagePath,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 422
-    },
-    __self: void 0
+    path: pagePath
   })))}`;
   callback(null, html);
 };

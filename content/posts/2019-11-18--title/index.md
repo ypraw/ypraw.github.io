@@ -1,5 +1,5 @@
 ---
-title: "'title'"
+title: "test post"
 category: test
 author: ypraw
 ---

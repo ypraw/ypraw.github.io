@@ -32,7 +32,6 @@ const Item = props => {
             display: flex;
             align-items: center;
           }
-          
 
           :global(svg) {
             margin: 0 ${theme.space.inset.xs} 0 0;
@@ -60,7 +59,6 @@ const Item = props => {
             :global(a:hover) {
               color: ${theme.color.brand.primary};
               background: color(white alpha(-60%));
-              // background: ${theme.color.Link};
             }
 
             :global(svg) {
@@ -70,10 +68,6 @@ const Item = props => {
             &:hover :global(svg) {
               fill: ${theme.color.brand.primary};
               opacity: 1;
-
-              :global(.hero) & :global(svg) {
-                fill: green;
-              }
             }
           }
 
@@ -103,7 +97,7 @@ Item.propTypes = {
   hidden: PropTypes.bool,
   onClick: PropTypes.func,
   icon: PropTypes.func,
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
 };
 
 export default Item;

@@ -46,15 +46,15 @@ function socketIo() {
         socket.on(`message`, msg => {
           if (msg.type === `staticQueryResult`) {
             if (didDataChange(msg, staticQueryData)) {
-              staticQueryData = { ...staticQueryData,
+              staticQueryData = Object.assign({}, staticQueryData, {
                 [msg.payload.id]: msg.payload.result
-              };
+              });
             }
           } else if (msg.type === `pageQueryResult`) {
             if (didDataChange(msg, pageQueryData)) {
-              pageQueryData = { ...pageQueryData,
+              pageQueryData = Object.assign({}, pageQueryData, {
                 [(0, _normalizePagePath.default)(msg.payload.id)]: msg.payload.result
-              };
+              });
             }
           } else if (msg.type === `overlayError`) {
             if (msg.payload.message) {

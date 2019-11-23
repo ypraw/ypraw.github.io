@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Item from "./Item";
 import Expand from "./Expand";
 require("core-js/fn/array/from");
+
 class Menu extends React.Component {
   constructor(props) {
     super(props);
@@ -21,9 +22,9 @@ class Menu extends React.Component {
       // { to: "/search/", label: "Search", icon: FaSearch },
       { to: "/", label: "Home" },
       { to: "/category/", label: "Categories" },
-      { to: "/search/", label: "Search" },
+      { to: "/Search/", label: "Search" },
       ...pages,
-      // { to: "/contact/", label: "Contact", icon: FaEnvelope }
+      // { to: "/contact/", label: "Contact", icon: FaEnvelope },
     ];
 
     this.renderedItems = []; // will contain references to rendered DOM elements of menu
@@ -164,7 +165,6 @@ class Menu extends React.Component {
             </ul>
           )}
         </nav>
-
         {/* --- STYLES --- */}
         <style jsx>{`
           .menu {
@@ -188,7 +188,7 @@ class Menu extends React.Component {
             justify-content: center;
             list-style: none;
             margin: 0;
-            padding: 0; /* 0 ${theme.space.s}; */
+            padding: 0;
             position: relative;
             width: 100%;
           }
@@ -197,7 +197,6 @@ class Menu extends React.Component {
             .menu {
               &::after {
                 position: absolute;
-                content: "";
                 left: ${theme.space.m};
                 right: ${theme.space.m};
                 top: 0;
@@ -246,9 +245,7 @@ class Menu extends React.Component {
               border-radius: ${theme.size.radius.small};
               border-top-right-radius: 0;
 
-
               &:after {
-                content: "";
                 background: ${theme.background.color.primary};
                 z-index: 10;
                 top: -10px;

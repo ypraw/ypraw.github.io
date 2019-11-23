@@ -11,6 +11,7 @@ exports['default'] = {
   year: 'Rok',
   timeSelect: 'Vybrať čas',
   dateSelect: 'Vybrať dátum',
+  weekSelect: 'Vybrať týždeň',
   monthSelect: 'Vybrať mesiac',
   yearSelect: 'Vybrať rok',
   decadeSelect: 'Vybrať dekádu',
