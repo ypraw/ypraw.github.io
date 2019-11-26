@@ -8,9 +8,6 @@ var plugins = [{
       plugin: require('/home/ypraw/Programming/blog/ypraw.github.io/node_modules/gatsby-plugin-layout/gatsby-ssr'),
       options: {"plugins":[],"component":"/home/ypraw/Programming/blog/ypraw.github.io/src/layouts/index.js"},
     },{
-      plugin: require('/home/ypraw/Programming/blog/ypraw.github.io/node_modules/gatsby-remark-images/gatsby-ssr'),
-      options: {"plugins":[],"maxWidth":800,"backgroundColor":"transparent"},
-    },{
       plugin: require('/home/ypraw/Programming/blog/ypraw.github.io/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
@@ -24,7 +21,7 @@ var plugins = [{
       options: {"plugins":[],"trackingId":"UA-97807209-1"},
     },{
       plugin: require('/home/ypraw/Programming/blog/ypraw.github.io/node_modules/gatsby-plugin-feed/gatsby-ssr'),
-      options: {"plugins":[],"query":"\n          {\n            site {\n              siteMetadata {\n                title\n                description\n                siteUrl\n                site_url: siteUrl\n              }\n            }\n          }\n        ","feeds":[{"query":"\n              {\n                allMarkdownRemark(\n                  limit: 1000,\n                  sort: { order: DESC, fields: [fields___prefix] },\n                  filter: { fields: { slug: { ne: null } } }\n                ) {\n                  edges {\n                    node {\n                      excerpt\n                      html\n                      fields {\n                        slug\n                        prefix\n                      }\n                      frontmatter {\n                        title\n                      }\n                    }\n                  }\n                }\n              }\n            ","output":"/rss.xml"}]},
+      options: {"plugins":[],"query":"\n          {\n            site {\n              siteMetadata {\n                title\n                description\n                siteUrl\n                site_url: siteUrl\n              }\n            }\n          }\n        ","feeds":[{"query":"\n              {\n                allMarkdownRemark(\n                  limit: 1000,\n                  sort: { order: DESC, fields: [fields___prefix] },\n                  filter: {\n                    fields: {\n                      prefix: { ne: null },\n                      slug: { ne: null }\n                    },\n                    frontmatter: {\n                      author: { ne: null }\n                    }\n                  }\n                ) {\n                  edges {\n                    node {\n                      excerpt\n                      html\n                      fields {\n                        slug\n                        prefix\n                      }\n                      frontmatter {\n                        title\n                      }\n                    }\n                  }\n                }\n              }\n            ","output":"/rss.xml"}]},
     },{
       plugin: require('/home/ypraw/Programming/blog/ypraw.github.io/node_modules/gatsby-plugin-sitemap/gatsby-ssr'),
       options: {"plugins":[]},
