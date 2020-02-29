@@ -167,15 +167,15 @@ exports.onCreateWebpackConfig = ({ loaders, stage, actions }) => {
   switch (stage) {
     case `build-javascript`:
       actions.setWebpackConfig({
-        // plugins: [
-        //   new BundleAnalyzerPlugin({
-        //     analyzerMode: "static",
-        //     reportFilename: "./report/treemap.html",
-        //     openAnalyzer: true,
-        //     logLevel: "error",
-        //     defaultSizes: "gzip"
-        //   })
-        // ]
+        plugins: [
+          new BundleAnalyzerPlugin({
+            analyzerMode: "static",
+            reportFilename: "./report/treemap.html",
+            openAnalyzer: true,
+            logLevel: "error",
+            defaultSizes: "gzip",
+          }),
+        ],
         devtool: false,
         module: {
           rules: [
