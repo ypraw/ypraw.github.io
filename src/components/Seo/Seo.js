@@ -7,7 +7,7 @@ const Seo = props => {
   const { data, facebook } = props;
   const postTitle = ((data || {}).frontmatter || {}).title;
   const postDescription = ((data || {}).frontmatter || {}).description;
-  const postCover = ((data || {}).frontmatter || {}).siteImage;
+  // const postCover = ((data || {}).frontmatter || {}).siteImage;
   const postSlug = ((data || {}).fields || {}).slug;
 
   const title = postTitle
@@ -23,7 +23,7 @@ const Seo = props => {
     <Helmet
       htmlAttributes={{
         lang: config.siteLanguage,
-        prefix: "og: http://ogp.me/ns#"
+        prefix: "og: http://ogp.me/ns#",
       }}
     >
       {/* General tags */}
@@ -52,7 +52,7 @@ const Seo = props => {
 
 Seo.propTypes = {
   data: PropTypes.object,
-  facebook: PropTypes.object.isRequired
+  facebook: PropTypes.object.isRequired,
 };
 
 export default Seo;

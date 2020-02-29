@@ -2,7 +2,7 @@ import { FaArrowRight } from "react-icons/fa/";
 import { FaCalendar } from "react-icons/fa/";
 import { FaTag } from "react-icons/fa/";
 import { FaUser } from "react-icons/fa/";
-import Img from "gatsby-image";
+// import Img from "gatsby-image";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
@@ -13,8 +13,8 @@ const Item = props => {
     post: {
       excerpt,
       fields: { slug, prefix },
-      frontmatter: { title, category, author }
-    }
+      frontmatter: { title, category, author },
+    },
   } = props;
 
   return (
@@ -222,7 +222,7 @@ const Item = props => {
 
 Item.propTypes = {
   post: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
 };
 
 export default Item;

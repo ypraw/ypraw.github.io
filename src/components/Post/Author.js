@@ -59,7 +59,7 @@ const Author = props => {
 
 Author.propTypes = {
   note: PropTypes.string.isRequired,
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
 };
 
 export default Author;

@@ -85,7 +85,10 @@ class Layout extends React.Component {
         query={graphql`
           query LayoutQuery {
             pages: allMarkdownRemark(
-              filter: { fileAbsolutePath: { regex: "//pages//" }, fields: { prefix: { regex: "/^\\d+$/" } } }
+              filter: {
+                fileAbsolutePath: { regex: "//pages//" }
+                fields: { prefix: { regex: "/^\\\\d+$/" } }
+              }
               sort: { fields: [fields___prefix], order: ASC }
             ) {
               edges {
@@ -101,7 +104,9 @@ class Layout extends React.Component {
                 }
               }
             }
-            footnote: markdownRemark(fileAbsolutePath: { regex: "/footnote/" }) {
+            footnote: markdownRemark(
+              fileAbsolutePath: { regex: "/footnote/" }
+            ) {
               id
               html
             }

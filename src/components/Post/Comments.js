@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import FacebookProvider, { Comments as FBComments } from "react-facebook";
+// import FacebookProvider, { Comments as FBComments } from "react-facebook";
 import { DiscussionEmbed } from "disqus-react";
 
 import config from "../../../content/meta/config";
@@ -27,7 +27,8 @@ import config from "../../../content/meta/config";
 // };
 
 const Comments = props => {
-  const { slug, post, theme } = props || {};
+  // const { slug, post, theme } = props || {};
+  const { theme } = props || {};
   // const title = post && post.frontmatter && post.frontmatter.title;
   // const category = post && post.frontmatter && post.frontmatter.category;
 
@@ -43,7 +44,7 @@ const Comments = props => {
     ? {
         url: props.article.url,
         identifier: props.article.id,
-        title: props.article.title
+        title: props.article.title,
       }
     : null;
   //console.log("POST COMMENTS:", JSON.stringify(disqusConfig));
@@ -69,7 +70,7 @@ Comments.propTypes = {
   slug: PropTypes.string.isRequired,
   facebook: PropTypes.object.isRequired,
   post: PropTypes.object.isRequired,
-  article: PropTypes.shape
+  article: PropTypes.shape,
 };
 
 // Comments.propTypes = {
