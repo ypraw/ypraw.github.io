@@ -113,6 +113,8 @@ module.exports = {
               backgroundColor: "transparent",
             },
           },
+          `gatsby-remark-lazy-load`,
+
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
