@@ -22,5 +22,9 @@ deploy:
   on:
     branch: develop
 # edge: true
+before_script:
+  - "npm install -g gatsby-cli"
+
 script:
-  - "npm build"
+  - "npm install"
+  - "gatsby build"
