@@ -1,6 +1,6 @@
 module.exports = [{
       plugin: require('../node_modules/gatsby-plugin-layout/gatsby-browser.js'),
-      options: {"plugins":[],"component":"/home/ypraw/Programming/blog/ypraw.github.io/src/layouts/index.js"},
+      options: {"plugins":[],"component":"/run/media/ypraw/Data/Programming/blog/ypraw.github.io/src/layouts/index.js"},
     },{
       plugin: require('../node_modules/gatsby-plugin-catch-links/gatsby-browser.js'),
       options: {"plugins":[]},
