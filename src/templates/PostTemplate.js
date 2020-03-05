@@ -13,6 +13,7 @@ const PostTemplate = props => {
   const {
     data: {
       post,
+      description,
       authornote: { html: authorNote },
       site: {
         siteMetadata: { facebook },
@@ -33,6 +34,7 @@ const PostTemplate = props => {
               authornote={authorNote}
               facebook={facebook}
               theme={theme}
+              description={description}
             />
           </Article>
         )}
@@ -58,6 +60,9 @@ export const postQuery = graphql`
       fields {
         slug
         prefix
+      }
+      internal {
+        description
       }
       frontmatter {
         title

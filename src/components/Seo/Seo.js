@@ -9,7 +9,6 @@ const Seo = props => {
   const postDescription = ((data || {}).frontmatter || {}).description;
   // const postCover = ((data || {}).frontmatter || {}).siteImage;
   const postSlug = ((data || {}).fields || {}).slug;
-
   const title = postTitle ? `${postTitle}` : config.siteTitle;
   const description = postDescription
     ? `${postDescription}`
