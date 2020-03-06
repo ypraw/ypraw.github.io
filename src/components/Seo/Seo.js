@@ -7,13 +7,14 @@ const Seo = props => {
   const { data, facebook } = props;
   const postTitle = ((data || {}).frontmatter || {}).title;
   const postDescription = ((data || {}).frontmatter || {}).description;
-  // const postCover = ((data || {}).frontmatter || {}).siteImage;
+  const postCover = ((data || {}).frontmatter || {}).cover;
   const postSlug = ((data || {}).fields || {}).slug;
   const title = postTitle ? `${postTitle}` : config.siteTitle;
   const description = postDescription
     ? `${postDescription}`
     : config.siteDescription;
-  const image = config.siteUrl + config.pathPrefix + config.siteImage;
+  // const image = config.siteUrl + config.pathPrefix + config.siteImage;
+  const image = postCover ? postCover : config.siteImage;
   const url = config.siteUrl + config.pathPrefix + postSlug;
 
   return (
