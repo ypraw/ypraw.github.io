@@ -12,9 +12,9 @@ const Seo = props => {
 
   const title = postTitle ? `${postTitle}` : config.siteTitle;
   const description = postDescription
-    ? `${postDescription}`
+    ? postDescription
     : config.siteDescription;
-  const image = postCover ? `${postCover}` : config.siteImage;
+  const image = postCover ? postCover : config.siteImage;
   const url = config.siteUrl + config.pathPrefix + postSlug;
 
   return (
