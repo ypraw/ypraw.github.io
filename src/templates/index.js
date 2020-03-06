@@ -135,6 +135,7 @@ export const query = graphql`
     }
     site {
       siteMetadata {
+        description
         facebook {
           appId
         }

@@ -238,7 +238,7 @@ module.exports = {
             query: `
               {
                 allMarkdownRemark(
-                  limit: 1000,
+                  limit: 200,
                   sort: { order: DESC, fields: [fields___prefix] },
                   filter: {
                     fields: {
