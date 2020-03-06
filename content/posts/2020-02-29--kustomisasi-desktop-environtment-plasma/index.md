@@ -4,7 +4,7 @@ category: linux
 author: ypraw
 ---
 
-[[description]]
+
 Hallo para pembaca, setelah sekian lama hiatus, akhirnya saya bisa menulis blog kembali. Setelah banyak berbincang dibeberapa grup linux, banyak yang menanyakan kepada saya desktop environtment apa yang saya gunakan, oke seperti di post [sebelumnya](/mengenal-linux-desktop-art) sudah saya singgung beberapa paket yang saya gunakan untuk menghias desktop yang saya gunakan, kali ini lebih terfokus kepada apa saja yang saya rubah dari desktop environtment yang saya gunakan yaitu kde plasma.
 
 ### Latte Dock
