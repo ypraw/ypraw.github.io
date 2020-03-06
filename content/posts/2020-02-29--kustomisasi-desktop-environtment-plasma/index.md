@@ -2,6 +2,7 @@
 title: "Kustomisasi Desktop Environtment Plasma"
 category: linux
 author: ypraw
+description: "HELLO"
 ---
 
 
