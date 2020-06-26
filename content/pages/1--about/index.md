@@ -8,8 +8,8 @@ title: About Me
 My name is Yunindyo Prabowo and this is my cv :
 
 ## Education
-  > * Senior High School : SMAN 101 Jakarta 2010-2013
-  > * College : Universitas Dian Nuswantoro Semarang [now]
+  > * Senior High School : SMAN 101 Jakarta
+  > * College : Universitas Dian Nuswantoro Semarang
 
 ## Skill of languages Programming
   > * [Python] - Strong in Native and OOP Paradigm
