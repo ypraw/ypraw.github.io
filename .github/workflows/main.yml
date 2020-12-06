@@ -3,7 +3,7 @@ name: Github Pages Build Automation
 # Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the develop branch
-   push:
+  push:
     branches:
       - master
   pull_request:
