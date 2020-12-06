@@ -1,25 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "prismjs/themes/prism-tomorrow.css";
+import Loadable from "react-loadable";
 
-import asyncComponent from "../AsyncComponent";
 import Headline from "../Article/Headline";
 import Bodytext from "../Article/Bodytext";
 import Meta from "./Meta";
 import Author from "./Author";
 import Comments from "./Comments";
 import NextPrev from "./NextPrev";
+import Loading from "../Loading";
 
-const Share = asyncComponent(() =>
-  import("./Share")
-    .then(module => {
-      return module.default;
-    })
-    .catch(error => {})
-);
 
-const Post = props => {
-  const {
+const Share = Loadable({
+  loader: () => import("./PostShare"),
+  loading() {
+    return <Loading />;
+  }
+});
+const Post = ({
     post,
     post: {
       html,
@@ -31,7 +30,7 @@ const Post = props => {
     next: nextPost,
     prev: prevPost,
     theme
-  } = props;
+  }) => {
 
   return (
     <React.Fragment>
