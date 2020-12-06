@@ -91,7 +91,7 @@ const getDetailedMessage = () => {
     }
 
     return msg; // eslint-disable-next-line no-empty
-  } catch (_unused) {
+  } catch {
     return null;
   }
 };

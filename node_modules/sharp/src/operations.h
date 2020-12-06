@@ -1,4 +1,4 @@
-// Copyright 2013, 2014, 2015, 2016, 2017, 2018, 2019 Lovell Fuller and contributors.
+// Copyright 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020 Lovell Fuller and contributors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,16 +24,6 @@
 using vips::VImage;
 
 namespace sharp {
-
-  /*
-    Removes alpha channel, if any.
-  */
-  VImage RemoveAlpha(VImage image);
-
-  /*
-    Ensures alpha channel, if missing.
-  */
-  VImage EnsureAlpha(VImage image);
 
   /*
    * Tint an image using the specified chroma, preserving the original image luminance

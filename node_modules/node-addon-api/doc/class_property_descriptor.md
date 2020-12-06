@@ -20,15 +20,15 @@ class Example : public Napi::ObjectWrap<Example> {
     static Napi::FunctionReference constructor;
     double _value;
     Napi::Value GetValue(const Napi::CallbackInfo &info);
-    Napi::Value SetValue(const Napi::CallbackInfo &info);
+    void SetValue(const Napi::CallbackInfo &info, const Napi::Value &value);
 };
 
 Napi::Object Example::Init(Napi::Env env, Napi::Object exports) {
     Napi::Function func = DefineClass(env, "Example", {
         // Register a class instance accessor with getter and setter functions.
-        InstanceAccessor("value", &Example::GetValue, &Example::SetValue),
-        // We can also register a readonly accessor by passing nullptr as the setter.
-        InstanceAccessor("readOnlyProp", &Example::GetValue, nullptr)
+        InstanceAccessor<&Example::GetValue, &Example::SetValue>("value"),
+        // We can also register a readonly accessor by omitting the setter.
+        InstanceAccessor<&Example::GetValue>("readOnlyProp")
     });
 
     constructor = Napi::Persistent(func);
@@ -52,12 +52,11 @@ Napi::Value Example::GetValue(const Napi::CallbackInfo &info) {
     return Napi::Number::New(env, this->_value);
 }
 
-Napi::Value Example::SetValue(const Napi::CallbackInfo &info, const Napi::Value &value) {
+void Example::SetValue(const Napi::CallbackInfo &info, const Napi::Value &value) {
     Napi::Env env = info.Env();
     // ...
     Napi::Number arg = value.As<Napi::Number>();
     this->_value = arg.DoubleValue();
-    return this->GetValue(info);
 }
 
 // Initialize native add-on

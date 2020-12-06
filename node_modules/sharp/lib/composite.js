@@ -53,6 +53,8 @@ const blend = {
  * https://libvips.github.io/libvips/API/current/libvips-conversion.html#VipsBlendMode
  * and https://www.cairographics.org/operators/
  *
+ * @since 0.22.0
+ *
  * @example
  * sharp('input.png')
  *   .rotate(180)
@@ -70,7 +72,7 @@ const blend = {
  *   });
  *
  * @param {Object[]} images - Ordered list of images to composite
- * @param {Buffer|String} [images[].input] - Buffer containing image data, String containing the path to an image file, or Create object (see bellow)
+ * @param {Buffer|String} [images[].input] - Buffer containing image data, String containing the path to an image file, or Create object (see below)
  * @param {Object} [images[].input.create] - describes a blank overlay to be created.
  * @param {Number} [images[].input.create.width]
  * @param {Number} [images[].input.create.height]
@@ -98,8 +100,7 @@ function composite (images) {
     if (!is.object(image)) {
       throw is.invalidParameterError('image to composite', 'object', image);
     }
-    const { raw, density } = image;
-    const inputOptions = (raw || density) ? { raw, density } : undefined;
+    const inputOptions = this._inputOptionsFromObject(image);
     const composite = {
       input: this._createInputDescriptor(image.input, inputOptions, { allowStream: false }),
       blend: 'over',

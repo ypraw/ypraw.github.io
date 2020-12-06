@@ -10,6 +10,7 @@ import {
 
 import Hit from "./Hit";
 
+
 const Search = props => {
   const { algolia, theme } = props;
 

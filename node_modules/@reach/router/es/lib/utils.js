@@ -60,12 +60,12 @@ var pick = function pick(routes, uri) {
       var routeSegment = routeSegments[index];
       var uriSegment = uriSegments[index];
 
-      var _isSplat = routeSegment === "*";
-      if (_isSplat) {
+      if (isSplat(routeSegment)) {
         // Hit a splat, just grab the rest, and return a match
         // uri:   /files/documents/work
         // route: /files/*
-        params["*"] = uriSegments.slice(index).map(decodeURIComponent).join("/");
+        var param = routeSegment.slice(1) || "*";
+        params[param] = uriSegments.slice(index).map(decodeURIComponent).join("/");
         break;
       }
 
@@ -182,12 +182,26 @@ var resolve = function resolve(to, base) {
 
 ////////////////////////////////////////////////////////////////////////////////
 // insertParams(path, params)
+
 var insertParams = function insertParams(path, params) {
-  var segments = segmentize(path);
-  return "/" + segments.map(function (segment) {
+  var _path$split = path.split("?"),
+      pathBase = _path$split[0],
+      _path$split$ = _path$split[1],
+      query = _path$split$ === undefined ? "" : _path$split$;
+
+  var segments = segmentize(pathBase);
+  var constructedPath = "/" + segments.map(function (segment) {
     var match = paramRe.exec(segment);
     return match ? params[match[1]] : segment;
   }).join("/");
+  var _params$location = params.location;
+  _params$location = _params$location === undefined ? {} : _params$location;
+  var _params$location$sear = _params$location.search,
+      search = _params$location$sear === undefined ? "" : _params$location$sear;
+
+  var searchSplit = search.split("?")[1] || "";
+  constructedPath = addQuery(constructedPath, query, searchSplit);
+  return constructedPath;
 };
 
 var validateRedirect = function validateRedirect(from, to) {
@@ -216,7 +230,7 @@ var isDynamic = function isDynamic(segment) {
   return paramRe.test(segment);
 };
 var isSplat = function isSplat(segment) {
-  return segment === "*";
+  return segment && segment[0] === "*";
 };
 
 var rankRoute = function rankRoute(route, index) {
@@ -240,11 +254,30 @@ var segmentize = function segmentize(uri) {
   .replace(/(^\/+|\/+$)/g, "").split("/");
 };
 
-var addQuery = function addQuery(pathname, query) {
-  return pathname + (query ? "?" + query : "");
+var addQuery = function addQuery(pathname) {
+  for (var _len = arguments.length, query = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    query[_key - 1] = arguments[_key];
+  }
+
+  query = query.filter(function (q) {
+    return q && q.length > 0;
+  });
+  return pathname + (query && query.length > 0 ? "?" + query.join("&") : "");
 };
 
 var reservedNames = ["uri", "path"];
 
+/**
+ * Shallow compares two objects.
+ * @param {Object} obj1 The first object to compare.
+ * @param {Object} obj2 The second object to compare.
+ */
+var shallowCompare = function shallowCompare(obj1, obj2) {
+  var obj1Keys = Object.keys(obj1);
+  return obj1Keys.length === Object.keys(obj2).length && obj1Keys.every(function (key) {
+    return obj2.hasOwnProperty(key) && obj1[key] === obj2[key];
+  });
+};
+
 ////////////////////////////////////////////////////////////////////////////////
-export { startsWith, pick, match, resolve, insertParams, validateRedirect };
+export { startsWith, pick, match, resolve, insertParams, validateRedirect, shallowCompare };

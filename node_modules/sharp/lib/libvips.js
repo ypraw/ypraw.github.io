@@ -8,8 +8,9 @@ const semver = require('semver');
 const platform = require('./platform');
 
 const env = process.env;
-const minimumLibvipsVersion = env.npm_package_config_libvips || /* istanbul ignore next */
+const minimumLibvipsVersionLabelled = env.npm_package_config_libvips || /* istanbul ignore next */
   require('../package.json').config.libvips;
+const minimumLibvipsVersion = semver.coerce(minimumLibvipsVersionLabelled).version;
 
 const spawnSyncOptions = {
   encoding: 'utf8',
@@ -47,24 +48,18 @@ const globalLibvipsVersion = function () {
 
 const hasVendoredLibvips = function () {
   const currentPlatformId = platform();
-  const vendorPath = path.join(__dirname, '..', 'vendor');
-  let vendorVersionId;
+  const vendorPath = path.join(__dirname, '..', 'vendor', minimumLibvipsVersion);
   let vendorPlatformId;
   try {
-    vendorVersionId = require(path.join(vendorPath, 'versions.json')).vips;
     vendorPlatformId = require(path.join(vendorPath, 'platform.json'));
   } catch (err) {}
-  /* istanbul ignore if */
-  if (vendorVersionId && vendorVersionId !== minimumLibvipsVersion) {
-    throw new Error(`Found vendored libvips v${vendorVersionId} but require v${minimumLibvipsVersion}. Please remove the 'node_modules/sharp/vendor' directory and run 'npm install'.`);
-  }
   /* istanbul ignore else */
   if (vendorPlatformId) {
     /* istanbul ignore else */
     if (currentPlatformId === vendorPlatformId) {
       return true;
     } else {
-      throw new Error(`'${vendorPlatformId}' binaries cannot be used on the '${currentPlatformId}' platform. Please remove the 'node_modules/sharp/vendor' directory and run 'npm install'.`);
+      throw new Error(`'${vendorPlatformId}' binaries cannot be used on the '${currentPlatformId}' platform. Please remove the 'node_modules/sharp' directory and run 'npm install' on the '${currentPlatformId}' platform.`);
     }
   } else {
     return false;
@@ -93,11 +88,12 @@ const useGlobalLibvips = function () {
 };
 
 module.exports = {
-  minimumLibvipsVersion: minimumLibvipsVersion,
-  cachePath: cachePath,
-  globalLibvipsVersion: globalLibvipsVersion,
-  hasVendoredLibvips: hasVendoredLibvips,
-  pkgConfigPath: pkgConfigPath,
-  useGlobalLibvips: useGlobalLibvips,
-  mkdirSync: mkdirSync
+  minimumLibvipsVersion,
+  minimumLibvipsVersionLabelled,
+  cachePath,
+  globalLibvipsVersion,
+  hasVendoredLibvips,
+  pkgConfigPath,
+  useGlobalLibvips,
+  mkdirSync
 };

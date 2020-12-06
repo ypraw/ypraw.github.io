@@ -1,4 +1,4 @@
-// Copyright 2013, 2014, 2015, 2016, 2017, 2018, 2019 Lovell Fuller and contributors.
+// Copyright 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020 Lovell Fuller and contributors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 #define SRC_METADATA_H_
 
 #include <string>
-#include <nan.h>
+#include <napi.h>
 
 #include "./common.h"
 
@@ -36,7 +36,10 @@ struct MetadataBaton {
   int paletteBitDepth;
   int pages;
   int pageHeight;
+  int loop;
+  std::vector<int> delay;
   int pagePrimary;
+  std::vector<std::pair<int, int>> levels;
   bool hasProfile;
   bool hasAlpha;
   int orientation;
@@ -48,6 +51,8 @@ struct MetadataBaton {
   size_t iptcLength;
   char *xmp;
   size_t xmpLength;
+  char *tifftagPhotoshop;
+  size_t tifftagPhotoshopLength;
   std::string err;
 
   MetadataBaton():
@@ -60,6 +65,7 @@ struct MetadataBaton {
     paletteBitDepth(0),
     pages(0),
     pageHeight(0),
+    loop(-1),
     pagePrimary(-1),
     hasProfile(false),
     hasAlpha(false),
@@ -71,9 +77,11 @@ struct MetadataBaton {
     iptc(nullptr),
     iptcLength(0),
     xmp(nullptr),
-    xmpLength(0) {}
+    xmpLength(0),
+    tifftagPhotoshop(nullptr),
+    tifftagPhotoshopLength(0) {}
 };
 
-NAN_METHOD(metadata);
+Napi::Value metadata(const Napi::CallbackInfo& info);
 
 #endif  // SRC_METADATA_H_

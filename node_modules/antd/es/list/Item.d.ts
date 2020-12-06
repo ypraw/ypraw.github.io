@@ -28,7 +28,7 @@ export default class Item extends React.Component<ListItemProps, any> {
         itemLayout: PropTypes.Requireable<string>;
     };
     context: any;
-    isItemContainsTextNode(): undefined;
+    isItemContainsTextNodeAndNotSingular(): undefined;
     isFlexMode(): boolean;
     renderItem: ({ getPrefixCls }: ConfigConsumerProps) => JSX.Element;
     render(): JSX.Element;
