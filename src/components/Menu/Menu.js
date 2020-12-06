@@ -114,11 +114,11 @@ class Menu extends React.Component {
       this.renderedItems.map(item => {
         const oldClass = this.state.open ? "showItem" : "hideItem";
         const newClass = this.state.open ? "hideItem" : "showItem";
-
         if (item.classList.contains(oldClass)) {
           item.classList.add(newClass);
           item.classList.remove(oldClass);
         }
+        return null;
       });
     }
 
@@ -136,6 +136,7 @@ class Menu extends React.Component {
             item.classList.add("hideItem");
             item.classList.remove("item");
           }
+          return null;
         });
       }
     }

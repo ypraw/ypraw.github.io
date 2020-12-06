@@ -40,7 +40,7 @@ class Header extends React.Component {
             <div className="logo">
               <img
                 src={
-                  config.gravatarImgMd5 == "" ? avatar : config.gravatarImgMd5
+                  config.gravatarImgMd5 === "" ? avatar : config.gravatarImgMd5
                 }
                 alt={config.siteTitle}
               />

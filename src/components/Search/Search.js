@@ -12,7 +12,7 @@ import Hit from "./Hit";
 
 
 const Search = props => {
-  const { algolia, theme } = props;
+  const { algolia } = props;
 
   return (
     <React.Fragment>
@@ -93,7 +93,6 @@ const Search = props => {
 
 Search.propTypes = {
   algolia: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired,
 };
 
 export default Search;
