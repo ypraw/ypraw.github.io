@@ -3,7 +3,7 @@ name: Github Pages Build Automation
 # Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the develop branch
-  push:
+  pull_request:
     branches:
       develop
 
@@ -27,5 +27,7 @@ jobs:
         with:
           access-token: ${{ secrets.BUILD_SECRET }}
           deploy-branch: master
+          gatsby-args: --prefix-paths
+
             # deploy-branch: gh-pages
             # atsby-args: --verbose
