@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    name: Gatsby Publish
-    uses: enriikke/gatsby-gh-pages-action@v2
-    with:
+    - name: Gatsby Publish
+      uses: enriikke/gatsby-gh-pages-action@v2
+      with:
         access-token: ${{ secrets.BUILD_SECRET }}
         deploy-branch: master
