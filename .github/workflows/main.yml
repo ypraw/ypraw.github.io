@@ -4,11 +4,9 @@ name: Github Pages Build Automation
 on:
   # Triggers the workflow on push or pull request events but only for the develop branch
   push:
-    branches:
-      - master
+    branches: master
   pull_request:
-    branches:
-      - develop
+    branches: develop
 
 
   # # Allows you to run this workflow manually from the Actions tab
