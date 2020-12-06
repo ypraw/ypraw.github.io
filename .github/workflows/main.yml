@@ -28,3 +28,6 @@ jobs:
           access-token: ${{ secrets.BUILD_SECRET }}
           deploy-branch: master
           gatsby-args: --prefix-paths
+
+            # deploy-branch: gh-pages
+            # atsby-args: --verbose
