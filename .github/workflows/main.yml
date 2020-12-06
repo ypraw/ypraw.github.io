@@ -1,5 +1,3 @@
-name: github pages
-
 on: push
 name: Build Gatsby Site
 jobs:
