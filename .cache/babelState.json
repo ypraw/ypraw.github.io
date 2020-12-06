@@ -1,0 +1,180 @@
+{
+  "stages": {
+    "develop": {
+      "plugins": [
+        {
+          "name": "babel-plugin-lodash",
+          "options": {}
+        },
+        {
+          "name": "styled-jsx/babel",
+          "options": {
+            "plugins": [
+              "styled-jsx-plugin-postcss"
+            ]
+          }
+        },
+        {
+          "name": "/run/media/ypraw/Data/Programming/blog/ypraw.github.io/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
+          "options": {}
+        },
+        {
+          "name": "/run/media/ypraw/Data/Programming/blog/ypraw.github.io/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
+          "options": {}
+        },
+        {
+          "name": "/run/media/ypraw/Data/Programming/blog/ypraw.github.io/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "options": {}
+        }
+      ],
+      "presets": [
+        {
+          "name": "/run/media/ypraw/Data/Programming/blog/ypraw.github.io/node_modules/@babel/preset-typescript/lib/index.js",
+          "options": {
+            "plugins": [],
+            "allExtensions": false,
+            "isTSX": false,
+            "jsxPragma": "React"
+          }
+        }
+      ],
+      "options": {
+        "cacheDirectory": true,
+        "sourceType": "unambiguous"
+      }
+    },
+    "develop-html": {
+      "plugins": [
+        {
+          "name": "babel-plugin-lodash",
+          "options": {}
+        },
+        {
+          "name": "styled-jsx/babel",
+          "options": {
+            "plugins": [
+              "styled-jsx-plugin-postcss"
+            ]
+          }
+        },
+        {
+          "name": "/run/media/ypraw/Data/Programming/blog/ypraw.github.io/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
+          "options": {}
+        },
+        {
+          "name": "/run/media/ypraw/Data/Programming/blog/ypraw.github.io/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
+          "options": {}
+        },
+        {
+          "name": "/run/media/ypraw/Data/Programming/blog/ypraw.github.io/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "options": {}
+        }
+      ],
+      "presets": [
+        {
+          "name": "/run/media/ypraw/Data/Programming/blog/ypraw.github.io/node_modules/@babel/preset-typescript/lib/index.js",
+          "options": {
+            "plugins": [],
+            "allExtensions": false,
+            "isTSX": false,
+            "jsxPragma": "React"
+          }
+        }
+      ],
+      "options": {
+        "cacheDirectory": true,
+        "sourceType": "unambiguous"
+      }
+    },
+    "build-html": {
+      "plugins": [
+        {
+          "name": "babel-plugin-lodash",
+          "options": {}
+        },
+        {
+          "name": "styled-jsx/babel",
+          "options": {
+            "plugins": [
+              "styled-jsx-plugin-postcss"
+            ]
+          }
+        },
+        {
+          "name": "/run/media/ypraw/Data/Programming/blog/ypraw.github.io/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
+          "options": {}
+        },
+        {
+          "name": "/run/media/ypraw/Data/Programming/blog/ypraw.github.io/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
+          "options": {}
+        },
+        {
+          "name": "/run/media/ypraw/Data/Programming/blog/ypraw.github.io/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "options": {}
+        }
+      ],
+      "presets": [
+        {
+          "name": "/run/media/ypraw/Data/Programming/blog/ypraw.github.io/node_modules/@babel/preset-typescript/lib/index.js",
+          "options": {
+            "plugins": [],
+            "allExtensions": false,
+            "isTSX": false,
+            "jsxPragma": "React"
+          }
+        }
+      ],
+      "options": {
+        "cacheDirectory": true,
+        "sourceType": "unambiguous"
+      }
+    },
+    "build-javascript": {
+      "plugins": [
+        {
+          "name": "babel-plugin-lodash",
+          "options": {}
+        },
+        {
+          "name": "styled-jsx/babel",
+          "options": {
+            "plugins": [
+              "styled-jsx-plugin-postcss"
+            ]
+          }
+        },
+        {
+          "name": "/run/media/ypraw/Data/Programming/blog/ypraw.github.io/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
+          "options": {}
+        },
+        {
+          "name": "/run/media/ypraw/Data/Programming/blog/ypraw.github.io/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
+          "options": {}
+        },
+        {
+          "name": "/run/media/ypraw/Data/Programming/blog/ypraw.github.io/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
+          "options": {}
+        }
+      ],
+      "presets": [
+        {
+          "name": "/run/media/ypraw/Data/Programming/blog/ypraw.github.io/node_modules/@babel/preset-typescript/lib/index.js",
+          "options": {
+            "plugins": [],
+            "allExtensions": false,
+            "isTSX": false,
+            "jsxPragma": "React"
+          }
+        }
+      ],
+      "options": {
+        "cacheDirectory": true,
+        "sourceType": "unambiguous"
+      }
+    }
+  },
+  "browserslist": [
+    ">0.25%",
+    "not dead"
+  ]
+}
