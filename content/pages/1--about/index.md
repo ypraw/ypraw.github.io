@@ -5,15 +5,15 @@ title: About Me
 <img src="./photo_2019-04-11_00-21-32.jpg" height="100" width="100" style="border-radius:50%;margin-left:auto;margin-right:auto;">
 
 
-My name is Yunindyo Prabowo and this is my cv :
+Hello i'm Yunindyo Prabowo, curently i'm work in Macroad as Backend Engineer. I'm Linux User, i use manjaro and Plasma is my favorite desktop environtment.
 
 ## Education
   > * Senior High School : SMAN 101 Jakarta
-  > * College : Universitas Dian Nuswantoro Semarang
+  > * Bachelor of Informatics from Dian Nuswantoro University Semarang
 
-## Skill of languages Programming
-  > * [Python] - Strong in Native and OOP Paradigm
-  > * [C/C++] - Strong in Functional and Prosedural Paradigm
+## Skill
+  > * [Python] => {Django, Flask, Sklearn}
+  > * [Javascript/Node JS] => {Express}
 
 ## Contact Me
   > * [Github](https://github.com/ypraw/)
