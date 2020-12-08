@@ -65,6 +65,6 @@ jobs:
       #     git commit -m "Add changes"
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-          with:
-            github_token: ${{ secrets.ACCESS_TOKEN }}
-            publish_dir: ./public
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: ./public
