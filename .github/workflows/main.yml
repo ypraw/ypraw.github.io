@@ -1,20 +1,74 @@
-name: Gatsby Publish
+# name: Gatsby Publish
+
+# on:
+#   push:
+#     branches:
+#       - develop
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#       - uses: xxninjabunnyxx/gatsby-push-to-github-pages-action@main
+#         with:
+#           publishBranch: 'master'
+#           token: ${{ secrets.ACCESS_TOKEN }}
+#           name: 'ypraw'
+#           email: 'dyo.ndutz@gmail.com'
+
+name: "secrets" # Name of your workflow
 
 on:
   push:
-    branches:
-      - develop
+    branches: [develop]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  buildAndPublish:
+    runs-on: [ubuntu-latest]
 
     steps:
-      - name: Checkout
+      - name: checkout master  branch # checkout master  branch
         uses: actions/checkout@v2
-      - uses: xxninjabunnyxx/gatsby-push-to-github-pages-action@main
         with:
-          publishBranch: 'master'
-          token: ${{ secrets.ACCESS_TOKEN }}
-          name: 'ypraw'
-          email: 'dyo.ndutz@gmail.com'
+          persist-credentials: false
+
+      - name: remove all files # remove files.
+        run: |
+          rm -rf *
+
+      - name: checkout dev  branch #checkout dev  branch into temp folder.
+        uses: actions/checkout@v2
+        with:
+          ref: develop
+          path: temp
+          persist-credentials: false
+
+      - name: run npm install and build
+        run: |
+          npm install
+          gatsby build
+      - name: move files # move the public built files into root dir and remove others.
+        if: ${{ success() }}
+        run: |
+          mv temp/public/* ./
+          rm -rf temp
+      - name: Commit files for change # commit
+        if: ${{ success() }}
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Add changes"
+      - name: Push changes #push files into master branch
+        if: ${{ success() }}
+        uses: ad-m/github-push-action@master
+        with:
+          BRANCH: master
+          github_token: ${{ secrets..ACCESS_TOKEN  }}
+          # GATSBY_GOOGLE_ANALYTICS_ID: ${{ secrets.GATSBY_GOOGLE_ANALYTICS_ID }}
+          # REACT_APP_GOOGLE_ANALYTICS_ID: ${{ secrets.REACT_APP_GOOGLE_ANALYTICS_ID }}
+          # GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
+          force: true
