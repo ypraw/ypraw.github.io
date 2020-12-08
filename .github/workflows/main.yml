@@ -63,8 +63,8 @@ jobs:
       #     git config --local user.name "GitHub Action"
       #     git add .
       #     git commit -m "Add changes"
-  - name: Deploy
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.ACCESS_TOKEN }}
-          publish_dir: ./public
+          with:
+            github_token: ${{ secrets.ACCESS_TOKEN }}
+            publish_dir: ./public
