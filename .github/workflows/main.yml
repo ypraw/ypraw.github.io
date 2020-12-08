@@ -1,68 +1,31 @@
-# # name: Gatsby Publish
-
-# # on:
-# #   push:
-# #     branches:
-# #       - develop
-
-# # jobs:
-# #   build:
-# #     runs-on: ubuntu-latest
-
-# #     steps:
-# #       - name: Checkout
-# #         uses: actions/checkout@v2
-# #       - uses: xxninjabunnyxx/gatsby-push-to-github-pages-action@main
-# #         with:
-# #           publishBranch: 'master'
-# #           token: ${{ secrets.ACCESS_TOKEN }}
-# #           name: 'ypraw'
-# #           email: 'dyo.ndutz@gmail.com'
-
-name: "Deploy Site" # Name of your workflow
+name: github pages
 
 on:
   push:
     branches: [develop]
 
 jobs:
-  buildAndPublish:
-    runs-on: [ubuntu-latest]
-
+  deploy:
+    runs-on: ubuntu-18.04
     steps:
-      # - name: checkout master  branch # checkout master  branch
-      #   uses: actions/checkout@v2
-      #   with:
-      #     persist-credentials: false
+      - uses: actions/checkout@v2
 
-      # - name: remove all files # remove files.
-      #   run: |
-      #     rm -rf *
+      - name: Setup Node
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: '12.x'
 
-      # - name: checkout develop  branch #checkout dev  branch into temp folder.
-      #   uses: actions/checkout@v2
-      #   with:
-      #     ref: develop
-      #     path: temp
-      #     persist-credentials: false
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
-      - name: run npm install and build
-        run: |
-          npm install
-          gatsy build
+      - run: npm ci
+      - run: gatsby build
 
-      # - name: move files # move the public built files into root dir and remove others.
-      #   if: ${{ success() }}
-      #   run: |
-      #     mv temp/public/* ./
-      #     rm -rf temp
-      # - name: Commit files for change # commit
-      #   if: ${{ success() }}
-      #   run: |
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
-      #     git add .
-      #     git commit -m "Add changes"
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
