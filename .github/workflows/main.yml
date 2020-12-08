@@ -19,57 +19,52 @@
 # #           name: 'ypraw'
 # #           email: 'dyo.ndutz@gmail.com'
 
-# name: "secrets" # Name of your workflow
+name: "Deploy Site" # Name of your workflow
 
-# on:
-#   push:
-#     branches: [develop]
+on:
+  push:
+    branches: [develop]
 
-# jobs:
-#   buildAndPublish:
-#     runs-on: [ubuntu-latest]
+jobs:
+  buildAndPublish:
+    runs-on: [ubuntu-latest]
 
-#     steps:
-#       - name: checkout master  branch # checkout master  branch
-#         uses: actions/checkout@v2
-#         with:
-#           persist-credentials: false
+    steps:
+      # - name: checkout master  branch # checkout master  branch
+      #   uses: actions/checkout@v2
+      #   with:
+      #     persist-credentials: false
 
-#       - name: remove all files # remove files.
-#         run: |
-#           rm -rf *
+      # - name: remove all files # remove files.
+      #   run: |
+      #     rm -rf *
 
-#       - name: checkout develop  branch #checkout dev  branch into temp folder.
-#         uses: actions/checkout@v2
-#         with:
-#           ref: develop
-#           path: temp
-#           persist-credentials: false
+      # - name: checkout develop  branch #checkout dev  branch into temp folder.
+      #   uses: actions/checkout@v2
+      #   with:
+      #     ref: develop
+      #     path: temp
+      #     persist-credentials: false
 
-#       - name: run npm install and build
-#         run: |
-#           npm install
-#           gatsby build
+      - name: run npm install and build
+        run: |
+          npm install
+          gatsy build
 
-#       - name: move files # move the public built files into root dir and remove others.
-#         if: ${{ success() }}
-#         run: |
-#           mv temp/public/* ./
-#           rm -rf temp
-#       - name: Commit files for change # commit
-#         if: ${{ success() }}
-#         run: |
-#           git config --local user.email "action@github.com"
-#           git config --local user.name "GitHub Action"
-#           git add .
-#           git commit -m "Add changes"
-#       - name: Push changes #push files into master branch
-#         if: ${{ success() }}
-#         uses: ad-m/github-push-action@master
-#         with:
-#           BRANCH: master
-#           github_token: ${{ secrets.ACCESS_TOKEN  }}
-#           # GATSBY_GOOGLE_ANALYTICS_ID: ${{ secrets.GATSBY_GOOGLE_ANALYTICS_ID }}
-#           # REACT_APP_GOOGLE_ANALYTICS_ID: ${{ secrets.REACT_APP_GOOGLE_ANALYTICS_ID }}
-#           # GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
-#           force: true
+      # - name: move files # move the public built files into root dir and remove others.
+      #   if: ${{ success() }}
+      #   run: |
+      #     mv temp/public/* ./
+      #     rm -rf temp
+      # - name: Commit files for change # commit
+      #   if: ${{ success() }}
+      #   run: |
+      #     git config --local user.email "action@github.com"
+      #     git config --local user.name "GitHub Action"
+      #     git add .
+      #     git commit -m "Add changes"
+  - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: ./public
