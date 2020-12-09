@@ -17,14 +17,22 @@ const Bodytext = props => {
             margin: 1.5em 0 1em;
           }
 
+          :global(h1){
+            color: ${theme.color.neutral.white};
+          }
           :global(h2) {
             line-height: ${theme.font.lineHeight.s};
             font-size: ${theme.font.size.l};
+            color: ${theme.color.neutral.gray.e};
           }
 
           :global(h3) {
             font-size: ${theme.font.size.m};
             line-height: ${theme.font.lineHeight.m};
+            color: ${theme.color.neutral.gray.e};
+          }
+          :global(h4){
+            color: ${theme.color.neutral.gray.e};
           }
 
           :global(p) {
@@ -41,6 +49,7 @@ const Bodytext = props => {
           :global(li) {
             margin: 0.7em 0;
             line-height: 1.5;
+            color: ${theme.color.neutral.white};
           }
           :global(a) {
             font-weight: ${theme.font.weight.bold};
@@ -56,7 +65,7 @@ const Bodytext = props => {
             border: 1px solid ${theme.line.color};
           }
           :global(code.language-text) {
-            background: ${theme.color.neutral.gray.c};
+            background: ${theme.color.neutral.gray.j};
             text-shadow: none;
             color: inherit;
             padding: 0.1em 0.3em 0.2em;

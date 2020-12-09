@@ -11,12 +11,12 @@ const Footer = props => {
       {/* --- STYLES --- */}
       <style jsx>{`
         .footer {
-          background: ${theme.color.neutral.white};
+          background: ${theme.background.color.dark};
           padding: ${theme.space.inset.default};
           padding-top: 0;
           padding-bottom: 120px;
           :global(a) {
-            color: ${theme.color.neutral.black};
+            color: ${theme.color.brand.primary};
           }
           :global(ul) {
             list-style: none;
@@ -24,7 +24,7 @@ const Footer = props => {
             padding: 0;
 
             :global(li) {
-              color: ${theme.color.neutral.black};
+              color: ${theme.color.neutral.white};
               font-size: ${theme.font.size.xxs};
               padding: ${theme.space.xxs} ${theme.space.s};
               position: relative;
