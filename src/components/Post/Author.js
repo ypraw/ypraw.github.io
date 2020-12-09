@@ -44,6 +44,9 @@ const Author = props => {
           font-size: 0.9em;
           line-height: 1.6;
         }
+        :global(p){
+          color: ${theme.color.brand.primary};
+        }
         @from-width tablet {
           .author {
             display: flex;
