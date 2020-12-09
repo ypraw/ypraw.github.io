@@ -101,6 +101,7 @@ background:
     primary: *color-gray-3
     alt: *color-gray-1
     brand: *color-brand-primary
+    dark: '#0d1117'
 text:
   family: *font-family-target
   color:
@@ -147,4 +148,3 @@ header:
     default: 80px
     fixed: 50px;
     homepage: 5.0em;
-

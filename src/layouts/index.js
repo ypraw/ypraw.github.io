@@ -178,6 +178,7 @@ class Layout extends React.Component {
                       main {
                         width: auto;
                         display: block;
+                        background: ${this.state.theme.background.color.dark};
                       }
                     `}</style>
                   </React.Fragment>
