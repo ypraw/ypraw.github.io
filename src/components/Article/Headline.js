@@ -14,6 +14,7 @@ const Headline = props => {
           font-size: ${theme.font.size.xxl};
           margin: ${theme.space.stack.l};
           animation-name: headlineEntry;
+          color: ${theme.color.brand.primary};
           animation-duration: ${theme.time.duration.long};
 
           :global(span) {
