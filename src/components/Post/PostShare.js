@@ -93,6 +93,9 @@ const PostShare = props => {
           justify-content: center;
           align-items: center;
         }
+        span {
+          color: ${theme.color.brand.primary};
+        }
 
         .links {
           display: flex;
