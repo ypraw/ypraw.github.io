@@ -35,7 +35,7 @@ const Meta = props => {
           margin: ${theme.space.m} 0;
           background: transparent;
           :global(a) {
-            color: ${theme.color.neutral.black};
+            color: ${theme.color.neutral.white};
           }
           :global(svg) {
             fill: ${theme.icon.color};
@@ -46,6 +46,7 @@ const Meta = props => {
             display: flex;
             text-transform: uppercase;
             margin: ${theme.space.xs} ${theme.space.s} ${theme.space.xs} 0;
+            color: ${theme.color.neutral.white};
           }
         }
         @from-width tablet {
