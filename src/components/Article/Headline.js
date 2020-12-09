@@ -22,6 +22,7 @@ const Headline = props => {
             display: block;
             font-size: 0.5em;
             letter-spacing: 0;
+            color: ${theme.color.neutral.white};
             margin: ${theme.space.stack.xs};
           }
 

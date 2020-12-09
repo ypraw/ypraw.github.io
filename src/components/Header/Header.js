@@ -88,7 +88,7 @@ class Header extends React.Component {
               align-items: center;
               display: flex;
               flex-direction: "column";
-              color: ${theme.text.color.primary};
+              color: ${theme.color.neutral.white};
 
               .logo {
                 flex-shrink: 0;
@@ -105,14 +105,14 @@ class Header extends React.Component {
           h1 {
             font-size: ${theme.font.size.m};
             font-weight: ${theme.font.weight.standard};
-            color: ${theme.color.neutral.black};
+            color: ${theme.color.neutral.white};;
             margin: ${theme.space.stack.xs};
           }
 
           h2 {
             font-weight: ${theme.font.weight.standard};
             font-size: ${theme.font.size.xxs};
-            color: ${theme.color.neutral.black};
+            color: ${theme.color.neutral.white};
             letter-spacing: 0;
             margin: 0;
           }
@@ -154,6 +154,7 @@ class Header extends React.Component {
             .header {
               padding: ${theme.space.inset.l};
               background-color: ${theme.background.color.dark};
+              color: ${theme.color.neutral.white};
 
               &.homepage {
                 height: ${theme.header.height.homepage};
@@ -169,10 +170,10 @@ class Header extends React.Component {
               background-color: ${theme.background.color.dark};
               :global(a.logoType),
               h1 {
-                color: ${theme.color.neutral.black};
+                color: ${theme.color.neutral.white};
               }
               h2 {
-                color: ${theme.color.neutral.black};
+                color: ${theme.color.neutral.white};
               }
             }
           }
@@ -202,7 +203,7 @@ class Header extends React.Component {
 
                 h1 {
                   margin: ${theme.space.stack.xxs};
-                  color: ${theme.color.neutral.black};
+                  color: ${theme.color.neutral.white};
                 }
 
                 h2 {
@@ -213,10 +214,10 @@ class Header extends React.Component {
               &.homepage:not(.fixed) {
                 :global(a.logoType),
                 h1 {
-                  color: ${theme.color.neutral.black};
+                  color: ${theme.color.neutral.white};
                 }
                 h2 {
-                  color: ${theme.color.neutral.black};
+                  color: ${theme.color.neutral.white};
                 }
               }
             }

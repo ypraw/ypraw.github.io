@@ -46,14 +46,14 @@ const Item = props => {
         @from-width desktop {
           .item {
             :global(a) {
-              color: ${theme.color.neutral.black};
+              color: ${theme.color.neutral.white};
               padding: ${theme.space.inset.s};
               transition: all ${theme.time.duration.default};
               border-radius: ${theme.size.radius.small};
             }
 
             :global(.homepage):not(.fixed) & :global(a) {
-              color: ${theme.color.neutral.black};
+              color: ${theme.color.neutral.white};
             }
 
             :global(a:hover) {
