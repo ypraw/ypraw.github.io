@@ -12,6 +12,12 @@ node_modules
 # Optional npm cache directory
 .npm
 
+# cache gatsby dev server
+.cache
+
+# public directory build result
+public
+
 # Optional REPL history
 .node_repl_history
 
