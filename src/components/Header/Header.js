@@ -105,7 +105,7 @@ class Header extends React.Component {
           h1 {
             font-size: ${theme.font.size.m};
             font-weight: ${theme.font.weight.standard};
-            color: ${theme.color.neutral.white};;
+            color: ${theme.color.neutral.white};
             margin: ${theme.space.stack.xs};
           }
 

@@ -35,6 +35,7 @@ const List = props => {
           padding: ${theme.space.xs} 0;
           font-size: ${theme.font.size.s};
           line-height: ${theme.font.lineHeight.l};
+          color: ${theme.color.neutral.white};
         }
       `}</style>
     </React.Fragment>

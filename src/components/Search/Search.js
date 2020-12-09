@@ -12,7 +12,7 @@ import Hit from "./Hit";
 
 
 const Search = props => {
-  const { algolia } = props;
+  const { algolia,theme } = props;
 
   return (
     <React.Fragment>
@@ -35,18 +35,22 @@ const Search = props => {
       <style jsx global>{`
         .ais-SearchBox {
           width: 100%;
+
         }
         .ais-SearchBox-form {
           position: relative;
           border-bottom: 1px solid #aaa;
           display: flex;
           justify-content: space-between;
+
         }
         .ais-SearchBox-input {
           border: none;
           padding: 0.2em;
           font-size: 1.4em;
           flex-grow: 1;
+          background:${theme.background.color.dark};
+          color:${theme.color.neutral.white};
         }
         .ais-SearchBox-submit,
         .ais-SearchBox-reset {

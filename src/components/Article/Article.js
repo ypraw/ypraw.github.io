@@ -14,6 +14,9 @@ const Article = props => {
           padding: ${theme.space.inset.default};
           margin: 0 auto;
         }
+        :global(h2){
+          color: ${theme.color.neutral.white};
+        }
         @from-width tablet {
           .article {
             padding: ${`calc(${theme.space.default}) calc(${theme.space.default} * 2)`};
