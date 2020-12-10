@@ -25,8 +25,6 @@ const Search = props => {
       <div className="search">
         {algolia && algolia.appId && (
           <InstantSearch
-            // appId={algolia.appId}
-            // apiKey={algolia.searchOnlyApiKey}
             searchClient={searchClient}
             indexName="ypraw_blog"
           >
@@ -42,14 +40,12 @@ const Search = props => {
       <style jsx global>{`
         .ais-SearchBox {
           width: 100%;
-
         }
         .ais-SearchBox-form {
           position: relative;
           border-bottom: 1px solid #aaa;
           display: flex;
           justify-content: space-between;
-
         }
         .ais-SearchBox-input {
           border: none;

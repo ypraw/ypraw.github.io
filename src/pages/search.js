@@ -5,7 +5,6 @@ import Article from "../components/Article";
 import Search from "../components/Search";
 import { ThemeContext } from "../layouts";
 import Seo from "../components/Seo";
-import AlgoliaIcon from "!svg-react-loader!../images/svg-icons/search-by-algolia.svg?name=AlgoliaLogo";
 
 require("core-js/fn/array/find");
 
@@ -23,9 +22,6 @@ const SearchPage = props => {
       <ThemeContext.Consumer>
         {theme => (
           <Article theme={theme}>
-            {/* <div className="icon">
-              <AlgoliaIcon />
-            </div> */}
             <Search algolia={algolia} theme={theme} />
           </Article>
         )}
