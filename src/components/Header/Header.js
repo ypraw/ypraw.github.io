@@ -76,7 +76,7 @@ class Header extends React.Component {
           .header {
             align-items: center;
             justify-content: center;
-            background-color: ${theme.background.color.dark};
+            background-color: ${theme.background.color.darkAlt};
             display: flex;
             height: ${theme.header.height.default};
             position: relative;
@@ -97,7 +97,7 @@ class Header extends React.Component {
 
             &.homepage {
               position: absolute;
-              background-color: ${theme.background.color.dark};
+              background-color: ${theme.background.color.darkAlt};
               height: ${theme.header.height.homepage};
             }
           }
@@ -153,7 +153,7 @@ class Header extends React.Component {
           @from-width tablet {
             .header {
               padding: ${theme.space.inset.l};
-              background-color: ${theme.background.color.dark};
+              background-color: ${theme.background.color.darkAlt};
               color: ${theme.color.neutral.white};
 
               &.homepage {
@@ -167,7 +167,7 @@ class Header extends React.Component {
               .logo {
                 border: none;
               }
-              background-color: ${theme.background.color.dark};
+              background-color: ${theme.background.color.darkAlt};
               :global(a.logoType),
               h1 {
                 color: ${theme.color.neutral.white};
@@ -181,7 +181,7 @@ class Header extends React.Component {
           @from-width desktop {
             .header {
               align-items: center;
-              background-color: ${theme.background.color.dark};
+              background-color: ${theme.background.color.darkAlt};
               display: flex;
               position: absolute;
               top: 0;
@@ -191,7 +191,7 @@ class Header extends React.Component {
 
               &.fixed {
                 height: ${theme.header.height.fixed};
-                background-color:${theme.background.color.dark};
+                background-color:${theme.background.color.darkAlt};
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.14),
                   0 4px 8px rgba(0, 0, 0, 0.28);
                 left: 0;
