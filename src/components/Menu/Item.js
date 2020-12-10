@@ -31,6 +31,7 @@ const Item = props => {
             padding: ${theme.space.inset.s};
             display: flex;
             align-items: center;
+            color: ${theme.color.neutral.white};
           }
 
           :global(svg) {
