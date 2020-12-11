@@ -24,12 +24,12 @@ const query = `{
 const queries = [
   {
     query,
-
     transformer: ({ data }) => {
       return data.allMarkdownRemark.edges.reduce(transformer, []);
-    },
-  },
+    }
+  }
 ];
+
 
 module.exports = {
   pathPrefix: config.pathPrefix,
@@ -71,6 +71,9 @@ module.exports = {
           ? process.env.ALGOLIA_INDEX_NAME
           : "",
         queries,
+        enablePartialUpdates: true,
+        skipIndexing: false,
+        replicaUpdateMode: 'replace',
         chunkSize: 1000, // default: 1000
       },
     },
@@ -235,20 +238,12 @@ module.exports = {
                 });
               });
             },
-            query: `
+             query: `
               {
                 allMarkdownRemark(
-                  limit: 200,
+                  limit: 1000,
                   sort: { order: DESC, fields: [fields___prefix] },
-                  filter: {
-                    fields: {
-                      prefix: { ne: null },
-                      slug: { ne: null }
-                    },
-                    frontmatter: {
-                      author: { ne: null }
-                    }
-                  }
+                  filter: { id: { regex: "//posts//" } }
                 ) {
                   edges {
                     node {
@@ -266,7 +261,7 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
+            output: "/rss.xml"
           },
         ],
       },
