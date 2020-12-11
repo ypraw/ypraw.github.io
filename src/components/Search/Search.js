@@ -26,7 +26,7 @@ const Search = props => {
         {algolia && algolia.appId && (
           <InstantSearch
             searchClient={searchClient}
-            indexName="ypraw_blog"
+            indexName={algolia.indexName}
           >
             <SearchBox translations={{ placeholder: "Search" }} />
             <Stats />
