@@ -13,8 +13,8 @@ const Item = props => {
     post: {
       excerpt,
       fields: { slug, prefix },
-      frontmatter: { title, category, author },
-    },
+      frontmatter: { title, category, author }
+    }
   } = props;
 
   return (
@@ -223,7 +223,7 @@ const Item = props => {
 
 Item.propTypes = {
   post: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired
 };
 
 export default Item;

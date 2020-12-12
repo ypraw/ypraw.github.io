@@ -13,7 +13,7 @@ class Menu extends React.Component {
       to: page.node.fields.slug,
       label: page.node.frontmatter.menuTitle
         ? page.node.frontmatter.menuTitle
-        : page.node.frontmatter.title,
+        : page.node.frontmatter.title
     }));
 
     this.items = [
@@ -23,7 +23,7 @@ class Menu extends React.Component {
       { to: "/", label: "Home" },
       { to: "/category/", label: "Categories" },
       { to: "/search/", label: "Search" },
-      ...pages,
+      ...pages
       // { to: "/contact/", label: "Contact", icon: FaEnvelope },
     ];
 
@@ -32,7 +32,7 @@ class Menu extends React.Component {
 
   state = {
     open: false,
-    hiddenItems: [],
+    hiddenItems: []
   };
 
   static propTypes = {
@@ -41,7 +41,7 @@ class Menu extends React.Component {
     screenWidth: PropTypes.number.isRequired,
     fontLoaded: PropTypes.bool.isRequired,
     pages: PropTypes.array.isRequired,
-    theme: PropTypes.object.isRequired,
+    theme: PropTypes.object.isRequired
   };
 
   componentDidMount() {
@@ -96,12 +96,12 @@ class Menu extends React.Component {
           item.classList.remove("item");
           result.hiddenItems.push({
             to: link.getAttribute("data-slug"),
-            label: link.text,
+            label: link.text
           });
         }
         return result;
       },
-      { visibleItems: [], cumulativeWidth: 0, hiddenItems: [] },
+      { visibleItems: [], cumulativeWidth: 0, hiddenItems: [] }
     );
 
     this.setState(prevState => ({ hiddenItems: menu.hiddenItems }));

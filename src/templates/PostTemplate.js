@@ -15,10 +15,10 @@ const PostTemplate = props => {
       post,
       authornote: { html: authorNote },
       site: {
-        siteMetadata: { facebook },
-      },
+        siteMetadata: { facebook }
+      }
     },
-    pageContext: { next, prev },
+    pageContext: { next, prev }
   } = props;
 
   return (
@@ -45,7 +45,7 @@ const PostTemplate = props => {
 
 PostTemplate.prototype = {
   data: PropTypes.object.isRequired,
-  pageContext: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired
 };
 export default PostTemplate;
 

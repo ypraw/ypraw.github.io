@@ -11,7 +11,6 @@ import Comments from "./Comments";
 import NextPrev from "./NextPrev";
 import Loading from "../Loading";
 
-
 const Share = Loadable({
   loader: () => import("./PostShare"),
   loading() {
@@ -19,19 +18,18 @@ const Share = Loadable({
   }
 });
 const Post = ({
-    post,
-    post: {
-      html,
-      fields: { prefix, slug },
-      frontmatter: { title, author, category }
-    },
-    authornote,
-    facebook,
-    next: nextPost,
-    prev: prevPost,
-    theme
-  }) => {
-
+  post,
+  post: {
+    html,
+    fields: { prefix, slug },
+    frontmatter: { title, author, category }
+  },
+  authornote,
+  facebook,
+  next: nextPost,
+  prev: prevPost,
+  theme
+}) => {
   return (
     <React.Fragment>
       <header>

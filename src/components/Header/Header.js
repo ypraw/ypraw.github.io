@@ -191,7 +191,7 @@ class Header extends React.Component {
 
               &.fixed {
                 height: ${theme.header.height.fixed};
-                background-color:${theme.background.color.darkAlt};
+                background-color: ${theme.background.color.darkAlt};
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.14),
                   0 4px 8px rgba(0, 0, 0, 0.28);
                 left: 0;

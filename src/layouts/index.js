@@ -22,7 +22,7 @@ class Layout extends React.Component {
       font600loaded: false,
       screenWidth: 0,
       headerMinimized: false,
-      theme: themeObjectFromYaml,
+      theme: themeObjectFromYaml
     };
 
     if (typeof window !== `undefined`) {
@@ -35,7 +35,7 @@ class Layout extends React.Component {
 
   componentDidMount() {
     this.setState({
-      screenWidth: getScreenWidth(),
+      screenWidth: getScreenWidth()
     });
     if (typeof window !== "undefined") {
       window.addEventListener("resize", this.resizeThrottler, false);
@@ -47,7 +47,7 @@ class Layout extends React.Component {
       this.timeouts,
       "resize",
       100,
-      this.resizeHandler,
+      this.resizeHandler
     );
   };
 
@@ -65,7 +65,7 @@ class Layout extends React.Component {
 
   loadFont = (name, family, weight) => {
     const font = new FontFaceObserver(family, {
-      weight: weight,
+      weight: weight
     });
 
     font.load(null, 10000).then(
@@ -75,7 +75,7 @@ class Layout extends React.Component {
       },
       () => {
         console.log(`${name} is not available`);
-      },
+      }
     );
   };
 
@@ -116,7 +116,7 @@ class Layout extends React.Component {
           const { children } = this.props;
           const {
             footnote: { html: footnoteHTML },
-            pages: { edges: pages },
+            pages: { edges: pages }
           } = data;
 
           return (
@@ -195,7 +195,7 @@ class Layout extends React.Component {
 Layout.propTypes = {
   children: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 };
 
 export default Layout;

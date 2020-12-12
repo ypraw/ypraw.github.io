@@ -13,9 +13,9 @@ const SearchPage = props => {
   const {
     data: {
       site: {
-        siteMetadata: { algolia, facebook },
-      },
-    },
+        siteMetadata: { algolia, facebook }
+      }
+    }
   } = props;
 
   return (
@@ -23,7 +23,7 @@ const SearchPage = props => {
       <ThemeContext.Consumer>
         {theme => (
           <Article theme={theme}>
-           <div className="icon">
+            <div className="icon">
               <AlgoliaIcon />
             </div>
             <Search algolia={algolia} theme={theme} />
@@ -49,7 +49,7 @@ const SearchPage = props => {
 };
 
 SearchPage.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired
 };
 
 export default SearchPage;

@@ -44,7 +44,7 @@ const Author = props => {
           font-size: 0.9em;
           line-height: 1.6;
         }
-        :global(p){
+        :global(p) {
           color: ${theme.color.brand.primary};
         }
         @from-width tablet {
@@ -62,7 +62,7 @@ const Author = props => {
 
 Author.propTypes = {
   note: PropTypes.string.isRequired,
-  theme: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired
 };
 
 export default Author;

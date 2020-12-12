@@ -31,7 +31,6 @@ const PostShare = props => {
   const iconSize = 36;
   const filter = count => (count > 0 ? count : "");
 
-
   return (
     <React.Fragment>
       <div className="share">
@@ -44,7 +43,7 @@ const PostShare = props => {
               "aria-label": "Twitter share"
             }}
           >
-          <TwitterIcon round size={iconSize} />
+            <TwitterIcon round size={iconSize} />
           </TwitterShareButton>
           <GooglePlusShareButton
             url={url}
@@ -126,13 +125,10 @@ const PostShare = props => {
   );
 };
 
-
-
 PostShare.propTypes = {
   post: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired
   // slug: PropTypes.string.isRequired
-
 };
 
 export default PostShare;

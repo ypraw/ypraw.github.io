@@ -44,7 +44,7 @@ const Comments = props => {
     ? {
         url: props.article.url,
         identifier: props.article.id,
-        title: props.article.title,
+        title: props.article.title
       }
     : null;
   //console.log("POST COMMENTS:", JSON.stringify(disqusConfig));
@@ -70,7 +70,7 @@ Comments.propTypes = {
   slug: PropTypes.string.isRequired,
   facebook: PropTypes.object.isRequired,
   post: PropTypes.object.isRequired,
-  article: PropTypes.shape,
+  article: PropTypes.shape
 };
 
 // Comments.propTypes = {

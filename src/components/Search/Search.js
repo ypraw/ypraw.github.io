@@ -5,20 +5,16 @@ import {
   SearchBox,
   Hits,
   Stats,
-  Pagination,
+  Pagination
 } from "react-instantsearch-dom";
 
-import algoliasearch from 'algoliasearch';
+import algoliasearch from "algoliasearch";
 
 import Hit from "./Hit";
 
-
 const Search = props => {
-  const { algolia,theme} = props;
-  const searchClient = algoliasearch(
-    algolia.appId,
-    algolia.searchOnlyApiKey,
-  );
+  const { algolia, theme } = props;
+  const searchClient = algoliasearch(algolia.appId, algolia.searchOnlyApiKey);
 
   return (
     <React.Fragment>
@@ -52,8 +48,8 @@ const Search = props => {
           padding: 0.2em;
           font-size: 1.4em;
           flex-grow: 1;
-          background:${theme.background.color.dark};
-          color:${theme.color.neutral.white};
+          background: ${theme.background.color.dark};
+          color: ${theme.color.neutral.white};
         }
         .ais-SearchBox-submit,
         .ais-SearchBox-reset {
@@ -99,7 +95,7 @@ const Search = props => {
 };
 
 Search.propTypes = {
-  algolia: PropTypes.object.isRequired,
+  algolia: PropTypes.object.isRequired
 };
 
 export default Search;

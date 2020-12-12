@@ -17,7 +17,7 @@ const Bodytext = props => {
             margin: 1.5em 0 1em;
           }
 
-          :global(h1){
+          :global(h1) {
             color: ${theme.color.neutral.white};
           }
           :global(h2) {
@@ -31,7 +31,7 @@ const Bodytext = props => {
             line-height: ${theme.font.lineHeight.m};
             color: ${theme.color.neutral.gray.e};
           }
-          :global(h4){
+          :global(h4) {
             color: ${theme.color.neutral.gray.e};
           }
 

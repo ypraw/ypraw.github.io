@@ -1,3 +1,29 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "editor.formatOnPaste": true,
+    "editor.tabCompletion": "on",
+    // Path Intellisense
+    "path-intellisense.extensionOnImport": true,
+    "path-intellisense.absolutePathToWorkspace": true,
+    "javascript.suggest.paths": true,
+    // "[javascript]": {
+    //     "editor.formatOnSave": true,
+    //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // },
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx",
+        "xml": {
+            "attr_quotes": "single"
+        }
+    },
+    "prettier.bracketSpacing": true,
+    "editor.codeActionsOnSave": {
+        // For ESLint
+        "source.fixAll.eslint": true,
+        // For TSLint
+        "source.fixAll.tslint": true,
+        // For Stylelint
+        "source.fixAll.stylelint": true
+    }
+
 }

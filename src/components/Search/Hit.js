@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 // import { Link } from "gatsby";
 import Link from "gatsby-link";
 
-
 const Hit = props => {
   const { hit } = props;
 
