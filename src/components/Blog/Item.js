@@ -58,7 +58,8 @@ const Item = props => {
           padding: ${theme.space.inset.s};
           position: relative;
           transition: all ${theme.time.duration.default};
-          background: ${theme.color.neutral.black};
+
+          background: ${theme.background.color.darkAlt};
 
           :global(.gatsby-image-outer-wrapper) {
             border-radius: ${theme.size.radius.default};
