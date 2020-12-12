@@ -102,7 +102,7 @@ background:
     alt: *color-gray-1
     brand: *color-brand-primary
     dark: '#0d1117'
-    darkAlt: '#181e27'
+    darkAlt: '#072233'
 text:
   family: *font-family-target
   color:
