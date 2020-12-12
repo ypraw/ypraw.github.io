@@ -21,7 +21,7 @@ module.exports = {
   manifestName: "Ypraw Blog",
   manifestShortName: "yprawblog", // max 12 characters
   manifestStartUrl: "/index.html",
-  manifestBackgroundColor: "#333333",
+  manifestBackgroundColor: "#072233",
   manifestThemeColor: "#072233",
   manifestDisplay: "standalone",
 

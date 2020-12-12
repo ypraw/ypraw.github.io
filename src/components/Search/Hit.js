@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import { Link } from "gatsby";
 import Link from "gatsby-link";
 
 const Hit = props => {
@@ -18,7 +17,9 @@ const Hit = props => {
           font-size: 1.2em;
           display: block;
           width: 100%;
-          color: #666;
+        }
+        .ais-Hits-item a {
+          color: #ffffff;
         }
         .ais-Hits-item:before {
           content: "•";
@@ -32,7 +33,8 @@ const Hit = props => {
 };
 
 Hit.propTypes = {
-  hit: PropTypes.object.isRequired
+  hit: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired
 };
 
 export default Hit;
