@@ -21,7 +21,7 @@ deploy:
   target-branch: master
   on:
     branch: develop
-# edge: true
+
 before_script:
   - "npm install -g gatsby-cli"
 
