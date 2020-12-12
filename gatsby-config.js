@@ -71,8 +71,6 @@ module.exports = {
           ? process.env.ALGOLIA_INDEX_NAME
           : "",
         queries,
-        enablePartialUpdates: true,
-        skipIndexing: false,
         replicaUpdateMode: 'replace',
         chunkSize: 1000, // default: 1000
       },
