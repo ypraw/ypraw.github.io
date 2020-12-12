@@ -32,6 +32,8 @@ const Item = props => {
             display: flex;
             align-items: center;
             color: ${theme.color.neutral.white};
+            font-weight: ${theme.font.weight.bold};
+            font-size: ${theme.font.size.s};
           }
 
           :global(svg) {
