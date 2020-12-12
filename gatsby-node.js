@@ -174,6 +174,8 @@ exports.onCreateWebpackConfig = ({ loaders, stage, actions }) => {
             openAnalyzer: true,
             logLevel: "error",
             defaultSizes: "gzip",
+            analyzerHost:"127.0.0.1",
+            analyzerPort: "8001",
           }),
         ],
         devtool: false,
