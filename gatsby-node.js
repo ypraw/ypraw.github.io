@@ -20,18 +20,18 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       createNodeField({
         node,
         name: `slug`,
-        value: `${separtorIndex ? "/" : ""}${slug.substring(shortSlugStart)}`,
+        value: `${separtorIndex ? "/" : ""}${slug.substring(shortSlugStart)}`
       });
     }
     createNodeField({
       node,
       name: `prefix`,
-      value: separtorIndex ? slug.substring(1, separtorIndex) : "",
+      value: separtorIndex ? slug.substring(1, separtorIndex) : ""
     });
     createNodeField({
       node,
       name: `source`,
-      value: source,
+      value: source
     });
   }
 };
@@ -43,7 +43,7 @@ exports.createPages = ({ graphql, actions }) => {
     const postTemplate = path.resolve("./src/templates/PostTemplate.js");
     const pageTemplate = path.resolve("./src/templates/PageTemplate.js");
     const categoryTemplate = path.resolve(
-      "./src/templates/CategoryTemplate.js",
+      "./src/templates/CategoryTemplate.js"
     );
     const IndexPage = path.resolve("./src/templates/index.js");
     resolve(
@@ -71,7 +71,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
           }
-        `,
+        `
       ).then(result => {
         if (result.errors) {
           console.log(result.errors);
@@ -85,8 +85,8 @@ exports.createPages = ({ graphql, actions }) => {
         items.forEach(edge => {
           const {
             node: {
-              frontmatter: { category },
-            },
+              frontmatter: { category }
+            }
           } = edge;
 
           if (category && category !== null) {
@@ -101,8 +101,8 @@ exports.createPages = ({ graphql, actions }) => {
             path: `/category/${_.kebabCase(category)}/`,
             component: categoryTemplate,
             context: {
-              category,
-            },
+              category
+            }
           });
         });
 
@@ -122,8 +122,8 @@ exports.createPages = ({ graphql, actions }) => {
               slug,
               prev,
               next,
-              source,
-            },
+              source
+            }
           });
         });
 
@@ -138,8 +138,8 @@ exports.createPages = ({ graphql, actions }) => {
             component: pageTemplate,
             context: {
               slug,
-              source,
-            },
+              source
+            }
           });
         });
 
@@ -154,11 +154,11 @@ exports.createPages = ({ graphql, actions }) => {
               limit: postsPerPage,
               skip: i * postsPerPage,
               numPages,
-              currentPage: i + 1,
-            },
+              currentPage: i + 1
+            }
           });
         });
-      }),
+      })
     );
   });
 };
@@ -174,9 +174,9 @@ exports.onCreateWebpackConfig = ({ loaders, stage, actions }) => {
             openAnalyzer: true,
             logLevel: "error",
             defaultSizes: "gzip",
-            analyzerHost:"127.0.0.1",
-            analyzerPort: "8001",
-          }),
+            analyzerHost: "127.0.0.1",
+            analyzerPort: "8001"
+          })
         ],
         devtool: false,
         module: {
@@ -186,10 +186,10 @@ exports.onCreateWebpackConfig = ({ loaders, stage, actions }) => {
               exclude: modulePath => /node_modules/.test(modulePath),
               // whitelist specific es6 module
               // && !/node_modules\/@papertrailio\/js-core/.test(modulePath),
-              use: loaders.js(),
-            },
-          ],
-        },
+              use: loaders.js()
+            }
+          ]
+        }
       });
   }
 };
