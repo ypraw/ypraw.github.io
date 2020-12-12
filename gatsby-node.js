@@ -165,7 +165,7 @@ exports.createPages = ({ graphql, actions }) => {
 
 exports.onCreateWebpackConfig = ({ loaders, stage, actions }) => {
   switch (stage) {
-    case `build-javascript`:
+    case `build`:
       actions.setWebpackConfig({
         plugins: [
           new BundleAnalyzerPlugin({
