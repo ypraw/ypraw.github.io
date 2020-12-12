@@ -135,7 +135,8 @@ class Layout extends React.Component {
                     {/* --- STYLES --- */}
                     <style jsx>{`
                       main {
-                        min-height: 80vh;
+                        min-height: 100vh;
+                        background: ${this.state.theme.background.color.dark};
                       }
                     `}</style>
                     <style jsx global>{`
@@ -178,7 +179,6 @@ class Layout extends React.Component {
                       main {
                         width: auto;
                         display: block;
-                        background: ${this.state.theme.background.color.dark};
                       }
                     `}</style>
                   </React.Fragment>
