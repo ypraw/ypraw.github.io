@@ -37,9 +37,11 @@ jobs:
           FB_APP_ID: ${{secrets.FB_APP_ID}}
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v3.7.2
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./public
           publish_branch: master
           enable_jekyll: true
+          allow_empty_commit: true
+          force_orphan: true
