@@ -40,11 +40,10 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
+          deploy_key: ${{ secrets.SECRET_KEY_DEPLOY_SITE }}
           publish_dir: ./public
           publish_branch: master
           enable_jekyll: true
           full_commit_message: ${{ github.event.head_commit.message }}
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
-          force_orphan: true
-          keep_files: true
