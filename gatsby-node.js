@@ -92,7 +92,9 @@ exports.createPages = ({ graphql, actions }) => {
 
           if (category && category !== null) {
             category.forEach(tag => {
-              categorySet.add(tag);
+              if (tag && tag !== null) {
+                categorySet.add(tag);
+              }
             });
           }
         });

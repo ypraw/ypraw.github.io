@@ -36,8 +36,12 @@ const CategoryTemplate = props => {
           </Article>
         )}
       </ThemeContext.Consumer>
-
       <Seo />
+      <style jsx>{`
+        p {
+          color: #fff;
+        }
+      `}</style>
     </React.Fragment>
   );
 };

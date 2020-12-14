@@ -26,8 +26,10 @@ const TagsPage = props => {
 
     if (category && category != null) {
       category.forEach(element => {
-        if (!categories[element]) {
-          categories[element] = [];
+        if (element && element != null) {
+          if (!categories[element]) {
+            categories[element] = [];
+          }
         }
         categories[element].push(edge);
       });
