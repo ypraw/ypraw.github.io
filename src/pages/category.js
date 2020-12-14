@@ -61,7 +61,7 @@ const CategoryPage = props => {
                 color: ${theme.color.brand.primary};
               }
               :global(a) {
-                color: ${theme.color.neutral.gray.e};
+                color: ${theme.color.neutral.gray.b};
               }
               @from-width desktop {
                 :global(a:hover) {
