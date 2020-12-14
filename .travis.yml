@@ -7,7 +7,7 @@ node_js:
 notification:
   email:
     recipients:
-      - dyo.ndutz@gmail.com
+      - yunindyo.prabowo@gmail.com
     on_success: always
     on_failure: always
 git:
