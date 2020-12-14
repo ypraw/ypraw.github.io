@@ -24,8 +24,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm ci
-      - run: npm run build
+      - name: INSTALL DEPENDENCIES
+        run: npm ci
+
+      - name: BUILING SITE
+        run: npm run build
+        env:
+          ALGOLIA_APP_ID: ${{secrets.ALGOLIA_APP_ID}}
+          ALGOLIA_SEARCH_ONLY_API_KEY: ${{secrets.ALGOLIA_SEARCH_ONLY_API_KEY}}
+          ALGOLIA_ADMIN_API_KEY: ${{secrets.ALGOLIA_ADMIN_API_KEY}}
+          ALGOLIA_INDEX_NAME: ${{secrets.ALGOLIA_INDEX_NAME}}
+          FB_APP_ID: ${{secrets.FB_APP_ID}}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
