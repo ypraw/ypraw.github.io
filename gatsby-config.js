@@ -31,7 +31,7 @@ const queries = [
 ];
 
 module.exports = {
-  pathPrefix: config.pathPrefix,
+  // pathPrefix: config.pathPrefix,
   siteMetadata: {
     title: config.siteTitle,
     description: config.siteDescription,
@@ -44,9 +44,6 @@ module.exports = {
       indexName: process.env.ALGOLIA_INDEX_NAME
         ? process.env.ALGOLIA_INDEX_NAME
         : ""
-    },
-    facebook: {
-      appId: process.env.FB_APP_ID ? process.env.FB_APP_ID : ""
     }
   },
   plugins: [
@@ -84,7 +81,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/posts/`,
+        path: `${__dirname}/content/posts/${process.env.POSTS_FOLDER ||
+          "draft_posts"}/`,
         name: "posts"
       }
     },
