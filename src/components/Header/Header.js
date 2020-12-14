@@ -26,7 +26,8 @@ class Header extends React.Component {
     const fixed = this.state.fixed ? "fixed" : "";
     const homepage = this.props.path === "/" ? "homepage" : "";
 
-    return `${fixed} ${homepage}`;
+    // return `${fixed} ${homepage}`;
+    return `${fixed}`;
   };
 
   render() {
@@ -82,6 +83,7 @@ class Header extends React.Component {
             position: relative;
             top: 0;
             width: 100%;
+            padding-bottom: auto !important;
             align-items: center;
 
             :global(a.logoType) {
