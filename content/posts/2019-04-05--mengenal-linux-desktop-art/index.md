@@ -1,6 +1,6 @@
 ---
 title: "Mengenal Linux Desktop Art"
-category: linux
+category: ["Linux"]
 author: ypraw
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Kompleksitas Algoritma - Notasi Asimptotik"
-category: "strategi algoritma"
+category: ["strategi algoritma"]
 author: ypraw
 ---
 

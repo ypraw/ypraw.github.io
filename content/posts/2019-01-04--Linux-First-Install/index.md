@@ -1,13 +1,13 @@
 ---
 title: Power Management Linux
 author: "Yunindyo Prabowo"
-category:   "linux"
+category:   ["linux"]
 ---
 
 Halo semua, dalam kesempatan kali ini saya akan menuliskan artikel berseri mengenai hal-hal yang saya lakukan setelah menginstall linux. Dalam artikel ini beberapa pengaturan seputar kernel dapat berbeda dengan perangkat yang saya gunakan dan perangkat yang pembaca gunakan. Namun secara umum beberapa konfigurasi yang saya gunakan bisa di terapkan oleh para pembaca.
 
 Berikut ini merupakan spesifikasi yang saya gunakan sebagai perangkat harian saya.
- 
+
 # Details Spesifications
 
 >| Info | Value |
@@ -18,13 +18,13 @@ Berikut ini merupakan spesifikasi yang saya gunakan sebagai perangkat harian say
 >| Processor | Intel i3-6100u @2.30Ghz|
 >| GPU I | Intel HD 520|
 >| GPU II  | Radeon R5 M430|
->| Disk Storage I | SSD 128 GB | 
+>| Disk Storage I | SSD 128 GB |
 >| Disk Storage II | HDD 1TB |
 
 
 ## Bagian Pertama {Cari mirror tercepat}
 
-Sebelum memulai merubah tampilan yang biasanya saya gunakan, saya perlu mengupdate semua package yang saya gunakan dan mencari mirror server terdekat, biasanya untuk mirror server ini selain menggunakan yang ada di Indonesia seperti Datautama saya menggunakan mirror server singapore, umumnya distribusi terkenal banyak yang sudah di mirrorkan ke server singapore ini. Dan nilai tambahnya adalah hampir semua provider Internet lokal memiliki full akses speed ke repository Singapore ini. Oleh karena itu saya menyarankan menggunakan repository Singapore ini sebagai main repo saya, kekurangannya terkadang repo-repo mirror ini menggunakan metode partial update sehingga kesan bleeding edge atau up-to-date terhadap upstream agak tertinggal, dikarenakan saya menggunakan manjaro, maka saya menggunakan sintaks berikut untuk mengeset repository mirror yg saya gunakan, yaitu Indonesia dan Singapore : 
+Sebelum memulai merubah tampilan yang biasanya saya gunakan, saya perlu mengupdate semua package yang saya gunakan dan mencari mirror server terdekat, biasanya untuk mirror server ini selain menggunakan yang ada di Indonesia seperti Datautama saya menggunakan mirror server singapore, umumnya distribusi terkenal banyak yang sudah di mirrorkan ke server singapore ini. Dan nilai tambahnya adalah hampir semua provider Internet lokal memiliki full akses speed ke repository Singapore ini. Oleh karena itu saya menyarankan menggunakan repository Singapore ini sebagai main repo saya, kekurangannya terkadang repo-repo mirror ini menggunakan metode partial update sehingga kesan bleeding edge atau up-to-date terhadap upstream agak tertinggal, dikarenakan saya menggunakan manjaro, maka saya menggunakan sintaks berikut untuk mengeset repository mirror yg saya gunakan, yaitu Indonesia dan Singapore :
 
 ```bash
 sudo pacman-mirrors -c Indonesia,Singapore
@@ -32,7 +32,7 @@ sudo pacman-mirrors -c Indonesia,Singapore
 
 namun beberapa rekomendasi lain bisa menggunakan searching fastest server,
 
-```bash 
+```bash
 sudo pacman-mirrors -f 10
 ```
 
@@ -49,7 +49,7 @@ untuk kernel berlabel LTS:
 ```bash
 sudo mhwd-kernel -i linux414
 ```
-atau 
+atau
 
 ``` bash
 sudo mhwd-kernel -i linux419
@@ -58,7 +58,7 @@ sudo mhwd-kernel -i linux419
 Langkah ini bergantung pada distribusi apa yang anda gunakan, umumnya kernel LTS menjadi pilihan untuk distribusi-distribusi yang mementingkan kestabilan.
 
 ### Install Microcode CPU
-Biasanya secara otomatis OS akan mendeteksi cpu yang digunakan oleh pengguna. Baik yang menggunakan AMD ataupun Intel. Jika belum yakin pastikan pada software manager anda bahwa package microcode sudah terinstall dengan baik. Cara ini dilakukan agar hardware yang anda gunakan dapat didukung dengan baik oleh kernel. 
+Biasanya secara otomatis OS akan mendeteksi cpu yang digunakan oleh pengguna. Baik yang menggunakan AMD ataupun Intel. Jika belum yakin pastikan pada software manager anda bahwa package microcode sudah terinstall dengan baik. Cara ini dilakukan agar hardware yang anda gunakan dapat didukung dengan baik oleh kernel.
 
 ### Kernel Parameter
 > **_Cara ini bukan untuk pengguna awam, jika anda merasa awam baca dengan teliti semua referensi yang saya berikan di bawah dan pastikan kembali spesifikasi hardware yang anda gunakan sama dengan paramter yang anda gunakan_**
@@ -66,7 +66,7 @@ Biasanya secara otomatis OS akan mendeteksi cpu yang digunakan oleh pengguna. Ba
 cek parameter apa saja yang dapat di include kan pada configurasi grub anda, sebagai contoh untuk modul i915 yaitu untuk pengguna intel dan integrated graphic intel.
 
 ```bash
- modinfo i915 | grep '^parm' 
+ modinfo i915 | grep '^parm'
 parm:           modeset:Use kernel modesetting [KMS] (0=disable, 1=on, -1=force vga console preference [default]) (int)
 parm:           enable_dc:Enable power-saving display C-states. (-1=auto [default]; 0=disable; 1=up to DC5; 2=up to DC6) (int)
 parm:           enable_fbc:Enable frame buffer compression for power savings (default: -1 (use per-chip default)) (int)
@@ -139,18 +139,18 @@ untuk laptop yang sudah support uefi dan di produksi pada tahun 2011 keatas tamb
 acpi_osi='!Windows 2012'
 ```
 
-beberapa model laptop uefi dapat juga mengganti dengan syntax berikut, 
+beberapa model laptop uefi dapat juga mengganti dengan syntax berikut,
 
 ```bash
 acpi_osi=! acpi_osi='Windows 2015'
 ```
-atau juga , 
+atau juga ,
 
 ```bash
 acpi_osi=! acpi_osi="Windows 2009"
 ```
 
-> referensi : 
+> referensi :
 > - [source code](https://elixir.bootlin.com/linux/v3.17/source/drivers/acpi/osl.c#L104)
 > - [More explanation](https://unix.stackexchange.com/questions/110624/what-do-the-kernel-parameters-acpi-osi-linux-and-acpi-backlight-vendor-do/268106#268106)
 
@@ -167,14 +167,14 @@ Lalu, regenerate grub.
 sudo mkinitcpio -P
 ```
 
-untuk pengguna ubuntu dan turunannya cukup dengan syntax berikut tanpa harus menambahkan `MODULES`, 
+untuk pengguna ubuntu dan turunannya cukup dengan syntax berikut tanpa harus menambahkan `MODULES`,
 
 ```bash
 sudo update-grub
 ```
 
 untuk pengguna intel, tambah syntax berikut pada GRUB_CMDLINE_LINUX_DEFAULT=""
- 
+
 ```bash
 i915.modeset=1
 ```
@@ -188,7 +188,7 @@ rd.udev.log-priority=3 loglevel=3
  rd.udev.log-priority=3 loglevel=3
 ```
 
-* disable patch spectre {optional} 
+* disable patch spectre {optional}
 Beberapa waktu lalu kita dikejutkan oleh bug cpu bernama spectre, bagi dunia os baik windows,mac, linux, bsd hal ini mengejutkan dan sempat membuat geger. Para pengembang kernel linux khususnya sudah membuat patch  namun hal ini berefek pada penurunan performance. Kita bisa mengignore patch tersebut dengan menambahkan syntax berikut pada GRUB_CMDLINE_LINUX_DEFAULT="" ,
 
 ``` bash
@@ -246,5 +246,3 @@ untuk artikel selanjutkan saya akan membahas mengenai konfigurasi tampilan linux
 > * [How to Power Saving on Manjaro](https://forum.manjaro.org/t/howto-power-savings-setup-20180906/1445)
 > * [Tlp](https://linrunner.de/en/tlp/tlp.html)
 > * [Power Management Arch Wiki](https://wiki.archlinux.org/index.php/Power_management)
-
-

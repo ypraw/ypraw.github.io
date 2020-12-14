@@ -1,6 +1,6 @@
 ---
 title: "Setup Vga Amd Pada Manjaro Linux"
-category: linux
+category: ["Linux"]
 author: Yunindyo Prabowo
 ---
 
@@ -20,7 +20,7 @@ Untuk spesifikasi Laptop yang saya gunakan,
 >| Processor | Intel i3-6100u @2.30Ghz|
 >| GPU I | Intel HD 520|
 >| GPU II  | Radeon R5 M430|
->| Disk Storage I | SSD 128 GB | 
+>| Disk Storage I | SSD 128 GB |
 >| Disk Storage II | HDD 1TB |
 
 ### Pembukaan
@@ -31,7 +31,7 @@ Dalam tutorial ini, saya akan menjelaskan pengaturan untuk kartu grafis intel se
 
 ### Langkah Pertama, check default module kernel
 
-Untuk kartu grafis radeon, utamanya dukungan terhadap firmware kernel dapat di cek menggunakan syntax berikut, 
+Untuk kartu grafis radeon, utamanya dukungan terhadap firmware kernel dapat di cek menggunakan syntax berikut,
 
 ```bash
 modinfo radeon
@@ -115,7 +115,7 @@ Setelah mengetahui driver mana yang telah diload dan termasuk generasi dengan ar
     pada `GRUB_CMDLINE_LINUX_DEFAULT` sehingga menjadi seperti ini, *ikuti tutorial sebelum ini [Linux First Install](/Linux-First-Install)*
 
     ```bash
-     GRUB_CMDLINE_LINUX_DEFAULT="quiet acpi_osi=Linux acpi_osi=! acpi_osi='Windows 2009'  loglevel=3 i915.modeset=1 ipv6.disable=1 rd.udev.log_priority=3 acpi=force acpi_enforce_resources=lax pcie_aspm=force nopti spectre_v2=off 
+     GRUB_CMDLINE_LINUX_DEFAULT="quiet acpi_osi=Linux acpi_osi=! acpi_osi='Windows 2009'  loglevel=3 i915.modeset=1 ipv6.disable=1 rd.udev.log_priority=3 acpi=force acpi_enforce_resources=lax pcie_aspm=force nopti spectre_v2=off
      radeon.dpm=1 radeon.audio=1 radeon.aspm=0 radeon.bapm=0 radeon.runpm=0 radeon.si_support=1"
      ```
      dilanjutkan dengan mengenerate image baru dan mengupdate-grub
@@ -134,15 +134,15 @@ Setelah mengetahui driver mana yang telah diload dan termasuk generasi dengan ar
         * untuk `Southern Island (SI)` `radeon.si_support=0 amdgpu.si_support=1`
         * untuk `Sea Island (CIK)` `radeon.cik_support=0 amdgpu.cik_support=1`
 
-    - Tambahkan pula kernel parameter berikut (sesuaikan si/cik sesuai gcn version kartu grafis anda, dalam kasus saya, yaitu Southern Island), 
-    
+    - Tambahkan pula kernel parameter berikut (sesuaikan si/cik sesuai gcn version kartu grafis anda, dalam kasus saya, yaitu Southern Island),
+
     ```bash
     amdgpu.si_support=1 radeon.si_support=0 amdgpu.runpm=0 amdgpu.aspm=0 amdgpu.dpm=1 amdgpu.sound=1
     ```
 
     sehingga pada `GRUB_CMDLINE_LINUX_DEFAULT` menjadi,
     ```bash
-    GRUB_CMDLINE_LINUX_DEFAULT="quiet acpi_osi=Linux acpi_osi=! acpi_osi='Windows 2009'  loglevel=3 i915.modeset=1 ipv6.disable=1 rd.udev.log_priority=3 acpi=force acpi_enforce_resources=lax pcie_aspm=force nopti spectre_v2=off 
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet acpi_osi=Linux acpi_osi=! acpi_osi='Windows 2009'  loglevel=3 i915.modeset=1 ipv6.disable=1 rd.udev.log_priority=3 acpi=force acpi_enforce_resources=lax pcie_aspm=force nopti spectre_v2=off
     amdgpu.si_support=1 radeon.si_support=0 amdgpu.runpm=0 amdgpu.aspm=0 amdgpu.dpm=1 amdgpu.sound=1"
     ```
 
@@ -159,7 +159,7 @@ Setelah mengetahui driver mana yang telah diload dan termasuk generasi dengan ar
      sudo pacman -S mkinitcpio -P && sudo update-grub
      ```
     > **untuk pengguna ubuntu dan turunannya seperti mint, lakukan hanya pada penambahan kernel paratemer dan cukup dengan mengupdate grub.**
-     
+
 Langkah terakhir yaitu restart dan cek apakah terdapat error menggunakan syntax berikut.
 
 ```bash
@@ -188,4 +188,4 @@ Jika ada pertanyaan, dapat anda tanyakan pada kolom komentar dibawah, see youuuu
 > REFERENCE
 > * [Radeon](https://wiki.archlinux.org/index.php/ATI)
 > * [AMDGPU](https://wiki.archlinux.org/index.php/AMDGPU)
-> * [PRIME](https://wiki.archlinux.org/index.php/PRIME) 
+> * [PRIME](https://wiki.archlinux.org/index.php/PRIME)

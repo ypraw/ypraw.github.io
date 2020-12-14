@@ -1,6 +1,6 @@
 ---
 title: Tutorial Dasar Flask Framework (Ke-satu)
-category: "flask tutorial dasar"
+category: ["flask tutorial dasar"]
 author: Yunindyo Prabowo
 ---
 

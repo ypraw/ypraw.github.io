@@ -1,6 +1,6 @@
 ---
 title: "GITHUB ACTION : Solusi cerdas untuk automation deploying static site generator"
-category: GITHUB
+category: ["Github", "CI/CD"]
 author: Yunindyo Prabowo
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Membuat Database dengan Python
-category: "python"
+category: ["python"]
 author: Yunindyo Prabowo
 ---
 

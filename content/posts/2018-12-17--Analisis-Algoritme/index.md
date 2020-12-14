@@ -1,10 +1,10 @@
 ---
 title: Analisis Algoritma
-category: "strategi algoritma"
+category: ["strategi algoritma"]
 author: Yunindyo Prabowo
 ---
 
-Algoritma sebagai salah satu fundamental dari cabang ilmu komputer merupakan bagian terpenting untuk dikuasai oleh orang-orang yang berada di lingkungan ini. Mulai dari para programmer sebagai praktisi dalam dunia nyata ataupun para peneliti-peneliti yang meriset mengenai perkembangan ilmu komputer. 
+Algoritma sebagai salah satu fundamental dari cabang ilmu komputer merupakan bagian terpenting untuk dikuasai oleh orang-orang yang berada di lingkungan ini. Mulai dari para programmer sebagai praktisi dalam dunia nyata ataupun para peneliti-peneliti yang meriset mengenai perkembangan ilmu komputer.
 <!--more-->
 
 Sebagai seorang yang terjun dalam bidang ilmu komputer, tentulah kita dituntut untuk dapat merancang serta mengembangkan algoritma berdasarkan masalah-masalah yang akan diselesaikan. Tentu dengan mempertimbangkan beberapa aspek yang nanti akan dibahas dalam tulisan ini.
@@ -18,8 +18,8 @@ Tentu sebagai programmer ataupun orang yang berkecimpung dalam dunia ilmu komput
 > algoritma merupakan prosedur atau langkah-langkah yang logic untuk memecahkan atau menyelesaikan masalah.
 
 Dalam mendefinisikan sebuah algoritma tentu kita memerlukan serta menggarisbawahi beberapa hal agar algoritma yang kita buat sesuai. Umumnya dalam mendesain suatu algoritma kita memerluka 3 hal berikut sebagai dasarnya, yaitu :
-    
-1. Masalah 
+
+1. Masalah
     > tentu merancang algoritma bertujuan untuk menyelesaikan masalah.
 2. Input
     > Kondisi keadan atau data masukan sesuai dengan permasalahan
@@ -33,7 +33,7 @@ Dalam mendefinisikan sebuah algoritma tentu kita memerlukan serta menggarisbawah
 * Input
     > total n deret list
 * Output
-    > total nilai keseluruhan 
+    > total nilai keseluruhan
 
 maka pertama-tama kita akan membuat pembuktiannya dalam program dengan bahasa python.
 
@@ -48,7 +48,7 @@ size=10
 print(f'total {size} bilangan adalah {totalderet1{size}}') # menghasilkan 55
 ```
 
-dalam contoh program diatas, kita tahu bahwa total 10 deret bilangan dimulai dari 1 sampai 10 adalah 55, bagaiman dengan fungsi berikut ini, 
+dalam contoh program diatas, kita tahu bahwa total 10 deret bilangan dimulai dari 1 sampai 10 adalah 55, bagaiman dengan fungsi berikut ini,
 
 ```python
 def totalderet2(sizeData):
@@ -61,7 +61,7 @@ print(f'total {size} bilangan adalah {totalderet2{size}}') # menghasilkan 55
 
 fungsi **totalderet2** juga akan menghasilkan nilai 55 untuk 10 deret bilangan 1-10, namun yang jadi pertanyaan bagaimana dengan performancenya  ???
 
-kita bisa membandingkan dengan timeit, 
+kita bisa membandingkan dengan timeit,
 
 ```python
 number=1000
