@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
 import React from "react";
 import { graphql } from "gatsby";
@@ -13,10 +14,7 @@ const PostTemplate = props => {
   const {
     data: {
       post,
-      authornote: { html: authorNote },
-      site: {
-        siteMetadata: { facebook }
-      }
+      authornote: { html: authorNote }
     },
     pageContext: { next, prev }
   } = props;
@@ -31,14 +29,13 @@ const PostTemplate = props => {
               next={next}
               prev={prev}
               authornote={authorNote}
-              facebook={facebook}
               theme={theme}
             />
           </Article>
         )}
       </ThemeContext.Consumer>
 
-      <Seo data={post} facebook={facebook} />
+      <Seo data={post} />
     </React.Fragment>
   );
 };
@@ -75,13 +72,6 @@ export const postQuery = graphql`
     authornote: markdownRemark(fileAbsolutePath: { regex: "/author/" }) {
       id
       html
-    }
-    site {
-      siteMetadata {
-        facebook {
-          appId
-        }
-      }
     }
   }
 `;

@@ -64,9 +64,6 @@ export const query = graphql`
           searchOnlyApiKey
           indexName
         }
-        facebook {
-          appId
-        }
       }
     }
   }

@@ -72,12 +72,5 @@ export const categoryQuery = graphql`
         }
       }
     }
-    site {
-      siteMetadata {
-        facebook {
-          appId
-        }
-      }
-    }
   }
 `;

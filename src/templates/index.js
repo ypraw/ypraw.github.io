@@ -36,7 +36,7 @@ class IndexPage extends React.Component {
           {theme => <Blog posts={posts} theme={theme} />}
         </ThemeContext.Consumer>
 
-        <Seo facebook={facebook} />
+        <Seo />
         <div
           style={{
             maxWidth: "700px",
@@ -130,14 +130,6 @@ export const query = graphql`
             category
             author
           }
-        }
-      }
-    }
-    site {
-      siteMetadata {
-        description
-        facebook {
-          appId
         }
       }
     }
