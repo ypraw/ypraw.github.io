@@ -27,4 +27,4 @@ before_script:
 
 script:
   - "npm install"
-  - "gatsby build"
+  - "gatsby build --prefix-paths --verbose"
