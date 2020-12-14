@@ -41,3 +41,6 @@ jobs:
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./public
+          publish_branch: master
+          enable_jekyll: true
+          full_commit_message: ${{ github.event.head_commit.message }}
