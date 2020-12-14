@@ -11,10 +11,7 @@ import Seo from "../components/Seo";
 const CategoryPage = props => {
   const {
     data: {
-      posts: { edges: posts },
-      site: {
-        siteMetadata: { facebook }
-      }
+      posts: { edges: posts }
     }
   } = props;
 
@@ -61,6 +58,15 @@ const CategoryPage = props => {
             <style jsx>{`
               h2 {
                 margin: 0 0 0.5em;
+                color: ${theme.color.brand.primary};
+              }
+              :global(a) {
+                color: ${theme.color.neutral.gray.e};
+              }
+              @from-width desktop {
+                :global(a:hover) {
+                  color: ${theme.color.brand.primary};
+                }
               }
               h2 :global(svg) {
                 height: 0.8em;
@@ -71,7 +77,7 @@ const CategoryPage = props => {
         )}
       </ThemeContext.Consumer>
 
-      <Seo facebook={facebook} />
+      <Seo />
     </React.Fragment>
   );
 };
