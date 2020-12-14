@@ -25,7 +25,6 @@ const Post = ({
     frontmatter: { title, author, category }
   },
   authornote,
-  facebook,
   next: nextPost,
   prev: prevPost,
   theme
