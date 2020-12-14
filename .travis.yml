@@ -23,8 +23,8 @@ deploy:
     branch: develop
 
 before_script:
-  - "npm install -g gatsby-cli"
+  # - "npm install -g gatsby-cli"
+  - "npm install"
 
 script:
-  - "npm install"
   - "gatsby build --prefix-paths --verbose"
