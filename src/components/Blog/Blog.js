@@ -30,7 +30,7 @@ const Blog = props => {
 
         ul {
           list-style: none;
-          margin: 50px auto;
+          margin: 0px auto;
           padding: ${`calc(${theme.space.default} * 1.5) 0 calc(${theme.space.default} * 0.5)`};
         }
 
