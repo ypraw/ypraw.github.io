@@ -4,13 +4,14 @@ import Helmet from "react-helmet";
 import config from "../../../content/meta/config";
 
 const Seo = props => {
-  const { data, facebook } = props;
+  const { data } = props;
+  const pageTitle = props.pageTitle;
   const postTitle = ((data || {}).frontmatter || {}).title;
   const postDescription = ((data || {}).frontmatter || {}).description;
   const postCover = ((data || {}).frontmatter || {}).cover;
   const postSlug = ((data || {}).fields || {}).slug;
 
-  const title = postTitle ? `${postTitle}` : config.siteTitle;
+  const title = config.shortSiteTitle + " - " + (postTitle || pageTitle);
   const description = postDescription
     ? postDescription
     : config.siteDescription;
@@ -33,9 +34,9 @@ const Seo = props => {
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
       <meta property="og:type" content="website" />
-      <meta property="fb:app_id" content={facebook.appId} />
+      {/* <meta property="fb:app_id" content={facebook.appId} /> */}
       {/* Twitter Card tags */}
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content={description} />
       <meta
         name="twitter:creator"
         content={config.authorTwitterAccount ? config.authorTwitterAccount : ""}
@@ -46,7 +47,7 @@ const Seo = props => {
 
 Seo.propTypes = {
   data: PropTypes.object,
-  facebook: PropTypes.object.isRequired
+  pageTitle: PropTypes.object
 };
 
 export default Seo;
