@@ -1,11 +1,8 @@
-//const webpack = require("webpack");
 const _ = require("lodash");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin;
 const path = require("path");
 const Promise = require("bluebird");
-
 const { createFilePath } = require(`gatsby-source-filesystem`);
+// const { blogPostTeaserFields, blogPostSort } = require(`./src/fragments.js`);
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
@@ -46,12 +43,15 @@ exports.createPages = ({ graphql, actions }) => {
       "./src/templates/CategoryTemplate.js"
     );
     const IndexPage = path.resolve("./src/templates/index.js");
+    let filters = `filter: { fields: { slug: { ne: null } } }`;
     resolve(
       graphql(
         `
           {
             allMarkdownRemark(
-              filter: { fields: { slug: { ne: null } } }
+              ` +
+          filters +
+          `
               sort: { fields: [fields___prefix], order: DESC }
               limit: 1000
             ) {
@@ -81,6 +81,7 @@ exports.createPages = ({ graphql, actions }) => {
         const items = result.data.allMarkdownRemark.edges;
 
         // Create category list
+        // Create category list
         const categorySet = new Set();
         items.forEach(edge => {
           const {
@@ -90,7 +91,9 @@ exports.createPages = ({ graphql, actions }) => {
           } = edge;
 
           if (category && category !== null) {
-            categorySet.add(category);
+            category.forEach(tag => {
+              categorySet.add(tag);
+            });
           }
         });
 
@@ -105,7 +108,6 @@ exports.createPages = ({ graphql, actions }) => {
             }
           });
         });
-
         // Create posts
         const posts = items.filter(item => item.node.fields.source === "posts");
         posts.forEach(({ node }, index) => {
@@ -163,36 +165,36 @@ exports.createPages = ({ graphql, actions }) => {
   });
 };
 
-exports.onCreateWebpackConfig = ({ loaders, stage, actions }) => {
-  switch (stage) {
-    case `build`:
-      actions.setWebpackConfig({
-        plugins: [
-          new BundleAnalyzerPlugin({
-            analyzerMode: "static",
-            reportFilename: "./report/treemap.html",
-            openAnalyzer: true,
-            logLevel: "error",
-            defaultSizes: "gzip",
-            analyzerHost: "127.0.0.1",
-            analyzerPort: "8001"
-          })
-        ],
-        devtool: false,
-        module: {
-          rules: [
-            {
-              test: /\.js$/,
-              exclude: modulePath => /node_modules/.test(modulePath),
-              // whitelist specific es6 module
-              // && !/node_modules\/@papertrailio\/js-core/.test(modulePath),
-              use: loaders.js()
-            }
-          ]
-        }
-      });
-  }
-};
+// exports.onCreateWebpackConfig = ({ loaders, stage, actions }) => {
+//   switch (stage) {
+//     case `build`:
+//       actions.setWebpackConfig({
+//         plugins: [
+//           new BundleAnalyzerPlugin({
+//             analyzerMode: "static",
+//             reportFilename: "./report/treemap.html",
+//             openAnalyzer: true,
+//             logLevel: "error",
+//             defaultSizes: "gzip",
+//             analyzerHost: "127.0.0.1",
+//             analyzerPort: "8001"
+//           })
+//         ],
+//         devtool: false,
+//         module: {
+//           rules: [
+//             {
+//               test: /\.js$/,
+//               exclude: modulePath => /node_modules/.test(modulePath),
+//               // whitelist specific es6 module
+//               // && !/node_modules\/@papertrailio\/js-core/.test(modulePath),
+//               use: loaders.js()
+//             }
+//           ]
+//         }
+//       });
+//   }
+// };
 
 // exports.onCreateWebpackConfig = ({
 //   actions, //, stage, getConfig, rules, loaders,

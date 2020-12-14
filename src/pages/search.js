@@ -13,7 +13,7 @@ const SearchPage = props => {
   const {
     data: {
       site: {
-        siteMetadata: { algolia, facebook }
+        siteMetadata: { algolia }
       }
     }
   } = props;
@@ -31,7 +31,7 @@ const SearchPage = props => {
         )}
       </ThemeContext.Consumer>
 
-      <Seo facebook={facebook} />
+      <Seo />
 
       {/* --- STYLES --- */}
       <style jsx>{`

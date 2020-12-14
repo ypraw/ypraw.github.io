@@ -81,8 +81,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/posts/${process.env.POSTS_FOLDER ||
-          "draft_posts"}/`,
+        path: `${__dirname}/content/posts/`,
         name: "posts"
       }
     },
@@ -109,7 +108,18 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
-              backgroundColor: "transparent"
+              backgroundColor: "transparent",
+              tracedSVG: { color: "#f9ebd2" }
+            }
+          },
+          {
+            resolve: `gatsby-remark-rehype-images`,
+            options: {
+              tag: "re-img",
+              maxWidth: 800,
+              quality: 90,
+              tracedSVG: { color: "#f9ebd2" },
+              generateTracedSVG: true
             }
           },
           `gatsby-remark-lazy-load`,

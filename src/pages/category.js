@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import React from "react";
 import { graphql } from "gatsby";
 import { ThemeContext } from "../layouts";
-import Article from "../components/Article/";
+import Article from "../components/Article";
 import Headline from "../components/Article/Headline";
 import List from "../components/List";
 import Seo from "../components/Seo";
 
-const CategoryPage = props => {
+const TagsPage = props => {
   const {
     data: {
       posts: { edges: posts }
@@ -25,10 +25,12 @@ const CategoryPage = props => {
     } = edge;
 
     if (category && category != null) {
-      if (!categories[category]) {
-        categories[category] = [];
-      }
-      categories[category].push(edge);
+      category.forEach(element => {
+        if (!categories[element]) {
+          categories[element] = [];
+        }
+        categories[element].push(edge);
+      });
     }
   });
 
@@ -82,11 +84,11 @@ const CategoryPage = props => {
   );
 };
 
-CategoryPage.propTypes = {
+TagsPage.propTypes = {
   data: PropTypes.object.isRequired
 };
 
-export default CategoryPage;
+export default TagsPage;
 
 //eslint-disable-next-line no-undef
 export const query = graphql`
