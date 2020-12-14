@@ -24,10 +24,7 @@ class IndexPage extends React.Component {
 
     const {
       data: {
-        posts: { edges: posts = [] },
-        site: {
-          siteMetadata: { facebook }
-        }
+        posts: { edges: posts = [] }
       }
     } = this.props;
     return (
