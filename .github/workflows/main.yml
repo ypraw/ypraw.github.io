@@ -44,6 +44,7 @@ jobs:
           publish_dir: ./public
           publish_branch: master
           enable_jekyll: true
+          force_orphan: true
           full_commit_message: ${{ github.event.head_commit.message }}
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
