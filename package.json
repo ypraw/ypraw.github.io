@@ -60,7 +60,7 @@
     "gatsby"
   ],
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "devhost": "gatsby develop --host 192.168.0.112",
     "deploy": "gatsby build && gh-pages -d public -b master",
