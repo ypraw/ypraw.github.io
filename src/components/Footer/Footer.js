@@ -1,13 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { graphql, useStaticQuery } from "gatsby";
+const moment = require("moment-timezone");
 
 const Footer = props => {
   const { html, theme } = props;
+  const buildTime = useStaticQuery(query).site.buildTime;
+  const timeGMT = moment(buildTime)
+    .tz("Asia/Jakarta")
+    .format("dddd, Do MMMM YYYY | HH:mm");
 
   return (
     <React.Fragment>
-      <footer className="footer" dangerouslySetInnerHTML={{ __html: html }} />
-
+      <footer className="footer">
+        <a href="https://www.github.com/ypraw/">
+          This blog is open source. Last updated {timeGMT} GMT/UTC+7
+        </a>
+      </footer>
       {/* --- STYLES --- */}
       <style jsx>{`
         .footer {
@@ -15,30 +24,10 @@ const Footer = props => {
           padding: ${theme.space.inset.default};
           padding-top: 0;
           padding-bottom: 120px;
+          text-align: center;
+          font-size: ${theme.font.size.xxs};
           :global(a) {
             color: ${theme.color.brand.primary};
-          }
-          :global(ul) {
-            list-style: none;
-            text-align: center;
-            padding: 0;
-
-            :global(li) {
-              color: ${theme.color.neutral.white};
-              font-size: ${theme.font.size.xxs};
-              padding: ${theme.space.xxs} ${theme.space.s};
-              position: relative;
-              display: inline-block;
-
-              &::after {
-                content: "•";
-                position: absolute;
-                right: ${`calc(${theme.space.xs} * -1)`};
-              }
-              &:last-child::after {
-                content: "";
-              }
-            }
           }
         }
 
@@ -58,3 +47,11 @@ Footer.propTypes = {
 };
 
 export default Footer;
+
+const query = graphql`
+  query Info {
+    site {
+      buildTime
+    }
+  }
+`;
