@@ -34,11 +34,12 @@ const Item = props => {
             <span>
               <FaUser size={18} /> {author}
             </span>
-            {category && (
-              <span>
-                <FaTag size={18} /> {category}
-              </span>
-            )}
+            {category &&
+              category.map(element => (
+                <span key={element}>
+                  <FaTag size={18} /> {element}
+                </span>
+              ))}
           </p>
           <p>{excerpt}</p>
         </Link>
