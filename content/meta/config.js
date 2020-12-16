@@ -1,8 +1,7 @@
 module.exports = {
   siteTitle: "Ypraw Blog", // <title>
   shortSiteTitle: "personal blog Yunindyo Prabowo, a noob programmer", // <title> ending for posts and pages
-  siteDescription:
-    "ypraw code snippets and chit-chat about programming, technology, operating system or sometimes about my feel XD",
+  siteDescription: "Programmer from Indonesia, Dark World enthusiast especially coffee and terminals have a dream to be a pythonist",
   siteUrl: "https://ypraw.github.io",
   pathPrefix: "/",
   disqusShortname: "yupraw-me",
