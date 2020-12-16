@@ -6,7 +6,7 @@ A [GatsbyJS](https://www.gatsbyjs.org/) blog starter. <br /><br />
 [![GitHub license](https://img.shields.io/github/license/greglobinski/gatsby-starter-hero-blog.svg)](https://github.com/greglobinski/gatsby-starter-personal-blog/blob/master/LICENSE)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-![deploy branch](https://github.com/ypraw/ypraw.github.io/workflows/github%20pages%builder/badge.svg?branch=develop)
+![deploy branch](https://github.com/ypraw/ypraw.github.io/workflows/github%20pages%20builder/badge.svg?branch=develop)
 
 
 
