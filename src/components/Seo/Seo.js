@@ -5,16 +5,19 @@ import config from "../../../content/meta/config";
 
 const Seo = props => {
   const { data } = props;
-  const pageTitle = props.pageTitle;
-  const postTitle = ((data || {}).frontmatter || {}).title;
-  const postDescription = ((data || {}).frontmatter || {}).description;
+  // const pageTitle = props.pageTitle;
+  const postTitle = props.title
+    ? props.title
+    : ((data || {}).frontmatter || {}).title;
+  const seoExcerpt = (data || {} || {}).excerpt;
+  // const postDescription = ((data || {}).frontmatter || {}).description;
   const postCover = ((data || {}).frontmatter || {}).cover;
   const postSlug = ((data || {}).fields || {}).slug;
 
-  const title = config.shortSiteTitle + " - " + (postTitle || pageTitle);
-  const description = postDescription
-    ? postDescription
-    : config.siteDescription;
+  const title = postTitle
+    ? `${postTitle} - ${config.shortSiteTitle}`
+    : config.siteTitle;
+  const description = seoExcerpt ? seoExcerpt : config.siteDescription;
   const image = postCover ? postCover : config.siteImage;
   const url = config.siteUrl + config.pathPrefix + postSlug;
 
@@ -47,7 +50,7 @@ const Seo = props => {
 
 Seo.propTypes = {
   data: PropTypes.object,
-  pageTitle: PropTypes.object
+  title: PropTypes.object
 };
 
 export default Seo;
