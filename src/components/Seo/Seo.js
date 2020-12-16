@@ -9,7 +9,7 @@ const Seo = props => {
   const postTitle = props.title
     ? props.title
     : ((data || {}).frontmatter || {}).title;
-  const seoExcerpt = (data || {} || {}).excerpt;
+  const seoExcerpt = props.excerpt ? props.excerpt : (data || {} || {}).excerpt;
   // const postDescription = ((data || {}).frontmatter || {}).description;
   const postCover = ((data || {}).frontmatter || {}).cover;
   const postSlug = ((data || {}).fields || {}).slug;
@@ -17,7 +17,9 @@ const Seo = props => {
   const title = postTitle
     ? `${postTitle} - ${config.shortSiteTitle}`
     : config.siteTitle;
+
   const description = seoExcerpt ? seoExcerpt : config.siteDescription;
+  console.log(seoExcerpt);
   const image = postCover ? postCover : config.siteImage;
   const url = config.siteUrl + config.pathPrefix + postSlug;
 
@@ -50,7 +52,8 @@ const Seo = props => {
 
 Seo.propTypes = {
   data: PropTypes.object,
-  title: PropTypes.object
+  title: PropTypes.object,
+  excerpt: PropTypes.object
 };
 
 export default Seo;
