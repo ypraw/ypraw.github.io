@@ -1,6 +1,6 @@
 ---
 title: "Setup Vga Amd Pada Manjaro Linux"
-category: ["Linux"]
+category: ["linux","vga", "power management"]
 author: Yunindyo Prabowo
 ---
 

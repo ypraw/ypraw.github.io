@@ -1,6 +1,6 @@
 ---
 title: "Kustomisasi Terminal Linux"
-category: ["Linux"]
+category: ["Linux", "terminal"]
 author: Yunindyo Prabowo
 ---
 

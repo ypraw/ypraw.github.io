@@ -1,6 +1,6 @@
 ---
 title: "Kustomisasi Desktop Environtment Plasma"
-category: ["linux"]
+category: ["linux","kde","plasma","desktop environtment"]
 author: "ypraw"
 cover: ss1.png
 description: "Sudah bukan rahasia lagi, mejik dari kustomisasi di plasma adalah latte dock. Latte dock ini merupaka docking sistem yang dikembangkan khusus untuk plasma"

@@ -1,6 +1,6 @@
 ---
 title: "Mengenal Linux Desktop Art"
-category: ["Linux"]
+category: ["linux","desktop environtment", "kde", "plasma"]
 author: ypraw
 ---
 
