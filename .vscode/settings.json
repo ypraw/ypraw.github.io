@@ -7,7 +7,7 @@
     "path-intellisense.absolutePathToWorkspace": true,
     "javascript.suggest.paths": true,
     // "[javascript]": {
-    //     "editor.formatOnSave": true,
+    //     "editor.formatOnSave": false,
     //     "editor.defaultFormatter": "esbenp.prettier-vscode"
     // },
     "emmet.syntaxProfiles": {
