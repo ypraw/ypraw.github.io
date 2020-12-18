@@ -12,9 +12,9 @@ A [GatsbyJS](https://www.gatsbyjs.org/) blog starter. <br /><br />
 
 ## Description
 
-Source code untuk blog saya.
+Source code untuk blog saya. Dibuat menggunakan GatsbyJS dan ReactJS
 
-## Features:
+## Fitur:
 
 - Easy editable content in **Markdown** files (posts, pages and parts)
 - **CSS** with `styled-jsx` and `PostCSS`
@@ -22,7 +22,7 @@ Source code untuk blog saya.
 - **Social** sharing (Twitter, Facebook, Google, LinkedIn)
 - **Comments** (Disqus)
 - **Images** lazy loading and `webp` support (gatsby-image)
-- Post **categories** (category based post list)
+- Post **categories** (multiple categories based post list)
 - Full text **searching** (Algolia)
 - Form elements and validation with `ant-design`
 - **RSS** feed
@@ -36,45 +36,53 @@ Source code untuk blog saya.
 - **Prettier** code styling
 - Webpack `BundleAnalyzerPlugin`
 - **Gravatar** image (optional) instead local Avatar/Logo image
+- **Create Post** for now only tested on Linux, Mac, Unix-like :(
+- **Pagination 5 articles per page**
 
 ## Instalasi GatsbyJS
 
-If you do not have Gatsby Cli installed yet, do it first.
+Pastikan bahwa nodeJS telah terinstall pada komputer anda. Jika belum anda dapat menginstallnya dari sini [NodeJS](https://nodejs.org/en/).
 
-```text
+Kemudian install gatsby-cli dengan syntaks berikut,
+
+```bash
 npm install --global gatsby-cli
 ```
 
-More information on [GatsbyJS.org](https://www.gatsbyjs.org/tutorial/part-one)
+Info lebih lanjut dapat ditemukan dalam tautan berikut ini [GatsbyJS.org](https://www.gatsbyjs.org/tutorial/part-one)
 
-## Getting started
 
-Install the starter using Gatsby Cli `gatsby new` command.
+## Memulai Instalasi Tema
 
-```text
-gatsby new [NEW_SITE_DIRECTORY_FOR_YOUR_BLOG] https://github.com/ypraw/gatsby-starter-hero-blog.git
+Install tema menggunakan command dibawah ini
+
+```bash
+gatsby new [NEW_SITE_DIRECTORY_FOR_YOUR_BLOG] https://github.com/ypraw/ypraw.github.io.git
+
+#contoh
+
+gatsby new my_blog https://github.com/ypraw/ypraw.github.io.git
 ```
 
-Go into the newly created directory and run
+arahkan ke folder yang telah dibuat lalu mulai dengan perintah dibawah ini untuk melihat tema.
 
-```text
+```bash
+cd my_blog \
 gatsby develop
 ```
 
-to hot-serve your website on http://localhost:8000 or
+setelah prosesi generate selesai, buka browser anda lalu arahkan pada `localhost:8000` atau `127.0.0.1:8000`, anda akan melihat tampilan web dengan mode developer.
 
+untuk tahap produksi gunakan perintah berikut
 ```text
 gatsby build
 ```
 
-to create static site ready to host (/public).
+perintah ini akan membuat folder (/public) yang siap diupload pada hosting yang anda gunakan.
 
-##### External services
+## Service Tambahan
 
-The starter uses external services for some functions: comments, searching, analytics. To use them you have to secure some access data. All services are free to use or have generous free tiers big enough for a personal blog.
-
-Create an `.env` file like below in the root folder. Change `...` placeholders with real data.
-<br />By default, your `.env` file will be ignored by git. Remove `.env` from `.gitignore` in order to be able to push the file to your repository.
+Tema ini menggunakan beberapa service untuk beberapa fungsi seperti komentar, pencarian, dan google analitik. untuk mengakses service-service tersebut maka diperlukan beberapa konfigurasi. Pada folder root , buatlah sebuah file `.env` dan isikan seperti berikut ini,
 
 ```text
 GOOGLE_ANALYTICS_ID=...
@@ -82,11 +90,25 @@ ALGOLIA_APP_ID=...
 ALGOLIA_SEARCH_ONLY_API_KEY=...
 ALGOLIA_ADMIN_API_KEY=...
 ALGOLIA_INDEX_NAME=...
-FB_APP_ID=...
 ```
 
-### Instructions & tutorials
+**PERINGATAN** :
+- **_Pada dasarnya file .env akan di ignore oleh gitignore, pastikan kembali bahwa file `.gitignore` mengandung .env, jika belum tulis .env pada file .gitignore_**
 
+- **_Jika anda tidak mengisi data Algolia pada file `.env`, maka proses build akan gagal, untuk itu anda diwajibkan untuk mendaftar algolia terlebih dahulu, [algolia](https://www.algolia.com/), sebagai catatan bagi anda yang masih mahasiswa, dosen, ataupun civitas akedemi lainnya yang memiliki email berdomain akademik seperti `.ac.id`,   `.edu`, dsb gunakanlah fitur github education pack untuk mendapatkan beberapa package premium seperti github developer, domain namecheap dan algolia education pack [disini](https://education.github.com/pack)_**
+
+### Instruksi dan tutorial
+- #### Comments System
+    - Untuk mengaktifkan komentar sistem menggunakan disqus, isikan `disqusShortname` anda pada file [config.js](/content/meta/config.js)
+- #### Create Post {_only unix-like, Linux, MacOS_}
+    - Jalankan perintah berikut
+    ```bash
+    npm run create-post [JUDUL] <space>[Kategori] <space> [Author]
+    ```
+    contoh,
+    ```bash
+    npm run create-post "New Post" "Kategorinya" "ypraw"
+    ```
 
 ## Windows users
 
@@ -96,7 +118,7 @@ You should take a look at this: [Gatsby on Windows](https://www.gatsbyjs.org/doc
 
 - [Yunindyo Prabowo](https://github.com/ypraw)
 
-- Thanks to Base Theme built by [@greglobinski](https://github.com/greglobinski)
+- Thanks to Base Theme develop by [@greglobinski](https://github.com/greglobinski)
 
 ## Contributing
 
@@ -110,7 +132,7 @@ You should take a look at this: [Gatsby on Windows](https://www.gatsbyjs.org/doc
 
 MIT License
 
-Copyright (c) 2017 gatsbyjs <br />Copyright (c) 2019 Yunindyo Prabowo
+Copyright (c) 2017 gatsbyjs <br />Copyright (c) 2018 greg lobinski <br />Copyright (c) 2019 Yunindyo Prabowo
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
