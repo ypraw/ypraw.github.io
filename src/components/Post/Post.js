@@ -1,38 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "prismjs/themes/prism-tomorrow.css";
-import Loadable from "react-loadable";
 
 import Headline from "../Article/Headline";
 import Bodytext from "../Article/Bodytext";
 import Meta from "./Meta";
 import Author from "./Author";
-// import Comments from "./Comments";
+import Comments from "./Comments";
 import NextPrev from "./NextPrev";
-import Loading from "../Loading";
+import asyncComponent from "../AsyncComponent";
 
-const Share = Loadable({
-  loader: () => import("./PostShare"),
-  loading: Loading
-});
-
-const CommentsLazy = Loadable({
-  loader: () => import("./Comments"),
-  loading: Loading
-});
-
+const Share = asyncComponent(() =>
+  import("./PostShare")
+    .then((module) => {
+      return module.default;
+    })
+    .catch((error) => {})
+);
 const Post = ({
   post,
   post: {
     html,
     htmlAst,
     fields: { prefix, slug },
-    frontmatter: { title, author, category }
+    frontmatter: { title, author, category },
   },
   authornote,
   next: nextPost,
   prev: prevPost,
-  theme
+  theme,
 }) => {
   return (
     <React.Fragment>
@@ -51,7 +47,7 @@ const Post = ({
         <Share post={post} theme={theme} />
         <Author note={authornote} theme={theme} />
         <NextPrev next={nextPost} prev={prevPost} theme={theme} />
-        <CommentsLazy slug={slug} theme={theme} />
+        <Comments slug={slug} theme={theme} />
       </footer>
     </React.Fragment>
   );
@@ -62,7 +58,7 @@ Post.propTypes = {
   authornote: PropTypes.string.isRequired,
   next: PropTypes.object,
   prev: PropTypes.object,
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
 };
 
 export default Post;

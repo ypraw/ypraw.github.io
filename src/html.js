@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -103,5 +104,5 @@ HTML.propTypes = {
   bodyAttributes: PropTypes.object,
   preBodyComponents: PropTypes.array,
   body: PropTypes.string,
-  postBodyComponents: PropTypes.array
+  postBodyComponents: PropTypes.array,
 };

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { graphql, useStaticQuery } from "gatsby";
 const moment = require("moment-timezone");
 
-const Footer = props => {
+const Footer = (props) => {
   const { theme } = props;
   const buildTime = useStaticQuery(query).site.buildTime;
   const timeGMT = moment(buildTime)
@@ -43,7 +43,7 @@ const Footer = props => {
 
 Footer.propTypes = {
   html: PropTypes.string,
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
 };
 
 export default Footer;

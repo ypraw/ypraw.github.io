@@ -8,24 +8,24 @@ import Headline from "../components/Article/Headline";
 import List from "../components/List";
 import Seo from "../components/Seo";
 
-const TagsPage = props => {
+const TagsPage = (props) => {
   const {
     data: {
-      posts: { edges: posts }
-    }
+      posts: { edges: posts },
+    },
   } = props;
 
   // Create category list
   const categories = {};
-  posts.forEach(edge => {
+  posts.forEach((edge) => {
     const {
       node: {
-        frontmatter: { category }
-      }
+        frontmatter: { category },
+      },
     } = edge;
 
     if (category && category != null) {
-      category.forEach(element => {
+      category.forEach((element) => {
         if (element && element != null) {
           if (!categories[element]) {
             categories[element] = [];
@@ -38,19 +38,20 @@ const TagsPage = props => {
 
   const categoryList = [];
 
-  for (var key in categories) {
+  // eslint-disable-next-line guard-for-in
+  for (const key in categories) {
     categoryList.push([key, categories[key]]);
   }
 
   return (
     <React.Fragment>
       <ThemeContext.Consumer>
-        {theme => (
+        {(theme) => (
           <Article theme={theme}>
             <header>
               <Headline title="Posts by categories" theme={theme} />
             </header>
-            {categoryList.map(item => (
+            {categoryList.map((item) => (
               <section key={item[0]}>
                 <h2>
                   <FaTag /> {item[0]}
@@ -87,12 +88,12 @@ const TagsPage = props => {
 };
 
 TagsPage.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
 };
 
 export default TagsPage;
 
-//eslint-disable-next-line no-undef
+// eslint-disable-next-line no-undef
 export const query = graphql`
   query PostsQuery {
     posts: allMarkdownRemark(

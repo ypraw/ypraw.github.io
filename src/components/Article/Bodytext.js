@@ -10,11 +10,11 @@ const renderAst = new rehypeReact({
   components: {
     "re-icons": Icons,
     "re-img": ReImg,
-    "re-link": Link
-  }
+    "re-link": Link,
+  },
 }).Compiler;
 
-const Bodytext = props => {
+const Bodytext = (props) => {
   // const { html, theme } = props;
   const { content, theme } = props;
   const html = props.content.html;
@@ -108,6 +108,6 @@ const Bodytext = props => {
 // };
 Bodytext.propTypes = {
   content: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
 };
 export default Bodytext;

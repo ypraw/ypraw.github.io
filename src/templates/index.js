@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import PropTypes from "prop-types";
 import React from "react";
 import { Link, graphql } from "gatsby";
@@ -107,7 +108,7 @@ IndexPage.propTypes = {
 };
 export default IndexPage;
 
-//eslint-disable-next-line no-undef
+// eslint-disable-next-line no-undef
 export const query = graphql`
   query IndexQuery($skip: Int!, $limit: Int!) {
     posts: allMarkdownRemark(
@@ -134,4 +135,4 @@ export const query = graphql`
   }
 `;
 
-//hero-background
+// hero-background

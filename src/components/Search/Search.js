@@ -5,14 +5,14 @@ import {
   SearchBox,
   Hits,
   Stats,
-  Pagination
+  Pagination,
 } from "react-instantsearch-dom";
 
 import algoliasearch from "algoliasearch";
 
 import Hit from "./Hit";
 
-const Search = props => {
+const Search = (props) => {
   const { algolia, theme } = props;
   const searchClient = algoliasearch(algolia.appId, algolia.searchOnlyApiKey);
 
@@ -137,7 +137,7 @@ const Search = props => {
 
 Search.propTypes = {
   algolia: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
 };
 
 export default Search;

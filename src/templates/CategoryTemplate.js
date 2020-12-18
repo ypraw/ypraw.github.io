@@ -8,18 +8,18 @@ import Article from "../components/Article";
 import Headline from "../components/Article/Headline";
 import List from "../components/List";
 
-const CategoryTemplate = props => {
+const CategoryTemplate = (props) => {
   const {
     pageContext: { category },
     data: {
-      allMarkdownRemark: { totalCount, edges }
-    }
+      allMarkdownRemark: { totalCount, edges },
+    },
   } = props;
 
   return (
     <React.Fragment>
       <ThemeContext.Consumer>
-        {theme => (
+        {(theme) => (
           <Article theme={theme}>
             <header>
               <Headline theme={theme}>
@@ -48,7 +48,7 @@ const CategoryTemplate = props => {
 
 CategoryTemplate.propTypes = {
   data: PropTypes.object.isRequired,
-  pageContext: PropTypes.object.isRequired
+  pageContext: PropTypes.object.isRequired,
 };
 
 export default CategoryTemplate;

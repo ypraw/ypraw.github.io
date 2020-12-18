@@ -3,7 +3,7 @@ import Picture from "gatsby-image";
 import React from "react";
 import theme from "../../theme/theme.yaml";
 
-const ReImg = props => {
+const ReImg = (props) => {
   const fluid = props.fluid ? props.fluid : JSON.parse(props.rehyped); // To support 2 different use cases
   delete fluid.base64; // Workaround a Gatsby bug where both "blur-up" and "tracedSVG" placeholders are shown on top of each other
   const href = props.href ? props.href : fluid.originalImg;
@@ -15,7 +15,7 @@ const ReImg = props => {
     width: props.meme ? "70%" : "100%",
     display: "block",
     borderRadius: theme.size.radius.default,
-    overflow: "hidden"
+    overflow: "hidden",
   };
   const absoluteStyle = {
     position: "absolute",
@@ -23,7 +23,7 @@ const ReImg = props => {
     left: 0,
     width: "100%",
     borderRadius: theme.size.radius.default,
-    overflow: "hidden"
+    overflow: "hidden",
   };
 
   if (!props.hovereffect) {

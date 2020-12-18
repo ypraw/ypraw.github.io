@@ -6,15 +6,15 @@ import Article from "../components/Article";
 import Page from "../components/Page";
 import { ThemeContext } from "../layouts";
 
-const PageTemplate = props => {
+const PageTemplate = (props) => {
   const {
-    data: { page }
+    data: { page },
   } = props;
 
   return (
     <React.Fragment>
       <ThemeContext.Consumer>
-        {theme => (
+        {(theme) => (
           <Article theme={theme}>
             <Page page={page} theme={theme} />
           </Article>
@@ -27,12 +27,12 @@ const PageTemplate = props => {
 };
 
 PageTemplate.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
 };
 
 export default PageTemplate;
 
-//eslint-disable-next-line no-undef
+// eslint-disable-next-line no-undef
 export const pageQuery = graphql`
   query PageByPath($slug: String!) {
     page: markdownRemark(fields: { slug: { eq: $slug } }) {

@@ -7,7 +7,7 @@ const About = () => {
   return (
     <React.Fragment>
       <ThemeContext.Consumer>
-        {theme => (
+        {(theme) => (
           <div className="wrapper">
             <div className="icons">
               <a href={config.authorGithub} target="_blank" rel="noreferrer">

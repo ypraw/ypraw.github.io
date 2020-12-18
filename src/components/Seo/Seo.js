@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import config from "../../../content/meta/config";
 
-const Seo = props => {
+const Seo = (props) => {
   const { data } = props;
   // const pageTitle = props.pageTitle;
   const postTitle = props.title
@@ -26,7 +26,7 @@ const Seo = props => {
     <Helmet
       htmlAttributes={{
         lang: config.siteLanguage,
-        prefix: "og: http://ogp.me/ns#"
+        prefix: "og: http://ogp.me/ns#",
       }}
     >
       {/* General tags */}
@@ -52,7 +52,7 @@ const Seo = props => {
 Seo.propTypes = {
   data: PropTypes.object,
   title: PropTypes.object,
-  excerpt: PropTypes.object
+  excerpt: PropTypes.object,
 };
 
 export default Seo;

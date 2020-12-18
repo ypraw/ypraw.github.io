@@ -7,14 +7,14 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 
-const Item = props => {
+const Item = (props) => {
   const {
     theme,
     post: {
       excerpt,
       fields: { slug, prefix },
-      frontmatter: { title, category, author }
-    }
+      frontmatter: { title, category, author },
+    },
   } = props;
 
   return (
@@ -35,7 +35,7 @@ const Item = props => {
               <FaUser size={18} /> {author}
             </span>
             {category &&
-              category.map(element => (
+              category.map((element) => (
                 <span key={element}>
                   <FaTag size={18} /> {element}
                 </span>
@@ -224,7 +224,7 @@ const Item = props => {
 
 Item.propTypes = {
   post: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
 };
 
 export default Item;

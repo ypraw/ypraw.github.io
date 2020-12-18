@@ -3,19 +3,19 @@ import React from "react";
 
 import Item from "./Item";
 
-const Blog = props => {
+const Blog = (props) => {
   const { posts, theme } = props;
 
   return (
     <React.Fragment>
       <main className="main">
         <ul>
-          {posts.map(post => {
+          {posts.map((post) => {
             const {
               node,
               node: {
-                fields: { slug }
-              }
+                fields: { slug },
+              },
             } = post;
             return <Item key={slug} post={node} theme={theme} />;
           })}
@@ -54,7 +54,7 @@ const Blog = props => {
 
 Blog.propTypes = {
   posts: PropTypes.array.isRequired,
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
 };
 
 export default Blog;

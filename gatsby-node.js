@@ -1,3 +1,6 @@
+/* eslint-disable no-dupe-else-if */
+require("core-js/features/array/from");
+
 const _ = require("lodash");
 const path = require("path");
 const Promise = require("bluebird");
@@ -10,25 +13,25 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const slug = createFilePath({ node, getNode });
     const fileNode = getNode(node.parent);
     const source = fileNode.sourceInstanceName;
-    const separtorIndex = ~slug.indexOf("--") ? slug.indexOf("--") : 0;
-    const shortSlugStart = separtorIndex ? separtorIndex + 2 : 0;
+    const separatorIndex = slug.indexOf("--") >= 0 ? slug.indexOf("--") : null;
+    const shortSlugStart = separatorIndex ? separatorIndex + 2 : 0;
 
     if (source !== "parts") {
       createNodeField({
         node,
         name: `slug`,
-        value: `${separtorIndex ? "/" : ""}${slug.substring(shortSlugStart)}`
+        value: `${separatorIndex ? "/" : ""}${slug.substring(shortSlugStart)}`,
       });
     }
     createNodeField({
       node,
       name: `prefix`,
-      value: separtorIndex ? slug.substring(1, separtorIndex) : ""
+      value: separatorIndex ? slug.substring(1, separatorIndex) : "",
     });
     createNodeField({
       node,
       name: `source`,
-      value: source
+      value: source,
     });
   }
 };
@@ -43,7 +46,7 @@ exports.createPages = ({ graphql, actions }) => {
       "./src/templates/CategoryTemplate.js"
     );
     const IndexPage = path.resolve("./src/templates/index.js");
-    let filters = `filter: { fields: { slug: { ne: null } } }`;
+    const filters = `filter: { fields: { slug: { ne: null } } }`;
     resolve(
       graphql(
         `
@@ -73,7 +76,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         `
-      ).then(result => {
+      ).then((result) => {
         if (result.errors) {
           console.log(result.errors);
           reject(result.errors);
@@ -84,15 +87,15 @@ exports.createPages = ({ graphql, actions }) => {
         // Create category list
         // Create category list
         const categorySet = new Set();
-        items.forEach(edge => {
+        items.forEach((edge) => {
           const {
             node: {
-              frontmatter: { category }
-            }
+              frontmatter: { category },
+            },
           } = edge;
 
           if (category && category !== null) {
-            category.forEach(tag => {
+            category.forEach((tag) => {
               if (tag && tag !== null) {
                 categorySet.add(tag);
               }
@@ -102,17 +105,19 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create category pages
         const categoryList = Array.from(categorySet);
-        categoryList.forEach(category => {
+        categoryList.forEach((category) => {
           createPage({
             path: `/category/${_.kebabCase(category)}/`,
             component: categoryTemplate,
             context: {
-              category
-            }
+              category,
+            },
           });
         });
         // Create posts
-        const posts = items.filter(item => item.node.fields.source === "posts");
+        const posts = items.filter(
+          (item) => item.node.fields.source === "posts"
+        );
         posts.forEach(({ node }, index) => {
           const slug = node.fields.slug;
           const next = index === 0 ? undefined : posts[index - 1].node;
@@ -127,13 +132,15 @@ exports.createPages = ({ graphql, actions }) => {
               slug,
               prev,
               next,
-              source
-            }
+              source,
+            },
           });
         });
 
         // and pages.
-        const pages = items.filter(item => item.node.fields.source === "pages");
+        const pages = items.filter(
+          (item) => item.node.fields.source === "pages"
+        );
         pages.forEach(({ node }) => {
           const slug = node.fields.slug;
           const source = node.fields.source;
@@ -143,15 +150,15 @@ exports.createPages = ({ graphql, actions }) => {
             component: pageTemplate,
             context: {
               slug,
-              source
-            }
+              source,
+            },
           });
         });
 
         // Create blog post list pages
         const postsPerPage = 5;
         const numPages = Math.ceil(posts.length / postsPerPage);
-        _.times(numPages, i => {
+        _.times(numPages, (i) => {
           createPage({
             path: i === 0 ? `/` : `/${i + 1}`,
             component: IndexPage,
@@ -159,8 +166,8 @@ exports.createPages = ({ graphql, actions }) => {
               limit: postsPerPage,
               skip: i * postsPerPage,
               numPages,
-              currentPage: i + 1
-            }
+              currentPage: i + 1,
+            },
           });
         });
       })

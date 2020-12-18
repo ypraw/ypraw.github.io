@@ -10,19 +10,19 @@ import { ThemeContext } from "../layouts";
 
 require("prismjs/themes/prism-okaidia.css");
 
-const PostTemplate = props => {
+const PostTemplate = (props) => {
   const {
     data: {
       post,
-      authornote: { html: authorNote }
+      authornote: { html: authorNote },
     },
-    pageContext: { next, prev }
+    pageContext: { next, prev },
   } = props;
 
   return (
     <React.Fragment>
       <ThemeContext.Consumer>
-        {theme => (
+        {(theme) => (
           <Article theme={theme}>
             <Post
               post={post}
@@ -42,11 +42,11 @@ const PostTemplate = props => {
 
 PostTemplate.prototype = {
   data: PropTypes.object.isRequired,
-  pageContext: PropTypes.object.isRequired
+  pageContext: PropTypes.object.isRequired,
 };
 export default PostTemplate;
 
-//eslint-disable-next-line no-undef
+// eslint-disable-next-line no-undef
 export const postQuery = graphql`
   query PostBySlug($slug: String!) {
     post: markdownRemark(fields: { slug: { eq: $slug } }) {
