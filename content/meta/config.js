@@ -1,7 +1,8 @@
 module.exports = {
   siteTitle: "Ypraw Blog", // <title>
   shortSiteTitle: "personal blog Yunindyo Prabowo, a noob programmer", // <title> ending for posts and pages
-  siteDescription: "Programmer from Indonesia, Dark World enthusiast especially coffee and terminals have a dream to be a pythonist",
+  siteDescription:
+    "Programmer from Indonesia, Dark World enthusiast especially coffee and terminals have a dream to be a pythonist",
   siteUrl: "https://ypraw.github.io",
   pathPrefix: "/",
   disqusShortname: "yupraw-me",
@@ -11,6 +12,9 @@ module.exports = {
   // author
   authorName: "Yunindyo Prabowo",
   authorTwitterAccount: "yunindyo",
+  authorLinkedin: "https://www.linkedin.com/in/yunindyo-prabowo-60aa19125/",
+  authorTelegram: "https://t.me/ypraw",
+  authorGithub: "https://www.github.com/ypraw",
 
   /* info */
   headerTitle: "Yunindyo Prabowo",
