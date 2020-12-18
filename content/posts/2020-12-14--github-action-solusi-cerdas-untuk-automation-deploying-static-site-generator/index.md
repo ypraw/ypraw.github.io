@@ -1,5 +1,5 @@
 ---
-title: "GITHUB ACTION : Solusi cerdas untuk automation deploying static site generator"
+title: "Github Action : Solusi cerdas untuk automation deploying static site generator"
 category: ["github", "ci", "cd"]
 author: Yunindyo Prabowo
 ---
@@ -33,7 +33,7 @@ Langkahnya pun terbilang mudah dan hampir sama dengan kebanyakan perangkat ci/cd
 
 Untuk memulai, kita buat dulu beberapa konfigurasi file, tepat nya pada root project static website kita, kita buat folder `.github/workflows` atau dalam kasus saya, seperti di gambar berikut,
 
-<img src="ss.png" width=100% height=auto>
+<re-img src="ss.png"></re-img>
 
 dilanjutkan dengan membuat file konfigurasi `.yml` atau saya menggunakan file `main.yml`.
 
