@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby";
 const moment = require("moment-timezone");
 
 const Footer = props => {
-  const { html, theme } = props;
+  const { theme } = props;
   const buildTime = useStaticQuery(query).site.buildTime;
   const timeGMT = moment(buildTime)
     .tz("Asia/Jakarta")

@@ -1,12 +1,28 @@
 import React from "react";
 import PropTypes from "prop-types";
+import rehypeReact from "rehype-react";
+import Icons from "../../components/About/About";
+import ReImg from "./ReImg";
+import { Link } from "gatsby";
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: {
+    "re-icons": Icons,
+    "re-img": ReImg,
+    "re-link": Link
+  }
+}).Compiler;
 
 const Bodytext = props => {
-  const { html, theme } = props;
+  // const { html, theme } = props;
+  const { content, theme } = props;
+  const html = props.content.html;
 
   return (
     <React.Fragment>
-      <div className="bodytext" dangerouslySetInnerHTML={{ __html: html }} />
+      {/* <div className="bodytext" dangerouslySetInnerHTML={{ __html: html }} /> */}
+      <div className="bodytext">{renderAst(content.htmlAst)}</div>
 
       <style jsx>{`
         .bodytext {
@@ -86,9 +102,12 @@ const Bodytext = props => {
   );
 };
 
+// Bodytext.propTypes = {
+//   html: PropTypes.string.isRequired,
+//   theme: PropTypes.object.isRequired
+// };
 Bodytext.propTypes = {
-  html: PropTypes.string.isRequired,
+  content: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired
 };
-
 export default Bodytext;

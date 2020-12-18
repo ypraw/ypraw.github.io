@@ -52,6 +52,7 @@ export const postQuery = graphql`
     post: markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
+      htmlAst
       excerpt(pruneLength: 280)
       fields {
         slug

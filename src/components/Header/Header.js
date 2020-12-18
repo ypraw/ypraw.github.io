@@ -43,6 +43,7 @@ class Header extends React.Component {
                 src={
                   config.gravatarImgMd5 === "" ? avatar : config.gravatarImgMd5
                 }
+                className="lazyload"
                 alt={config.siteTitle}
               />
             </div>

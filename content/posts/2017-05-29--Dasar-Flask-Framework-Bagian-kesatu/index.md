@@ -68,7 +68,7 @@ Seperti yang dijelaskan di awal, istilah view pada mvc dikenal sebagai template 
 pada folder webFlask buatlah folder templates dan static dimana didalam folder static kita akan menempatkan file css dan js dengan struktur static/assets/css atau  static/assets/js sebenarnya tidak harus menggunakan folder assets, namun untuk memudahkan struktur aplikasi web terutama managemen files berdasarkan tipenya, digunakan struktur yang umumnya menggunakan folder assets , sedangkan pada folder templates kita akan menaruh file html.
 berikut ini merupakan struktur foldernya :
 
-<img src="https://res.cloudinary.com/ypraw/image/upload/v1496012486/flask2_ckojgs.png" width="200" height="200">
+<img src="https://res.cloudinary.com/ypraw/image/upload/v1496012486/flask2_ckojgs.png" width="200" height="200" class="lazyload" >
 
 
 kita isikan pada folder static kita dengan bootstrap, yang dapat di download [disini](http://getbootstrap.com/getting-started/).
@@ -199,7 +199,7 @@ let's code guys :
 di dalam skript diatas, kita mempassing nilai variabel name dan looping angka. Untuk mempassing variabel kita menggunakan tag {{variabel}} dan untuk menuliskan skripting kita menggunakan { % % }
 tambahkan kode diatas pada file index.html sebelumnya, lalu jalankan kembali.
 
-<img src="https://res.cloudinary.com/ypraw/image/upload/v1496015088/flask4_xsct9c.png" width=100% height=auto>
+<img src="https://res.cloudinary.com/ypraw/image/upload/v1496015088/flask4_xsct9c.png" width=100% height=auto class="lazyload" >
 
 # Penutup
 Demikian Tutorial flask tahap pertama mengenai view

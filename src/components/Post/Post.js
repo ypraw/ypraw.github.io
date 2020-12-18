@@ -21,6 +21,7 @@ const Post = ({
   post,
   post: {
     html,
+    htmlAst,
     fields: { prefix, slug },
     frontmatter: { title, author, category }
   },
@@ -40,7 +41,8 @@ const Post = ({
           theme={theme}
         />
       </header>
-      <Bodytext html={html} theme={theme} />
+      {/* <Bodytext html={html} theme={theme} /> */}
+      <Bodytext content={post} theme={theme} />
       <footer>
         <Share post={post} theme={theme} />
         <Author note={authornote} theme={theme} />
