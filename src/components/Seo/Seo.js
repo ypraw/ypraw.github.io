@@ -19,7 +19,6 @@ const Seo = props => {
     : config.siteTitle;
 
   const description = seoExcerpt ? seoExcerpt : config.siteDescription;
-  console.log(seoExcerpt);
   const image = postCover ? postCover : config.siteImage;
   const url = config.siteUrl + config.pathPrefix + postSlug;
 
