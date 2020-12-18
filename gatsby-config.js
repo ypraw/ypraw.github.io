@@ -104,6 +104,7 @@ module.exports = {
       options: {
         plugins: [
           `gatsby-plugin-sharp`,
+          `gatsby-remark-component`,
           {
             resolve: `gatsby-remark-images`,
             options: {
