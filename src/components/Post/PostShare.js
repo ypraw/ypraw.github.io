@@ -7,7 +7,7 @@ import {
   FacebookShareCount,
   FacebookIcon,
   TwitterIcon,
-  LinkedinIcon,
+  LinkedinIcon
 } from "react-share";
 
 import config from "../../../content/meta/config";
@@ -17,9 +17,9 @@ const PostShare = (props) => {
     post: {
       fields: { slug },
       frontmatter: { title },
-      excerpt,
+      excerpt
     },
-    theme,
+    theme
   } = props;
 
   const url = config.siteUrl + config.pathPrefix + slug;
@@ -36,7 +36,7 @@ const PostShare = (props) => {
             url={url}
             title={title}
             additionalProps={{
-              "aria-label": "Twitter share",
+              "aria-label": "Twitter share"
             }}
           >
             <TwitterIcon round size={iconSize} />
@@ -45,7 +45,7 @@ const PostShare = (props) => {
             url={url}
             quote={`${title} - ${excerpt}`}
             additionalProps={{
-              "aria-label": "Facebook share",
+              "aria-label": "Facebook share"
             }}
           >
             <FacebookIcon round size={iconSize} />
@@ -58,7 +58,7 @@ const PostShare = (props) => {
             title={title}
             description={excerpt}
             additionalProps={{
-              "aria-label": "LinkedIn share",
+              "aria-label": "LinkedIn share"
             }}
           >
             <LinkedinIcon round size={iconSize} />
@@ -84,6 +84,7 @@ const PostShare = (props) => {
         .label {
           font-size: 1.2em;
           margin: 0 1em 1em;
+          color: ${theme.color.brand.primary};
         }
         @from-width tablet {
           .share {
@@ -101,7 +102,7 @@ const PostShare = (props) => {
 
 PostShare.propTypes = {
   post: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired
 };
 
 export default PostShare;

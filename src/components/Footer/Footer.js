@@ -6,9 +6,7 @@ const moment = require("moment-timezone");
 const Footer = (props) => {
   const { theme } = props;
   const buildTime = useStaticQuery(query).site.buildTime;
-  const timeGMT = moment(buildTime)
-    .tz("Asia/Jakarta")
-    .format("dddd, Do MMMM YYYY | HH:mm");
+  const timeGMT = moment(buildTime).tz("Asia/Jakarta").format("dddd, Do MMMM YYYY | HH:mm");
 
   return (
     <React.Fragment>
@@ -43,7 +41,7 @@ const Footer = (props) => {
 
 Footer.propTypes = {
   html: PropTypes.string,
-  theme: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired
 };
 
 export default Footer;

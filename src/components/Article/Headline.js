@@ -60,7 +60,7 @@ const Headline = (props) => {
 Headline.propTypes = {
   title: PropTypes.string,
   children: PropTypes.node,
-  theme: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired
 };
 
 export default Headline;
