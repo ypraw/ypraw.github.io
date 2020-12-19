@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 export function getScreenWidth() {
   if (typeof window !== `undefined`) {
     return window.innerWidth;

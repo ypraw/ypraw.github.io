@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import "typeface-open-sans";
 import FontFaceObserver from "fontfaceobserver";
 import PropTypes from "prop-types";
@@ -43,12 +44,7 @@ class Layout extends React.Component {
   }
 
   resizeThrottler = () => {
-    return timeoutThrottlerHandler(
-      this.timeouts,
-      "resize",
-      100,
-      this.resizeHandler
-    );
+    return timeoutThrottlerHandler(this.timeouts, "resize", 100, this.resizeHandler);
   };
 
   resizeHandler = () => {
@@ -103,15 +99,13 @@ class Layout extends React.Component {
                 }
               }
             }
-            footnote: markdownRemark(
-              fileAbsolutePath: { regex: "/footnote/" }
-            ) {
+            footnote: markdownRemark(fileAbsolutePath: { regex: "/footnote/" }) {
               id
               html
             }
           }
         `}
-        render={data => {
+        render={(data) => {
           const { children } = this.props;
           const {
             footnote: { html: footnoteHTML },
@@ -199,7 +193,7 @@ Layout.propTypes = {
 
 export default Layout;
 
-//eslint-disable-next-line no-undef
+// eslint-disable-next-line no-undef
 /*
 export const postQuery = graphql`
   query LayoutQuery {

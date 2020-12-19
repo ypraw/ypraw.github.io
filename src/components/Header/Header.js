@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
@@ -14,7 +15,7 @@ class Header extends React.Component {
     fixed: false
   };
 
-  visibilitySensorChange = val => {
+  visibilitySensorChange = (val) => {
     if (val) {
       this.setState({ fixed: false });
     } else {
@@ -40,9 +41,7 @@ class Header extends React.Component {
           <Link to="/" className="logoType">
             <div className="logo">
               <img
-                src={
-                  config.gravatarImgMd5 === "" ? avatar : config.gravatarImgMd5
-                }
+                src={config.gravatarImgMd5 === "" ? avatar : config.gravatarImgMd5}
                 className="lazyload"
                 alt={config.siteTitle}
               />
@@ -53,9 +52,9 @@ class Header extends React.Component {
             </div>
           </Link>
           <FontLoadedContext.Consumer>
-            {loaded => (
+            {(loaded) => (
               <ScreenWidthContext.Consumer>
-                {width => (
+                {(width) => (
                   <Menu
                     path={path}
                     fixed={fixed}
@@ -148,9 +147,7 @@ class Header extends React.Component {
             left: 0;
             right: 0;
             height: 1px;
-            top: ${path === "/"
-              ? theme.header.height.homepage
-              : theme.header.height.default};
+            top: ${path === "/" ? theme.header.height.homepage : theme.header.height.default};
           }
 
           @from-width tablet {
@@ -195,8 +192,7 @@ class Header extends React.Component {
               &.fixed {
                 height: ${theme.header.height.fixed};
                 background-color: ${theme.background.color.darkAlt};
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.14),
-                  0 4px 8px rgba(0, 0, 0, 0.28);
+                box-shadow: 0 0 10px #ff0f7b, 0 4px 8px #ff0f7b);
                 left: 0;
                 padding: 0 ${theme.space.m};
                 position: fixed;

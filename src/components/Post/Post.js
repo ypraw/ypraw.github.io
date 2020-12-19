@@ -23,23 +23,18 @@ const Post = ({
     html,
     htmlAst,
     fields: { prefix, slug },
-    frontmatter: { title, author, category },
+    frontmatter: { title, author, category }
   },
   authornote,
   next: nextPost,
   prev: prevPost,
-  theme,
+  theme
 }) => {
   return (
     <React.Fragment>
       <header>
         <Headline title={title} theme={theme} />
-        <Meta
-          prefix={prefix}
-          author={author}
-          category={category}
-          theme={theme}
-        />
+        <Meta prefix={prefix} author={author} category={category} theme={theme} />
       </header>
       {/* <Bodytext html={html} theme={theme} /> */}
       <Bodytext content={post} theme={theme} />
@@ -58,7 +53,7 @@ Post.propTypes = {
   authornote: PropTypes.string.isRequired,
   next: PropTypes.object,
   prev: PropTypes.object,
-  theme: PropTypes.object.isRequired,
+  theme: PropTypes.object.isRequired
 };
 
 export default Post;

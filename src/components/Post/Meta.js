@@ -6,7 +6,7 @@ import { FaCalendar } from "react-icons/fa/";
 import { FaUser } from "react-icons/fa/";
 import { FaTag } from "react-icons/fa/";
 
-const Meta = props => {
+const Meta = (props) => {
   const { prefix, author: authorName, category, theme } = props;
 
   return (
@@ -18,7 +18,7 @@ const Meta = props => {
         <FaUser size={18} /> {authorName}
       </span>
       {category &&
-        category.map(tag => (
+        category.map((tag) => (
           <span key={tag}>
             <Link to={`/category/${tag.split(" ").join("-")}`}>
               <span>
