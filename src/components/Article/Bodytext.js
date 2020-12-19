@@ -105,7 +105,6 @@ const Bodytext = (props) => {
             border: 1px solid ${theme.line.color};
           }
           :global(code.language-text) {
-            background: ${theme.color.neutral.gray.j};
             text-shadow: none;
             color: inherit;
             padding: 0.1em 0.3em 0.2em;

@@ -14,9 +14,9 @@ const PostTemplate = (props) => {
   const {
     data: {
       post,
-      authornote: { html: authorNote },
+      authornote: { html: authorNote }
     },
-    pageContext: { next, prev },
+    pageContext: { next, prev }
   } = props;
 
   return (
@@ -24,13 +24,7 @@ const PostTemplate = (props) => {
       <ThemeContext.Consumer>
         {(theme) => (
           <Article theme={theme}>
-            <Post
-              post={post}
-              next={next}
-              prev={prev}
-              authornote={authorNote}
-              theme={theme}
-            />
+            <Post post={post} next={next} prev={prev} authornote={authorNote} theme={theme} />
           </Article>
         )}
       </ThemeContext.Consumer>
@@ -42,7 +36,7 @@ const PostTemplate = (props) => {
 
 PostTemplate.prototype = {
   data: PropTypes.object.isRequired,
-  pageContext: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired
 };
 export default PostTemplate;
 

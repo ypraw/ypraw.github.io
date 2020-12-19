@@ -20,18 +20,18 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       createNodeField({
         node,
         name: `slug`,
-        value: `${separatorIndex ? "/" : ""}${slug.substring(shortSlugStart)}`,
+        value: `${separatorIndex ? "/" : ""}${slug.substring(shortSlugStart)}`
       });
     }
     createNodeField({
       node,
       name: `prefix`,
-      value: separatorIndex ? slug.substring(1, separatorIndex) : "",
+      value: separatorIndex ? slug.substring(1, separatorIndex) : ""
     });
     createNodeField({
       node,
       name: `source`,
-      value: source,
+      value: source
     });
   }
 };
@@ -42,9 +42,7 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const postTemplate = path.resolve("./src/templates/PostTemplate.js");
     const pageTemplate = path.resolve("./src/templates/PageTemplate.js");
-    const categoryTemplate = path.resolve(
-      "./src/templates/CategoryTemplate.js"
-    );
+    const categoryTemplate = path.resolve("./src/templates/CategoryTemplate.js");
     const IndexPage = path.resolve("./src/templates/index.js");
     const filters = `filter: { fields: { slug: { ne: null } } }`;
     resolve(
@@ -55,7 +53,7 @@ exports.createPages = ({ graphql, actions }) => {
               ` +
           filters +
           `
-              sort: { fields: [fields___prefix], order: DESC }
+              sort: { fields: [fields___prefix, fields___slug], order: DESC }
               limit: 1000
             ) {
               edges {
@@ -85,13 +83,12 @@ exports.createPages = ({ graphql, actions }) => {
         const items = result.data.allMarkdownRemark.edges;
 
         // Create category list
-        // Create category list
         const categorySet = new Set();
         items.forEach((edge) => {
           const {
             node: {
-              frontmatter: { category },
-            },
+              frontmatter: { category }
+            }
           } = edge;
 
           if (category && category !== null) {
@@ -110,19 +107,16 @@ exports.createPages = ({ graphql, actions }) => {
             path: `/category/${_.kebabCase(category)}/`,
             component: categoryTemplate,
             context: {
-              category,
-            },
+              category
+            }
           });
         });
         // Create posts
-        const posts = items.filter(
-          (item) => item.node.fields.source === "posts"
-        );
+        const posts = items.filter((item) => item.node.fields.source === "posts");
         posts.forEach(({ node }, index) => {
           const slug = node.fields.slug;
           const next = index === 0 ? undefined : posts[index - 1].node;
-          const prev =
-            index === posts.length - 1 ? undefined : posts[index + 1].node;
+          const prev = index === posts.length - 1 ? undefined : posts[index + 1].node;
           const source = node.fields.source;
 
           createPage({
@@ -132,15 +126,13 @@ exports.createPages = ({ graphql, actions }) => {
               slug,
               prev,
               next,
-              source,
-            },
+              source
+            }
           });
         });
 
         // and pages.
-        const pages = items.filter(
-          (item) => item.node.fields.source === "pages"
-        );
+        const pages = items.filter((item) => item.node.fields.source === "pages");
         pages.forEach(({ node }) => {
           const slug = node.fields.slug;
           const source = node.fields.source;
@@ -150,8 +142,8 @@ exports.createPages = ({ graphql, actions }) => {
             component: pageTemplate,
             context: {
               slug,
-              source,
-            },
+              source
+            }
           });
         });
 
@@ -166,8 +158,8 @@ exports.createPages = ({ graphql, actions }) => {
               limit: postsPerPage,
               skip: i * postsPerPage,
               numPages,
-              currentPage: i + 1,
-            },
+              currentPage: i + 1
+            }
           });
         });
       })

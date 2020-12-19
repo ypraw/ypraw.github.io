@@ -11,8 +11,8 @@ import Seo from "../components/Seo";
 const TagsPage = (props) => {
   const {
     data: {
-      posts: { edges: posts },
-    },
+      posts: { edges: posts }
+    }
   } = props;
 
   // Create category list
@@ -20,8 +20,8 @@ const TagsPage = (props) => {
   posts.forEach((edge) => {
     const {
       node: {
-        frontmatter: { category },
-      },
+        frontmatter: { category }
+      }
     } = edge;
 
     if (category && category != null) {
@@ -88,7 +88,7 @@ const TagsPage = (props) => {
 };
 
 TagsPage.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired
 };
 
 export default TagsPage;
