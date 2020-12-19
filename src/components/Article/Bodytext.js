@@ -33,6 +33,14 @@ const Bodytext = (props) => {
             margin: 1.5em 0 1em;
           }
 
+          :global(blockquote) {
+            border-left: 5px solid #bbbbbb;
+            margin: 2.5em 0;
+            padding: 0em 1.1em 0em 1.3em;
+            position: relative;
+            font-style: italic;
+          }
+
           :global(h1) {
             color: ${theme.color.neutral.white};
           }
@@ -62,15 +70,31 @@ const Bodytext = (props) => {
             margin: 0 0 1.5em;
             padding: 0 0 0 1.5em;
           }
+          :global(th) {
+            color: ${theme.color.neutral.white};
+          }
+          :global(td) {
+            color: ${theme.color.neutral.white};
+          }
+          :global(table) {
+            background: ${theme.background.color.darkAlt2};
+          }
           :global(li) {
             margin: 0.7em 0;
             line-height: 1.5;
+            font-size: ${theme.font.size.s};
+            list-style-type: square;
             color: ${theme.color.neutral.white};
           }
           :global(a) {
             font-weight: ${theme.font.weight.bold};
             color: ${theme.color.brand.primary};
             text-decoration: underline;
+          }
+          @from-width desktop {
+            :global(a:hover) {
+              color: ${theme.color.special.linkHover};
+            }
           }
           :global(a.gatsby-resp-image-link) {
             border: 0;
