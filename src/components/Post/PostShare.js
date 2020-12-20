@@ -7,7 +7,9 @@ import {
   FacebookShareCount,
   FacebookIcon,
   TwitterIcon,
-  LinkedinIcon
+  LinkedinIcon,
+  TelegramShareButton,
+  TelegramIcon
 } from "react-share";
 
 import config from "../../../content/meta/config";
@@ -41,6 +43,15 @@ const PostShare = (props) => {
           >
             <TwitterIcon round size={iconSize} />
           </TwitterShareButton>
+          <TelegramShareButton
+            url={url}
+            title={title}
+            additionalProps={{
+              "aria-label": "Telegram share"
+            }}
+          >
+            <TelegramIcon round size={iconSize} />
+          </TelegramShareButton>
           <FacebookShareButton
             url={url}
             quote={`${title} - ${excerpt}`}
