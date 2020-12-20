@@ -34,12 +34,11 @@ jobs:
           ALGOLIA_SEARCH_ONLY_API_KEY: ${{secrets.ALGOLIA_SEARCH_ONLY_API_KEY}}
           ALGOLIA_ADMIN_API_KEY: ${{secrets.ALGOLIA_ADMIN_API_KEY}}
           ALGOLIA_INDEX_NAME: ${{secrets.ALGOLIA_INDEX_NAME}}
-          FB_APP_ID: ${{secrets.FB_APP_ID}}
+          PLAUSIBLE_DOMAIN: ${{secrets.PLAUSIBLE_DOMAIN}}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.ACCESS_TOKEN }}
           deploy_key: ${{ secrets.SECRET_KEY_DEPLOY_SITE }}
           publish_dir: ./public
           publish_branch: master
