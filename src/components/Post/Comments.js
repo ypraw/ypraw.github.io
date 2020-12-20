@@ -4,7 +4,7 @@ import { DiscussionEmbed } from "disqus-react";
 
 import config from "../../../content/meta/config";
 
-const Comments = props => {
+const Comments = (props) => {
   const { theme } = props || {};
 
   const disqusConfig = props.article
@@ -17,10 +17,7 @@ const Comments = props => {
   return (
     <React.Fragment>
       <div id="post-comments" className="comments">
-        <DiscussionEmbed
-          shortname={config.disqusShortname}
-          config={disqusConfig}
-        />
+        <DiscussionEmbed shortname={config.disqusShortname} config={disqusConfig} />
       </div>
       <style jsx>{`
         .comments {

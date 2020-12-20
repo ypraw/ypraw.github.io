@@ -9,7 +9,7 @@ import Seo from "../components/Seo";
 class IndexPage extends React.Component {
   separator = React.createRef();
 
-  scrollToContent = e => {
+  scrollToContent = (e) => {
     this.separator.current.scrollIntoView({
       block: "start",
       behavior: "smooth"
@@ -20,8 +20,7 @@ class IndexPage extends React.Component {
     const { currentPage, numPages } = this.props.pageContext;
     const isFirst = currentPage === 1 || !currentPage;
     const isLast = currentPage === numPages;
-    const prevPage =
-      currentPage - 1 === 1 ? "/" : `/${(currentPage - 1).toString()}`;
+    const prevPage = currentPage - 1 === 1 ? "/" : `/${(currentPage - 1).toString()}`;
     const nextPage = `/${(currentPage + 1).toString()}`;
 
     const {
@@ -32,7 +31,7 @@ class IndexPage extends React.Component {
     return (
       <React.Fragment>
         <ThemeContext.Consumer>
-          {theme => <Blog posts={posts} theme={theme} />}
+          {(theme) => <Blog posts={posts} theme={theme} />}
         </ThemeContext.Consumer>
 
         <Seo />

@@ -102,8 +102,8 @@ background:
     primary: *color-gray-3
     alt: *color-gray-1
     brand: *color-brand-primary
-    dark: '#0d1117'
-    darkAlt: '#072233'
+    dark: '#072233'
+    darkAlt: '#051622'
     darkAlt2: '051926'
 text:
   family: *font-family-target

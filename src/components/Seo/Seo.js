@@ -47,6 +47,12 @@ const Seo = (props) => {
             <meta property="og:description" content={description} />
             <meta property="og:image" content={image} />
             <meta property="og:type" content="website" />
+            {/* Twitter Card tags */}
+            <meta name="twitter:card" content={description} />
+            <meta
+              name="twitter:creator"
+              content={config.authorTwitterAccount ? config.authorTwitterAccount : ""}
+            />
             {/* Plausible Analytics */}
             {process.browser && (
               <script async defer data-domain={domain} src="https://plausible.io/js/plausible.js" />
