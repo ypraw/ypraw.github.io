@@ -4,7 +4,7 @@ category: ["github", "ci", "cd", "github action"]
 author: Yunindyo Prabowo
 ---
 
-Meneruskan artikel sebelumnya menengenai [github action](/github-action-solusi-cerdas-untuk-automation-deploying-static-site-generator/), pada kesempatan kali ini saya ingin menjabarkan lebih lanjut bagaimana mengkonfigurasi github action untuk pertama kali/
+Meneruskan artikel sebelumnya menengenai [github action](/github-action-solusi-cerdas-untuk-automation-deploying-static-site-generator/), pada kesempatan kali ini saya ingin menjabarkan lebih lanjut bagaimana mengkonfigurasi github action untuk pertama kali=.
 
 Github sebagai penyedia layanan hosting pages, juga menyediakan media deploy secara otomatis yaitu github action. Dengan adanya tools ini, kita dapat dengan mudah melakukan deploy dalam satu platform tanpa harus menggunakan platform lain. Sebelum ke langkah mendeploy, pertama kali kita harus menyiapkan beberapa token dan konfigurasi yang akan kita gunakan saat menggunakan github action.
 
@@ -93,6 +93,6 @@ langkah terakhir push file tersebut, dan lihat hasilnya pada menu action.
 
 > **NOTE: Perhatikan, file konfigurasi diatas hanya bekerja pada source code blog saya**
 
-untuk kedepannya saya akan menjelaskan bagaimana github action bekerja pada static site generator dan bagimana cara menstup environment variable pada source code sehingga bisa digunakan untuk membuild source code kita.
+untuk kedepannya saya akan menjelaskan bagaimana github action bekerja pada static site generator dan bagaimana cara men-setup environment variable pada source code sehingga bisa digunakan untuk membuild source code kita.
 
 Stay tune seri selanjutnya [setup github action](/category/github-action)
