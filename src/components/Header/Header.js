@@ -9,7 +9,6 @@ import config from "../../../content/meta/config";
 import Menu from "../Menu";
 
 import avatar from "../../images/jpg/avatar.jpg";
-import _JSXStyle from "styled-jsx/style";
 class Header extends React.Component {
   state = {
     fixed: false
