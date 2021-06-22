@@ -13,7 +13,7 @@ import {
 } from "react-share";
 import _JSXStyle from "styled-jsx/style";
 import config from "../../../content/meta/config";
-
+import _JSXStyle from "styled-jsx/style";
 const PostShare = (props) => {
   const {
     post: {

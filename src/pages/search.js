@@ -5,7 +5,7 @@ import Article from "../components/Article";
 import Search from "../components/Search";
 import { ThemeContext } from "../layouts";
 import Seo from "../components/Seo";
-
+import _JSXStyle from "styled-jsx/style";
 const SearchPage = (props) => {
   const {
     data: {

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import config from "../../../content/meta/config";
 import avatar from "../../images/jpg/ava.webp";
-
+import _JSXStyle from "styled-jsx/style";
 const Author = props => {
   const { note, theme } = props;
 

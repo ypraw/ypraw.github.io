@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import { FaCalendar } from "react-icons/fa/";
 import { FaUser } from "react-icons/fa/";
 import { FaTag } from "react-icons/fa/";
-
+import _JSXStyle from "styled-jsx/style";
 const Meta = (props) => {
   const { prefix, author: authorName, category, theme } = props;
 

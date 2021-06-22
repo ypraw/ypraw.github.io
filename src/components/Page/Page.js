@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import Headline from "../Article/Headline";
 import Bodytext from "../Article/Bodytext";
-
+import _JSXStyle from "styled-jsx/style";
 const Page = props => {
   const {
     page,

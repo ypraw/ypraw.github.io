@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { DiscussionEmbed } from "disqus-react";
 
 import config from "../../../content/meta/config";
-
+import _JSXStyle from "styled-jsx/style";
 const Comments = (props) => {
   const { theme } = props || {};
 

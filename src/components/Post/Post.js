@@ -9,7 +9,7 @@ import Author from "./Author";
 import Comments from "./Comments";
 import NextPrev from "./NextPrev";
 import asyncComponent from "../AsyncComponent";
-
+import _JSXStyle from "styled-jsx/style";
 const Share = asyncComponent(() =>
   import("./PostShare")
     .then((module) => {

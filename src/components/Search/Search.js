@@ -7,7 +7,7 @@ import {
   Stats,
   Pagination,
 } from "react-instantsearch-dom";
-
+import _JSXStyle from "styled-jsx/style";
 import algoliasearch from "algoliasearch";
 
 import Hit from "./Hit";

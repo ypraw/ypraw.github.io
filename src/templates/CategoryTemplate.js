@@ -7,7 +7,7 @@ import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
 import Headline from "../components/Article/Headline";
 import List from "../components/List";
-
+import _JSXStyle from "styled-jsx/style";
 const CategoryTemplate = (props) => {
   const {
     pageContext: { category },

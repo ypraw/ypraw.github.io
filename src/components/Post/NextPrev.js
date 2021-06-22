@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 
 import { FaArrowRight } from "react-icons/fa/";
 import { FaArrowLeft } from "react-icons/fa/";
-
+import _JSXStyle from "styled-jsx/style";
 const NextPrev = (props) => {
   const {
     theme,

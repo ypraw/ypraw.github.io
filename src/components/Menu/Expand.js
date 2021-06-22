@@ -1,7 +1,7 @@
 import { FaAngleDown } from "react-icons/fa/";
 import PropTypes from "prop-types";
 import React from "react";
-
+import _JSXStyle from "styled-jsx/style";
 const Expand = props => {
   const { onClick, theme } = props;
 
