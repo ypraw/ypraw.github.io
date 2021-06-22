@@ -25,7 +25,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: INSTALL DEPENDENCIES
-        run: npm ci
+        run: npm install
 
       - name: BUILING SITE
         run: npm run build
