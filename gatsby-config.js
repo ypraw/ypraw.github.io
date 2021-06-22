@@ -32,6 +32,9 @@ const queries = [
 
 module.exports = {
   // pathPrefix: config.pathPrefix,
+  flags: {
+    DEV_SSR: false,
+  },
   siteMetadata: {
     title: config.siteTitle,
     description: config.siteDescription,
@@ -47,6 +50,8 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-jsx`, // the plugin's code is inserted directly to gatsby-node.js and gatsby-ssr.js files
     `gatsby-plugin-styled-jsx-postcss`, // as above
+    // `gatsby-plugin-styled-components`,
+    // `babel-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-layout`,
       options: {
@@ -156,7 +161,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
 
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-catch-links`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

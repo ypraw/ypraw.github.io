@@ -6,6 +6,7 @@ import { FaUser } from "react-icons/fa/";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
+import _JSXStyle from "styled-jsx/style";
 
 const Item = (props) => {
   const {

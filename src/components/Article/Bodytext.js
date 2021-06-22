@@ -4,7 +4,7 @@ import rehypeReact from "rehype-react";
 import Icons from "../../components/About/About";
 import ReImg from "./ReImg";
 import { Link } from "gatsby";
-
+import _JSXStyle from "styled-jsx/style";
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {

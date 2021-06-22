@@ -16,10 +16,10 @@ Pertama dan yang paling utama adalah kalian harus memiliki repository khusus unt
 yang kedua adalah menyiapkan _**private access token**_ dengan langkah sebagai berikut:
 
 1. Buka bagian atas kanan halaman apapun di github, kemudian klik setting
-   <re-img src="private_acess.png" className="lazyload"></re-img>
+   <re-img src="private_acess.png" width=100% height=auto></re-img>
 
 2. Cari Bagian Developer Settings
-   <re-img src="developer-settings.png"></re-img>
+   <re-img src="developer-settings.png" width=100% height=auto></re-img>
 
 3. Klik _**Personal Access Token**_ lalu klik **GENERATE new Token**
 4. isi deskripsi yang sesuai

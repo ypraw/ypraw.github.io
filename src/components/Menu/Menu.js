@@ -4,7 +4,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import Item from "./Item";
 import Expand from "./Expand";
-import { MdHome, MdBookmark, MdSearch } from "react-icons/md";
+import _JSXStyle from "styled-jsx/style";
+import { MdHome, MdBookmark, MdSearch, MdAccountCircle } from "react-icons/md";
 require("core-js/features/array/from");
 
 class Menu extends React.Component {
@@ -23,6 +24,7 @@ class Menu extends React.Component {
       { to: "/", label: "Home", icon: MdHome },
       { to: "/category/", label: "Categories", icon: MdBookmark },
       { to: "/search/", label: "Search", icon: MdSearch },
+      { to: "/about/", label: "About", icon: MdAccountCircle },
       // { to: "/", label: "Home" },
       // { to: "/category/", label: "Categories" },
       // { to: "/search/", label: "Search" },

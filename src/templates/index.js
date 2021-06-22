@@ -5,7 +5,7 @@ import { Link, graphql } from "gatsby";
 import { ThemeContext } from "../layouts";
 import Blog from "../components/Blog";
 import Seo from "../components/Seo";
-
+import _JSXStyle from "styled-jsx/style";
 class IndexPage extends React.Component {
   separator = React.createRef();
 

@@ -87,7 +87,7 @@ sudo cpupower frequency-set -f 1400MHz
 
 kira-kira kita akan mendapatkan hasil seperti berikut,
 
-<img src="res.png" width=100% height=auto>
+<re-img src="res.png" width=100% height=auto></re-img>
 
 untuk memudahkkan kita menscale pada saat perangkat pertama kali dihidupkan, selanjutnya kita akan membutuhkan module ```cpufreq_userspace``` agar terload secara otomatis, dan  kita akan membuat service baru dengan systemd agar setiap reboot kita menjalankan frequency sesuai dengan yang kita definisikan.
 

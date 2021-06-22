@@ -5,7 +5,7 @@ import Seo from "../components/Seo";
 import Article from "../components/Article";
 import Page from "../components/Page";
 import { ThemeContext } from "../layouts";
-
+import _JSXStyle from "styled-jsx/style";
 const PageTemplate = (props) => {
   const {
     data: { page },

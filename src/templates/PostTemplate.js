@@ -7,7 +7,7 @@ import Article from "../components/Article";
 import Post from "../components/Post";
 import { ThemeContext } from "../layouts";
 // require("katex/dist/katex.min.css");
-
+import _JSXStyle from "styled-jsx/style";
 require("prismjs/themes/prism-okaidia.css");
 
 const PostTemplate = (props) => {

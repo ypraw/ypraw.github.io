@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import React from "react";
 
+import _JSXStyle from "styled-jsx/style";
+
 import Item from "./Item";
 
 const Blog = (props) => {

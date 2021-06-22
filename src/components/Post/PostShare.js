@@ -11,7 +11,7 @@ import {
   TelegramShareButton,
   TelegramIcon
 } from "react-share";
-
+import _JSXStyle from "styled-jsx/style";
 import config from "../../../content/meta/config";
 
 const PostShare = (props) => {

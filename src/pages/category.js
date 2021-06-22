@@ -7,7 +7,7 @@ import Article from "../components/Article";
 import Headline from "../components/Article/Headline";
 import List from "../components/List";
 import Seo from "../components/Seo";
-
+import _JSXStyle from "styled-jsx/style";
 const TagsPage = (props) => {
   const {
     data: {

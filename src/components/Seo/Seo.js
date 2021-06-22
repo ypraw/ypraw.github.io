@@ -54,7 +54,7 @@ const Seo = (props) => {
               content={config.authorTwitterAccount ? config.authorTwitterAccount : ""}
             />
             {/* Plausible Analytics */}
-            {process.browser && (
+            { (
               <script async defer data-domain={domain} src="https://plausible.io/js/plausible.js" />
             )}
           </Helmet>

@@ -2,6 +2,7 @@ import React from "react";
 import { ThemeContext } from "../../layouts";
 import { FaGithub, FaTelegram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import config from "../../../content/meta/config";
+import _JSXStyle from "styled-jsx/style";
 
 const About = () => {
   return (

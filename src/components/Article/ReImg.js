@@ -2,6 +2,8 @@ import { Link, graphql, StaticQuery } from "gatsby";
 import Picture from "gatsby-image";
 import React from "react";
 import theme from "../../theme/theme.yaml";
+import _JSXStyle from "styled-jsx/style";
+
 
 const ReImg = (props) => {
   const fluid = props.fluid ? props.fluid : JSON.parse(props.rehyped); // To support 2 different use cases

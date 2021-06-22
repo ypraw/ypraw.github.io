@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import _JSXStyle from "styled-jsx/style";
 const Headline = (props) => {
   const { title, children, theme } = props;
 
