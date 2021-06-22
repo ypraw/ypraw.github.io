@@ -114,7 +114,7 @@ module.exports = {
               backgroundColor: "none",
               // tracedSVG: { color: "#f9ebd2" }
               tracedSVG: false,
-              loading: lazy,
+              loading: "lazy",
 
             }
           },
