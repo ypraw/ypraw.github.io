@@ -1,4 +1,5 @@
 require("dotenv").config();
+const { lazy } = require("react");
 const config = require("./content/meta/config");
 const transformer = require("./src/utils/algolia");
 
@@ -110,8 +111,11 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 800,
-              backgroundColor: "transparent",
-              tracedSVG: { color: "#f9ebd2" }
+              backgroundColor: "none",
+              // tracedSVG: { color: "#f9ebd2" }
+              tracedSVG: false,
+              loading: lazy,
+
             }
           },
           {
@@ -120,8 +124,8 @@ module.exports = {
               tag: "re-img",
               maxWidth: 800,
               quality: 90,
-              tracedSVG: { color: "#f9ebd2" },
-              generateTracedSVG: true
+              // tracedSVG: { color: "#f9ebd2" },
+              // generateTracedSVG: true
             }
           },
           `gatsby-remark-lazy-load`,

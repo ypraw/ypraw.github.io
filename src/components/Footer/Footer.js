@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql, useStaticQuery } from "gatsby";
+import _JSXStyle from "styled-jsx/style";
+
 const moment = require("moment-timezone");
 
 const Footer = (props) => {
