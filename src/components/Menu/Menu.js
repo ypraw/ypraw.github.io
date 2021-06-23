@@ -21,8 +21,8 @@ class Menu extends React.Component {
     }));
 
     this.items = [
-      { to: "/", label: "Home", icon: MdHome },
-      { to: "/category/", label: "Categories", icon: MdBookmark },
+      { to: "/", label: "Blog", icon: MdHome },
+      { to: "/category/", label: "Blog Categories", icon: MdBookmark },
       { to: "/search/", label: "Search", icon: MdSearch },
       { to: "/about/", label: "About", icon: MdAccountCircle },
       // { to: "/", label: "Home" },

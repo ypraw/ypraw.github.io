@@ -14,7 +14,7 @@ const Footer = (props) => {
     <React.Fragment>
       <footer className="footer">
         <a href="https://www.github.com/ypraw/">
-          This blog is open source. Last updated {timeGMT} GMT/UTC+7
+          This blog is open source. Built in on top Gatsby Js and React JS. Last updated {timeGMT} GMT/UTC+7
         </a>
       </footer>
       {/* --- STYLES --- */}
