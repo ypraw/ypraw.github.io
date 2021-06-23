@@ -110,3 +110,5 @@ maka akan tampil layout sebagai berikut.
 <!-- <img src="./dash.png" width="500" height="300" class="lazyload" > -->
 <re-img src="dash.png" width=100% height=auto></re-img>
 <!-- ![unsplash.com](./dash.png) -->
+
+Dalam _section_ `layout`, kita mendifinisikan semua komponen dalam tag `html` ataupun builtin `dash core component` seperti `dcc.Graph`, disini juga kita bisa mendifinisikan `external syylesheet` sebagai css ataupun js tambahan untuk mempercantik design web. Di pembahasan selanjutnya kita akan membahas bagaimana cara memasang _bootstrap css framework_ untuk styling web.
