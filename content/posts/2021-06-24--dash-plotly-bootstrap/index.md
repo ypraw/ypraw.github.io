@@ -531,7 +531,13 @@ if __name__ == '__main__':
 
 ```
 
-Seperti dilangkah awal, kita menggunakan file `.env` yang kita definisikan pada file `config.py` pada folder `config` yang kita import disini. Selanjutnya juga, Dan kunci penting pada file ini adalah, kita memanggil semua callback yang ada dalam page disini, untuk memberitahu kepada dash bahwa ada callback yang harus dipanggil. Karena pada dasarnya, callback didefinisikan pada `app.py` yang sebenernya tidak ada pada file tersebut, sehingga dash akan memberitahu exception error. Hal ini dapat dicegah denan menambahkan `suppress_callback_exception=True` pada file `app.py`.
+Seperti dilangkah awal, kita menggunakan file `.env` yang kita definisikan pada file `config.py` pada folder `config` yang kita import disini. Selanjutnya juga, Dan kunci penting pada file ini adalah, kita memanggil semua callback yang ada dalam page disini, untuk memberitahu kepada dash bahwa ada callback yang harus dipanggil. Karena pada dasarnya, callback didefinisikan pada `app.py` yang sebenernya tidak ada pada file tersebut, sehingga dash akan memberitahu exception error. Hal ini dapat dicegah denan menambahkan `suppress_callback_exception=True` pada file `app.py`. Dan untuk menjalankan aplikasi kita dapat menggunakan perintah :
+
+```BASH
+python index.py
+```
+
+Dan voilaaa.
 
 Untuk tutorial selanjutnya, saya akan membahas bagaimana men-dockerize aplikasi dash dan mungkin juga sedikit membahas bagaimana kita membuat model machine learning pada aplikasi dash.
 
