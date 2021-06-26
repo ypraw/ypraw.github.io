@@ -5,7 +5,9 @@ author: Yunindyo Prabowo
 ---
 
 Yeay, Akhirnya Tutorial Dasar Flask memasuki tahap akhir. Yaitu tahap koneksi dengan database. Tutorial ini merupakan tutorial ketiga mengenai Flask dasar dan juga merupakan bagian kelima dari tutorial dasar Flask, yaitu <b>CRUD menggunakn raw query Mysql</b>. Sesuai dengan tujuan mengapa tutorial ini dibuat yaitu membuat **_The Real Apps On Flask_**, sebenernya sih bukan aplikasi beneran dengan segala macam kompleksitasnya hahaha, melainkan aplikasi yang mencakup Templating, Routing, viewing dan CRUD sebagai dasar pondasi Aplikasi yang kelak dibangun oleh pembaca masing-masing.
+
 <!--more-->
+
 Sebagai rangkuman, pada tutorial-tutorial sebelumnya kita telah mempelajari:
 
   | Tutorial                                                            | Bagian    |   Konten              |
@@ -297,19 +299,23 @@ untuk template-template lainnya juga sama, semua looping ataupun pemanggilan par
 # ScreenShoot
 
 ## Halaman Depan
-<img src="https://res.cloudinary.com/ypraw/image/upload/v1497044623/flask3-1_ptlvs0.png" width="100%" height="auto">
+
+<!-- <re-img src="https://res.cloudinary.com/ypraw/image/upload/v1497044623/flask3-1_ptlvs0.png" width=100% height=auto></re-img> -->
+<!-- <img src="https://res.cloudinary.com/ypraw/image/upload/v1497044623/flask3-1_ptlvs0.png" width=10% height=auto> -->
+
+<!-- ![halaman depan](https://res.cloudinary.com/ypraw/image/upload/v1497044623/flask3-1_ptlvs0.png) -->
 
 ## Halaman login
-<img src="https://res.cloudinary.com/ypraw/image/upload/v1497044747/flask3-2_qmjqh7.png" width="100%" height="auto">
+<!-- <re-img src="https://res.cloudinary.com/ypraw/image/upload/v1497044747/flask3-2_qmjqh7.png" width="100%" height="auto"></re-img> -->
 
 ## Halaman Dasboard
-<img src="https://res.cloudinary.com/ypraw/image/upload/v1497044741/flask3-3_z3ejfe.png" width="100%" height="auto">
+<!-- <re-img src="https://res.cloudinary.com/ypraw/image/upload/v1497044741/flask3-3_z3ejfe.png" width="100%" height="auto"></re-img> -->
 
 ## Halaman Add product
-<img src="https://res.cloudinary.com/ypraw/image/upload/v1497044743/flask3-4_jzqmeg.png" width="100%" height="auto">
+<!-- <re-img src="https://res.cloudinary.com/ypraw/image/upload/v1497044743/flask3-4_jzqmeg.png" width="100%" height="auto"></re-img> -->
 
 ## Halaman Update Product
-<img src="https://res.cloudinary.com/ypraw/image/upload/v1497044743/flask3-5_hckvs5.png" width="100%" height="auto">
+<!-- <re-img src="https://res.cloudinary.com/ypraw/image/upload/v1497044743/flask3-5_hckvs5.png" width="100%" height="auto"></re-img> -->
 
 # Penutup
 Alhamdulillah akhirnya tutorial akhir Dasar Flask telah berakhir, semoga dengan tutorial akhir ini para pemabaca dapat memahami apa itu FLask dan fungsi-fungsi dasar dalam membangun aplikasi web berbasis python dengan Framework flask.

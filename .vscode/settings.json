@@ -24,6 +24,36 @@
         "source.fixAll.tslint": true,
         // For Stylelint
         "source.fixAll.stylelint": true
+    },
+    // markdown-formatter conf
+    // Convert the code area of unnamed language into code block according to js type
+    // "markdownFormatter.codeAreaToBlock": "js",
+    // or not
+    "markdownFormatter.codeAreaToBlock": "",
+    // format punctuation automatically
+    "markdownFormatter.fullWidthTurnHalfWidth": "auto",
+    // Chinese punctuation formatted to English
+    // "markdownFormatter.fullWidthTurnHalfWidth": "，：；！“”‘’（）？。",
+    "markdownFormatter.formatOpt": {
+        "indent_size": 2
+    },
+    "[markdown]": {
+        // auto save
+        "editor.formatOnSave": false,
+        // show space
+        "editor.renderWhitespace": "all",
+        //
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": true,
+            "strings": true
+        },
+        //
+        "editor.snippetSuggestions": "top",
+        "editor.tabCompletion": "on",
+        //
+        "editor.acceptSuggestionOnEnter": "on",
+        //
+        "editor.defaultFormatter": "mervin.markdown-formatter"
     }
-
 }
