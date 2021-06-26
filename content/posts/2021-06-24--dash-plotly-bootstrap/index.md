@@ -535,6 +535,16 @@ Seperti dilangkah awal, kita menggunakan file `.env` yang kita definisikan pada 
 
 Untuk tutorial selanjutnya, saya akan membahas bagaimana men-dockerize aplikasi dash dan mungkin juga sedikit membahas bagaimana kita membuat model machine learning pada aplikasi dash.
 
+### Screenshoot
+
+#### Homepage graph
+
+<re-img src="homepage_graph.png" width=100% height=auto></re-img>
+
+#### Homepage Table
+
+<re-img src="homepage_table.png" width=100% height=auto></re-img>
+
 Apabila ada pertanyaan jangan sungkan untuk bertanya di kolom komentar,
 Stay tune guys ...
 
