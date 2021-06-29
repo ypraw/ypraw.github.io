@@ -9,6 +9,7 @@ import { ThemeContext } from "../layouts";
 // require("katex/dist/katex.min.css");
 import _JSXStyle from "styled-jsx/style";
 require("prismjs/themes/prism-okaidia.css");
+require(`katex/dist/katex.min.css`);
 
 const PostTemplate = (props) => {
   const {
@@ -33,7 +34,6 @@ const PostTemplate = (props) => {
     </React.Fragment>
   );
 };
-
 PostTemplate.prototype = {
   data: PropTypes.object.isRequired,
   pageContext: PropTypes.object.isRequired

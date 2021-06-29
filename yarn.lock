@@ -4737,10 +4737,15 @@
   "resolved" "https://registry.npmjs.org/command-exists/-/command-exists-1.2.9.tgz"
   "version" "1.2.9"
 
-"commander@^2.20.0", "commander@^2.20.3", "commander@^2.8.1":
+"commander@^2.19.0", "commander@^2.20.0", "commander@^2.20.3", "commander@^2.8.1":
   "integrity" "sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ=="
   "resolved" "https://registry.npmjs.org/commander/-/commander-2.20.3.tgz"
   "version" "2.20.3"
+
+"commander@^6.0.0":
+  "integrity" "sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA=="
+  "resolved" "https://registry.npmjs.org/commander/-/commander-6.2.1.tgz"
+  "version" "6.2.1"
 
 "commander@^6.2.0":
   "integrity" "sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA=="
@@ -7668,10 +7673,10 @@
     "yoga-layout-prebuilt" "^1.9.6"
     "yurnalist" "^2.1.0"
 
-"gatsby-core-utils@^2.7.1":
-  "integrity" "sha512-ofiAzLMeLjkS9huo0JQRbNzOfwCCxzPg7mSXeEhZhHGfbXoqZ9ZufmlTTgSYLc5v6agoM4yi4rHqdMOXu4qXAw=="
-  "resolved" "https://registry.npmjs.org/gatsby-core-utils/-/gatsby-core-utils-2.7.1.tgz"
-  "version" "2.7.1"
+"gatsby-core-utils@^2.7.1", "gatsby-core-utils@^2.8.0":
+  "integrity" "sha512-CadvILN4ZyYMYQAp+haxSgE/0k5zIu6y2WcqVSJaQLmmWq0o49Gv4CftVKOEXOtXaN0DEr9e4wWFVBRAYaRHGA=="
+  "resolved" "https://registry.npmjs.org/gatsby-core-utils/-/gatsby-core-utils-2.8.0.tgz"
+  "version" "2.8.0"
   dependencies:
     "ci-info" "2.0.0"
     "configstore" "^5.0.1"
@@ -8021,6 +8026,17 @@
     "unist-util-select" "^3.0.4"
     "unist-util-visit-parents" "^3.1.1"
 
+"gatsby-remark-katex@^5.5.0":
+  "integrity" "sha512-7wXon1E2IaspFORFjURJfkQsvBObkppY+amD8So9KiSyDs2lIzGwVC27QdHomdzGMBP2QsE6w4ZNzixUgQUuAw=="
+  "resolved" "https://registry.npmjs.org/gatsby-remark-katex/-/gatsby-remark-katex-5.5.0.tgz"
+  "version" "5.5.0"
+  dependencies:
+    "@babel/runtime" "^7.14.0"
+    "rehype-parse" "^7.0.1"
+    "remark-math" "^4.0.0"
+    "unified" "^9.2.1"
+    "unist-util-visit" "^2.0.3"
+
 "gatsby-remark-lazy-load@^1.0.2":
   "integrity" "sha512-u9BuKr+oQ2UTcpRIqjLVe0C4rL0zdc1W3vmQFOAF4+0tnTjuUWkjTJSgAsYl8fQDlBmZ1iixEBc3JrWHOXfATg=="
   "resolved" "https://registry.npmjs.org/gatsby-remark-lazy-load/-/gatsby-remark-lazy-load-1.0.2.tgz"
@@ -8112,13 +8128,13 @@
     "node-fetch" "^2.6.1"
     "uuid" "3.4.0"
 
-"gatsby-transformer-remark@^4.4.1":
-  "integrity" "sha512-TQt8i/gSLoVID3Pn6v6I8OOXLSw5r0w4yY90VisENiStDxEEKMrgAvlkaBNikwGvi+c8KctfX6SFCGbSUpqRkg=="
-  "resolved" "https://registry.npmjs.org/gatsby-transformer-remark/-/gatsby-transformer-remark-4.4.1.tgz"
-  "version" "4.4.1"
+"gatsby-transformer-remark@^4.5.0":
+  "integrity" "sha512-iiXNQRnM2mOeOuXxZWNjAj2CR5hoYgBSXD68+k7ZSeSGIkF1qf5B27t0yTdwDP/rVE+C+ZLtjjl3JNKwul++6g=="
+  "resolved" "https://registry.npmjs.org/gatsby-transformer-remark/-/gatsby-transformer-remark-4.5.0.tgz"
+  "version" "4.5.0"
   dependencies:
     "@babel/runtime" "^7.14.0"
-    "gatsby-core-utils" "^2.7.1"
+    "gatsby-core-utils" "^2.8.0"
     "gray-matter" "^4.0.2"
     "hast-util-raw" "^6.0.2"
     "hast-util-to-html" "^7.1.2"
@@ -10538,6 +10554,20 @@
   "resolved" "https://registry.npmjs.org/junk/-/junk-3.1.0.tgz"
   "version" "3.1.0"
 
+"katex@^0.12.0":
+  "integrity" "sha512-y+8btoc/CK70XqcHqjxiGWBOeIL8upbS0peTPXTvgrh21n1RiWWcIpSWM+4uXq+IAgNh9YYQWdc7LVDPDAEEAg=="
+  "resolved" "https://registry.npmjs.org/katex/-/katex-0.12.0.tgz"
+  "version" "0.12.0"
+  dependencies:
+    "commander" "^2.19.0"
+
+"katex@^0.13.11", "katex@^0.13.3":
+  "integrity" "sha512-yJBHVIgwlAaapzlbvTpVF/ZOs8UkTj/sd46Fl8+qAf2/UiituPYVeapVD8ADZtqyRg/qNWUKt7gJoyYVWLrcXw=="
+  "resolved" "https://registry.npmjs.org/katex/-/katex-0.13.11.tgz"
+  "version" "0.13.11"
+  dependencies:
+    "commander" "^6.0.0"
+
 "kebab-hash@^0.1.2":
   "integrity" "sha512-BTZpq3xgISmQmAVzkISy4eUutsUA7s4IEFlCwOBJjvSFOwyR7I+fza+tBc/rzYWK/NrmFHjfU1IhO3lu29Ib/w=="
   "resolved" "https://registry.npmjs.org/kebab-hash/-/kebab-hash-0.1.2.tgz"
@@ -11286,6 +11316,15 @@
     "mdast-util-gfm-task-list-item" "^0.1.0"
     "mdast-util-to-markdown" "^0.6.1"
 
+"mdast-util-math@^0.1.0":
+  "integrity" "sha512-fogAitds+wH+QRas78Yr1TwmQGN4cW/G2WRw5ePuNoJbBSPJCxIOCE8MTzHgWHVSpgkRaPQTgfzXRE1CrwWSlg=="
+  "resolved" "https://registry.npmjs.org/mdast-util-math/-/mdast-util-math-0.1.2.tgz"
+  "version" "0.1.2"
+  dependencies:
+    "longest-streak" "^2.0.0"
+    "mdast-util-to-markdown" "^0.6.0"
+    "repeat-string" "^1.0.0"
+
 "mdast-util-mdx-expression@~0.1.0":
   "integrity" "sha512-SoO8y1B9NjMOYlNdwXMchuTVvqSTlUmXm1P5QvZNPv7OH7aa8qJV+3aA+vl1DHK9Vk1uZAlgwokjvDQhS6bINA=="
   "resolved" "https://registry.npmjs.org/mdast-util-mdx-expression/-/mdast-util-mdx-expression-0.1.1.tgz"
@@ -11575,6 +11614,14 @@
     "micromark-extension-gfm-table" "~0.4.0"
     "micromark-extension-gfm-tagfilter" "~0.3.0"
     "micromark-extension-gfm-task-list-item" "~0.3.0"
+
+"micromark-extension-math@^0.1.0":
+  "integrity" "sha512-ZJXsT2eVPM8VTmcw0CPSDeyonOn9SziGK3Z+nkf9Vb6xMPeU+4JMEnO6vzDL10562Favw8Vste74f54rxJ/i6Q=="
+  "resolved" "https://registry.npmjs.org/micromark-extension-math/-/micromark-extension-math-0.1.2.tgz"
+  "version" "0.1.2"
+  dependencies:
+    "katex" "^0.12.0"
+    "micromark" "~2.11.0"
 
 "micromark-extension-mdx-expression@^0.3.0", "micromark-extension-mdx-expression@^0.3.2", "micromark-extension-mdx-expression@~0.3.0":
   "integrity" "sha512-Sh8YHLSAlbm/7TZkVKEC4wDcJE8XhVpZ9hUXBue1TcAicrrzs/oXu7PHH3NcyMemjGyMkiVS34Y0AHC5KG3y4A=="
@@ -15850,6 +15897,14 @@
   dependencies:
     "jsesc" "~0.5.0"
 
+"rehype-parse@^7.0.1":
+  "integrity" "sha512-fOiR9a9xH+Le19i4fGzIEowAbwG7idy2Jzs4mOrFWBSJ0sNUgy0ev871dwWnbOo371SjgjG4pwzrbgSVrKxecw=="
+  "resolved" "https://registry.npmjs.org/rehype-parse/-/rehype-parse-7.0.1.tgz"
+  "version" "7.0.1"
+  dependencies:
+    "hast-util-from-parse5" "^6.0.0"
+    "parse5" "^6.0.0"
+
 "rehype-react@^6.2.0":
   "integrity" "sha512-XpR3p8ejdJ5CSEKqAfASIrkD+KaHLy0JOqXu9zM32tvkr1cUeM7AeidF6Q8eQ/wtMvcJb+h/L4QRwg1eFwBggQ=="
   "resolved" "https://registry.npmjs.org/rehype-react/-/rehype-react-6.2.0.tgz"
@@ -15873,6 +15928,14 @@
   dependencies:
     "mdast-util-gfm" "^0.1.0"
     "micromark-extension-gfm" "^0.3.0"
+
+"remark-math@^4.0.0":
+  "integrity" "sha512-lH7SoQenXtQrvL0bm+mjZbvOk//YWNuyR+MxV18Qyv8rgFmMEGNuB0TSCQDkoDaiJ40FCnG8lxErc/zhcedYbw=="
+  "resolved" "https://registry.npmjs.org/remark-math/-/remark-math-4.0.0.tgz"
+  "version" "4.0.0"
+  dependencies:
+    "mdast-util-math" "^0.1.0"
+    "micromark-extension-math" "^0.1.0"
 
 "remark-mdx@^2.0.0-next.4":
   "integrity" "sha512-I5dCKP5VE18SMd5ycIeeEk8Hl6oaldUY6PIvjrfm65l7d0QRnLqknb62O2g3QEmOxCswcHTtwITtz6rfUIVs+A=="
