@@ -36,6 +36,7 @@ jobs:
           ALGOLIA_ADMIN_API_KEY: ${{secrets.ALGOLIA_ADMIN_API_KEY}}
           ALGOLIA_INDEX_NAME: ${{secrets.ALGOLIA_INDEX_NAME}}
           PLAUSIBLE_DOMAIN: ${{secrets.PLAUSIBLE_DOMAIN}}
+          GOOGLE_ANALYTICS_ID: ${{secrets.GOOGLE_ANALYTICS_ID}}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
