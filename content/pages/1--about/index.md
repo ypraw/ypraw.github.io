@@ -23,6 +23,7 @@ Hello i'm Yunindyo Prabowo, i'm currently working at [Macroad](https://macroad.c
   | microsite vidio.com x macroad | create logical flow backend for update banner, price and package | 2021 |
   | Dashboard Monitoring | Dashboard for Monitoring and Reporting statistic Platform | 2021 |
   | [Stowtui](https://github.com/ypraw/stowtui) | Creator and Maintener stowtui, a Terminal User Interface for GNU STOW, managing dotfiles application | 2021 |
+
 ## Skill
 
 * Programming Languages
