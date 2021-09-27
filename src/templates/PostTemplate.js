@@ -8,7 +8,8 @@ import Post from "../components/Post";
 import { ThemeContext } from "../layouts";
 // require("katex/dist/katex.min.css");
 import _JSXStyle from "styled-jsx/style";
-require("prismjs/themes/prism-okaidia.css");
+// require("prismjs/themes/prism-okaidia.css");
+require("prism-themes/themes/prism-gruvbox-dark.css");
 require(`katex/dist/katex.min.css`);
 
 const PostTemplate = (props) => {
