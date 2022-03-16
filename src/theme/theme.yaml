@@ -92,7 +92,7 @@ font:
 #TIME
 time:
   duration:
-    default: 1s
+    default: 1.5s
     long: 2.5s
 
 # GENERAL TOKENS
