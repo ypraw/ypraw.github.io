@@ -54,6 +54,6 @@
         //
         "editor.acceptSuggestionOnEnter": "on",
         //
-        "editor.defaultFormatter": "mervin.markdown-formatter"
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
     }
 }
