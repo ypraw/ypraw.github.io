@@ -32,6 +32,11 @@ Hello i'm Yunindyo Prabowo, i'm currently working at [Lion parcel](https://lionp
 
 * Database
   * [Postgresql]
+  * [Aws Redshift]
+
+
+* Cloud Platform
+  * AWS EC2
 
 ## Contact Me
 
