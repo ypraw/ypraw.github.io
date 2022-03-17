@@ -34,7 +34,7 @@ const queries = [
 module.exports = {
   // pathPrefix: config.pathPrefix,
   flags: {
-    DEV_SSR: false,
+    DEV_SSR: false
   },
   siteMetadata: {
     title: config.siteTitle,
@@ -59,12 +59,12 @@ module.exports = {
         component: require.resolve(`./src/layouts/`)
       }
     },
-     {
+    {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
         trackingIds: [
-          process.env.GOOGLE_ANALYTICS_ID, // Google Analytics / GA
+          process.env.GOOGLE_ANALYTICS_ID // Google Analytics / GA
         ],
 
         // This object is used for configuration specific to this plugin
@@ -74,9 +74,9 @@ module.exports = {
           // Setting this parameter is also optional
           respectDNT: true,
           // Avoids sending pageview hits from custom paths
-          exclude: ["/preview/**", "/do-not-track/me/too/"],
-        },
-      },
+          exclude: ["/preview/**", "/do-not-track/me/too/"]
+        }
+      }
     },
     {
       resolve: `gatsby-plugin-algolia`,
@@ -89,15 +89,15 @@ module.exports = {
         chunkSize: 1000 // default: 1000
       }
     },
-     {
-    resolve: `gatsby-plugin-styled-jsx`,
-    options: {
-      jsxPlugins: ["styled-jsx-plugin-postcss"],
-      optimizeForSpeed: true,
-      sourceMaps: false,
-      vendorPrefixes: true,
+    {
+      resolve: `gatsby-plugin-styled-jsx`,
+      options: {
+        jsxPlugins: ["styled-jsx-plugin-postcss"],
+        optimizeForSpeed: true,
+        sourceMaps: false,
+        vendorPrefixes: true
+      }
     },
-  },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -136,12 +136,12 @@ module.exports = {
             options: { components: ["re-icons", "re-img", "re-tracedsvg-gallery"] }
           },
           {
-          resolve: `gatsby-remark-katex`,
-          options: {
-            // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
-            strict: `ignore`
-          }
-        },
+            resolve: `gatsby-remark-katex`,
+            options: {
+              // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
+              strict: `ignore`
+            }
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -149,8 +149,7 @@ module.exports = {
               backgroundColor: "none",
               // tracedSVG: { color: "#f9ebd2" }
               tracedSVG: false,
-              loading: "lazy",
-
+              loading: "lazy"
             }
           },
           {
@@ -158,7 +157,7 @@ module.exports = {
             options: {
               tag: "re-img",
               maxWidth: 800,
-              quality: 90,
+              quality: 90
               // tracedSVG: { color: "#f9ebd2" },
               // generateTracedSVG: true
             }
@@ -198,11 +197,11 @@ module.exports = {
       }
     },
     `gatsby-plugin-sharp`,
-     {
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS_ID,
-           head: false,
+        head: false,
         // Setting this parameter is optional
         anonymize: true,
         // Setting this parameter is also optional
@@ -217,7 +216,7 @@ module.exports = {
         siteSpeedSampleRate: 10,
         cookieDomain: "example.com",
         // defaults to false
-        enableWebVitalsTracking: true,
+        enableWebVitalsTracking: true
       }
     },
 
@@ -322,8 +321,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-                        title: "ypraw blog RSS Feed",
-
+            title: "ypraw blog RSS Feed"
           }
         ]
       }
