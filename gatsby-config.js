@@ -89,6 +89,15 @@ module.exports = {
         chunkSize: 1000 // default: 1000
       }
     },
+     {
+    resolve: `gatsby-plugin-styled-jsx`,
+    options: {
+      jsxPlugins: ["styled-jsx-plugin-postcss"],
+      optimizeForSpeed: true,
+      sourceMaps: false,
+      vendorPrefixes: true,
+    },
+  },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -296,7 +305,9 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml"
+            output: "/rss.xml",
+                        title: "ypraw blog RSS Feed",
+
           }
         ]
       }
