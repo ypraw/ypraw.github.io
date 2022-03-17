@@ -189,6 +189,12 @@ module.exports = {
       }
     },
     `gatsby-plugin-sharp`,
+     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_ID
+      }
+    },
 
     `gatsby-transformer-sharp`,
     {

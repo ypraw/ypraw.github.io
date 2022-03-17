@@ -12,6 +12,7 @@
     "gatsby-image": "^3.7.1",
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-feed": "^3.7.1",
+    "gatsby-plugin-google-analytics": "^4.10.0",
     "gatsby-plugin-google-gtag": "^3.8.0",
     "gatsby-plugin-layout": "^2.7.1",
     "gatsby-plugin-manifest": "^3.7.1",
