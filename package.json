@@ -43,7 +43,7 @@
     "katex": "^0.13.11",
     "lazysizes": "^5.3.2",
     "lodash.throttle": "^4.1.1",
-    "moment-timezone": "^0.5.33",
+    "moment-timezone": "^0.5.35",
     "normalize.css": "^8.0.1",
     "prism-themes": "^1.7.0",
     "prismjs": "^1.23.0",
