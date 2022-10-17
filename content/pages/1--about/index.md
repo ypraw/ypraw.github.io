@@ -6,7 +6,7 @@ title: About Me
 
 <re-img  alt="about me" src="./photo_2019-04-11_00-21-32.jpg"></re-img>
 
-Hello i'm Yunindyo Prabowo, i'm currently working at [Lion parcel](https://lionparcel.com/) as Data Engineer. I'm Linux User, i use manjaro with plasma as desktop environtment.
+Hello i'm Yunindyo Prabowo, i'm currently working at [Bithealth](https://bithealth.co.id/) a digital healthcare solutions provider as Data Engineer. I'm Linux User, i use manjaro with plasma as desktop environtment.
 
 ## Education
   > * Senior High School : SMAN 101 Jakarta
@@ -33,10 +33,12 @@ Hello i'm Yunindyo Prabowo, i'm currently working at [Lion parcel](https://lionp
 * Database
   * [Postgresql]
   * [Aws Redshift]
+  * [Google Bigquery]
 
 
 * Cloud Platform
   * AWS EC2
+  * GCP Compute Engine
 
 ## Contact Me
 
