@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-category-template-js",
+    "path": "/category/virtual-environtment/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/management-paket-dan-virtual-environtment-menggunakan-pipenv/"},"excerpt":"Ada baiknya sebelum memulai project python, kita perlu mengisolasi environtment yang digunakan pada project. Umumnya menggunakan Venv, pada…","timeToRead":1,"frontmatter":{"title":"Management paket dan virtual environtment menggunakan pipenv","category":["python","pipenv","virtual environtment"]}}}]}},"pageContext":{"category":"virtual environtment"}},
+    "staticQueryHashes": ["1722218574","2797806559","2909820253"]}

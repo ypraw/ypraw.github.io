@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-category-template-js",
+    "path": "/category/data/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":2,"edges":[{"node":{"fields":{"slug":"/dash-plotly-advance-learn/"},"excerpt":"Pada tulisan sebelumnya, kita telah membahas sedikit mengenai dash, dan bagaimana cara menggunakan komponen-komponen html ataupun komponen…","timeToRead":2,"frontmatter":{"title":"Dash Plotly Advance Learn - CallBack","category":["python","dash","plotly","data engineer","data"]}}},{"node":{"fields":{"slug":"/dash-plotly-learn/"},"excerpt":"Sudah lama saya tidak menulis catatan kecil untuk keberlangsungan hidup para programmer lain, eh wkwkwkwk. Pada tulisan kali ini saya akan…","timeToRead":4,"frontmatter":{"title":"Dash Plotly solusi Tim Data untuk visualisasi","category":["python","dash","plotly","data engineer","data"]}}}]}},"pageContext":{"category":"data"}},
+    "staticQueryHashes": ["1722218574","2797806559","2909820253"]}

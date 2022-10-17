@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-category-template-js",
+    "path": "/category/k-nn/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/k-nearest-neighbor-algorithm-on-python/"},"excerpt":"Siapa bilang bahwa rumus pythagoras yang terkenal itu cuma konsep matematika yang diajarin dan ngga berguna didunia nyata, atau bahkan cuma…","timeToRead":8,"frontmatter":{"title":"K-Nearest Neighbor Algorithm on Python","category":["python","data scientist","machine learning","supervised algorithm","knn","nearest neighbors","k-nn"]}}}]}},"pageContext":{"category":"k-nn"}},
+    "staticQueryHashes": ["1722218574","2797806559","2909820253"]}

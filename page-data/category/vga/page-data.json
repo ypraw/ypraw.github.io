@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-category-template-js",
+    "path": "/category/vga/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/setup-vga-amd-pada-manjaro-linux/"},"excerpt":"Assalamualaikum temen-temen pembaca sekalian. Pada kesempatan sebelumnya saya telah membuat artikel mengenai Hal-hal apa saja yang saya…","timeToRead":7,"frontmatter":{"title":"Setup Vga Amd Pada Manjaro Linux","category":["linux","vga","power management"]}}}]}},"pageContext":{"category":"vga"}},
+    "staticQueryHashes": ["1722218574","2797806559","2909820253"]}

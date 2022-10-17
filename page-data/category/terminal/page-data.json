@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-category-template-js",
+    "path": "/category/terminal/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/kustomisasi-terminal-linux/"},"excerpt":"Halo guys XD, setelah membahas bagaimana trik untuk Berhemat Battery pada Tutorial Linux First Install, dalam kesempatan kali ini saya akan…","timeToRead":7,"frontmatter":{"title":"Kustomisasi Terminal Linux","category":["linux","terminal"]}}}]}},"pageContext":{"category":"terminal"}},
+    "staticQueryHashes": ["1722218574","2797806559","2909820253"]}

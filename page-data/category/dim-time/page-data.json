@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-category-template-js",
+    "path": "/category/dim-time/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/mengenal-dimension-time-table/"},"excerpt":"Halo para pembaca, sudah lama saya tidak menulis artikel mengenai dunia programming. Pada kesempatan kali ini saya akan sedikit bercerita…","timeToRead":5,"frontmatter":{"title":"Mengenal dimension time table","category":["python","data engineer","sql","dim time"]}}}]}},"pageContext":{"category":"dim time"}},
+    "staticQueryHashes": ["1722218574","2797806559","2909820253"]}

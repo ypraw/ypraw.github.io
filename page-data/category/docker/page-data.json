@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-category-template-js",
+    "path": "/category/docker/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"fields":{"slug":"/dockerize-dash-application/"},"excerpt":"Hello guys, melanjutkan tutorial mengenai Dash untuk membuat website data visualisasi, kita akan membungkus aplikasi kita kedalam container…","timeToRead":2,"frontmatter":{"title":"Dockerize Dash Application","category":["python","dash","data engineer","data scientist","docker","docker-compose","gunicorn"]}}}]}},"pageContext":{"category":"docker"}},
+    "staticQueryHashes": ["1722218574","2797806559","2909820253"]}

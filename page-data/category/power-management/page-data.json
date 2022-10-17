@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-category-template-js",
+    "path": "/category/power-management/",
+    "result": {"data":{"allMarkdownRemark":{"totalCount":2,"edges":[{"node":{"fields":{"slug":"/scalling-cpu-intel-on-linux/"},"excerpt":"Terkadang kita membutuhkan performa perangkat yang maksimal saat menggunakan beberapa software tertentu ataupun pada saat kita melakukan…","timeToRead":4,"frontmatter":{"title":"Scalling Cpu Intel on Linux","category":["linux","power management"]}}},{"node":{"fields":{"slug":"/setup-vga-amd-pada-manjaro-linux/"},"excerpt":"Assalamualaikum temen-temen pembaca sekalian. Pada kesempatan sebelumnya saya telah membuat artikel mengenai Hal-hal apa saja yang saya…","timeToRead":7,"frontmatter":{"title":"Setup Vga Amd Pada Manjaro Linux","category":["linux","vga","power management"]}}}]}},"pageContext":{"category":"power management"}},
+    "staticQueryHashes": ["1722218574","2797806559","2909820253"]}

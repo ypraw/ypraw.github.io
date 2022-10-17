@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-search-js",
+    "path": "/search/",
+    "result": {"data":{"site":{"siteMetadata":{"algolia":{"appId":"WJJ6S5HGOV","searchOnlyApiKey":"8e7e42cf4d790d01ba89ce960afd0409","indexName":"ypraw_blog"}}}},"pageContext":{}},
+    "staticQueryHashes": ["1722218574","2797806559","2909820253"]}
